@@ -6,7 +6,7 @@ let index=0,done=new Set(),revealed=new Set();const $=id=>document.getElementByI
 function render(){const [a,b]=SETS[index],c=a+b;$('progress').textContent='Family '+(index+1)+' of '+SETS.length;$('numbers').textContent=a+' · '+b+' · '+c;$('options').replaceChildren();$('feedback').textContent='';$('explanations').replaceChildren();
 deck(a,b).forEach((item,i)=>{const label=document.createElement('label');label.className='equation';const input=document.createElement('input');input.type='checkbox';input.value=String(i);input.addEventListener('change',()=>{$('feedback').textContent='';$('explanations').replaceChildren();});label.appendChild(input);const text=document.createElement('span');text.textContent=item.eq;label.appendChild(text);$('options').appendChild(label);});
 $('previous').disabled=index===0;$('next').disabled=index===SETS.length-1;updateCount();}
-function updateCount(){$('completion').textContent=done.size+' families completed without revealing; '+revealed.size+' families revealed. Six practice families total.';}
+function updateCount(){$('completion').textContent='Completed without reveal: '+done.size+'. Revealed: '+revealed.size+'. Practice families: 6.';}
 function selected(){return Array.from($('options').children).map(l=>l.children[0].checked);}
 function check(){const items=deck(...SETS[index]),chosen=selected();let missing=0,extra=0;items.forEach((x,i)=>{if(x.valid&&!chosen[i])missing++;if(!x.valid&&chosen[i])extra++;});$('explanations').replaceChildren();
 if(!missing&&!extra){if(!revealed.has(index))done.add(index);$('feedback').textContent=(revealed.has(index)?'The revealed set is correct. ':'Family complete. ')+items.filter(x=>x.valid).length+' distinct equations connect these numbers.';updateCount();}
