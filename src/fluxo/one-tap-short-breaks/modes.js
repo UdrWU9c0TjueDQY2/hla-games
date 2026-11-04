@@ -7,4 +7,3 @@
  function render(){preview.classList.toggle('paused',paused);toggle.textContent=paused?'Resume preview motion':'Pause preview motion';}
  toggle.addEventListener('click',()=>{paused=!paused;render();});render();
 })();
-
