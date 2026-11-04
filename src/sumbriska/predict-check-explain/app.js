@@ -1,0 +1,3 @@
+const checks=[...document.querySelectorAll('input[type=checkbox]')];
+function update(){const n=checks.filter(c=>c.checked).length;document.getElementById('done').textContent=`${n} of 6`;document.getElementById('ring').style.setProperty('--angle',`${n*60}deg`);document.getElementById('status').textContent=n===6?'Practice sheet complete. Pick one observation to bring to your next board.':`Next: ${checks.find(c=>!c.checked).dataset.task}`;}
+checks.forEach(c=>c.addEventListener('change',update));document.getElementById('reset').addEventListener('click',()=>{checks.forEach(c=>c.checked=false);update();});update();
