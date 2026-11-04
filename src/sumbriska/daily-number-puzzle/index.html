@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Daily Number Puzzle: Flip Bridges, Match Sums</title>
+<meta name="description" content="A free daily number puzzle to play in your browser: flip bridges so every island hits its target sum. New board every day, solution behind a tap.">
+<link rel="canonical" href="https://honest-little-apps.pages.dev/sumbriska/daily-number-puzzle/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="apple-itunes-app" content="app-id=6829238551">
+<meta property="og:type" content="article"><meta property="og:title" content="Free Daily Number Puzzle: Flip Bridges, Match Sums"><meta property="og:description" content="A free daily number puzzle to play in your browser: flip bridges so every island hits its target sum. New board every day, solution behind a tap."><meta property="og:url" content="https://honest-little-apps.pages.dev/sumbriska/daily-number-puzzle/"><meta property="og:image" content="https://honest-little-apps.pages.dev/sumbriska/daily-number-puzzle/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="Honest Little Apps">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Free Daily Number Puzzle: Flip Bridges, Match Sums"><meta name="twitter:description" content="A free daily number puzzle to play in your browser: flip bridges so every island hits its target sum. New board every day, solution behind a tap."><meta name="twitter:image" content="https://honest-little-apps.pages.dev/sumbriska/daily-number-puzzle/og.png">
+<link rel="preload" href="/assets/fonts/bricolage-grotesque-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Honest Little Apps", "item": "https://honest-little-apps.pages.dev/"}, {"@type": "ListItem", "position": 2, "name": "Pocket Puzzle Arcade", "item": "https://honest-little-apps.pages.dev/games/"}, {"@type": "ListItem", "position": 3, "name": "Daily number puzzle", "item": "https://honest-little-apps.pages.dev/sumbriska/daily-number-puzzle/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How does the daily number puzzle work?", "acceptedAnswer": {"@type": "Answer", "text": "Each island shows a target. Each bridge carries a number and points at one island; that island counts the number in its sum. Tap a bridge to flip which island it points at. When every island's sum equals its target, the board is solved. A new board appears every day, built from the date, so everyone gets the same puzzle."}}, {"@type": "Question", "name": "Is the puzzle on this page the same as the app?", "acceptedAnswer": {"@type": "Answer", "text": "It uses the same core rule, flip bridges to match sums, with five islands and eight bridges. The iPhone app adds themed regions, Two Tides boards that must satisfy two schedules at once, timed Harbor Run, the endless Deep, a workshop for custom boards, and a harbor you build as you solve."}}, {"@type": "Question", "name": "Is Sumbriska free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes to download and play. Regions 1 and 2, the Daily board, The Deep and Harbor Run are included. An optional Voyage Pass subscription ($4.99 a month or $29.99 a year, no free trial) adds regions 3 to 6, side boards, Gale Run, the 3-4 ring workshop and cosmetics."}}, {"@type": "Question", "name": "Is it suitable for kids?", "acceptedAnswer": {"@type": "Answer", "text": "The listing describes child profiles with no purchases and no links, an adult area behind PIN or Face ID, no ads, no accounts and no data collection, and it works offline. The board on this page collects nothing either."}}, {"@type": "Question", "name": "What is the minimum number of flips?", "acceptedAnswer": {"@type": "Answer", "text": "The par shown above the board is the number of bridges pointing the wrong way at the start. Each bridge only has two states, so par is the fewest flips that can solve it. Extra flips are not penalised; they are just a sign you were exploring."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Free Daily Number Puzzle: Flip Bridges, Match Sums", "description": "A free daily number puzzle to play in your browser: flip bridges so every island hits its target sum. New board every day, solution behind a tap.", "url": "https://honest-little-apps.pages.dev/sumbriska/daily-number-puzzle/", "image": "https://honest-little-apps.pages.dev/sumbriska/daily-number-puzzle/og.png", "datePublished": "2026-11-03", "dateModified": "2026-11-03", "author": {"@type": "Organization", "name": "Honest Little Apps", "url": "https://honest-little-apps.pages.dev/"}, "publisher": {"@type": "Organization", "name": "Honest Little Apps", "url": "https://honest-little-apps.pages.dev/"}, "mainEntityOfPage": "https://honest-little-apps.pages.dev/sumbriska/daily-number-puzzle/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Sumbriska daily number puzzle", "applicationCategory": "GameApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "url": "https://honest-little-apps.pages.dev/sumbriska/daily-number-puzzle/", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "Honest Little Apps"}}</script>
+
+<style>
+@font-face{font-family:'Bricolage Grotesque';src:url(/assets/fonts/bricolage-grotesque-800.woff2) format('woff2');font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:'Bricolage Grotesque';src:url(/assets/fonts/bricolage-grotesque-600.woff2) format('woff2');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Source Sans 3';src:url(/assets/fonts/source-sans-3-400.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Source Sans 3';src:url(/assets/fonts/source-sans-3-600.woff2) format('woff2');font-weight:600;font-style:normal;font-display:swap}
+
+:root{--bg:#061023;--bg2:#102542;--cyan:#3fe0ff;--green:#35e38a;--yellow:#ffd14a;--ink:#f1fbff;--mute:#a7bccb;--line:#1f3a5c;--card:#0b1a33}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 'Source Sans 3',system-ui,sans-serif}
+a{color:var(--cyan)}a:focus-visible,button:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;letter-spacing:-.02em;line-height:1.08;margin:0 0 .4em}
+h2{font-size:clamp(24px,3.4vw,32px);font-weight:800;margin-top:1.5em}h3{font-size:19px;font-weight:600}p{margin:0 0 1em}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+.crumb{font-size:13px;color:var(--mute);padding:16px 0 0}.crumb a{color:var(--mute);text-decoration:none}
+.hero{position:relative;padding:20px 0 10px;overflow:hidden}
+.paper{position:absolute;z-index:0;opacity:.9;pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--yellow);margin-bottom:10px}
+h1{font-size:clamp(32px,5.8vw,56px);font-weight:800;max-width:15ch}h1 span{display:block;color:var(--cyan)}
+.lede{font-size:clamp(17px,2.1vw,20px);color:var(--mute);max-width:46ch;margin:12px 0 18px}
+.badge{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);font-weight:600}.badge img{display:block;width:150px;height:50px}.badge span{font-size:15px}
+/* myths */
+.myths{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin:22px 0 6px}
+.myth{perspective:900px;min-height:140px}.myth button{all:unset;cursor:pointer;display:block;width:100%;min-height:140px;position:relative;transform-style:preserve-3d;transition:transform .3s;border-radius:14px}
+.myth.is-flipped button{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;border-radius:14px;padding:14px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;justify-content:space-between;font-size:15px;line-height:1.35}
+.face.front{background:var(--bg2);border:1px solid var(--line)}.face.back{background:var(--yellow);color:#1a1400;transform:rotateY(180deg)}
+.face small{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.8}.face b{font-family:'Bricolage Grotesque';font-weight:800;font-size:17px}
+.hint{font-size:13px;color:var(--mute);margin:0 0 16px}
+/* puzzle */
+.puzzle{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;margin-top:18px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.puzzle header{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;justify-content:space-between;margin-bottom:8px}
+.puzzle h2{margin:0;font-size:22px}.puzzle .meta{font-size:14px;color:var(--mute)}
+.board{width:100%;max-width:420px;margin:0 auto;display:block;touch-action:manipulation}
+.board .isl circle{fill:var(--bg2);stroke:var(--cyan);stroke-width:2.5}.board .isl.ok circle{fill:#0f3d2a;stroke:var(--green)}
+.board .isl text{fill:var(--ink);font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;text-anchor:middle}
+.board .isl .tgt{font-size:11px;font-weight:600;fill:var(--mute);font-family:'Source Sans 3'}.board .isl.ok .tgt{fill:var(--green)}
+.board .br line{stroke:#2b4a72;stroke-width:4;stroke-linecap:round}.board .br .pill{fill:#f1fbff;stroke:none}.board .br .val{fill:#061023;font-weight:700;font-size:14px;text-anchor:middle;font-family:'Source Sans 3'}
+.board .br .arrow{fill:var(--yellow)}.board .br{cursor:pointer}.board .br:focus{outline:none}.board .br:focus .pill,.board .br:hover .pill{fill:var(--yellow)}
+.board .hit{fill:transparent;stroke:transparent;stroke-width:28}
+.ctr{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px}
+.ctr button{font:inherit;font-weight:600;background:var(--bg2);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:8px 14px;cursor:pointer}
+.ctr button.primary{background:var(--cyan);color:#061023;border-color:var(--cyan)}
+.status{text-align:center;min-height:28px;margin-top:10px;font-weight:600}.status.win{color:var(--green)}
+.sol{display:none;margin-top:12px;background:var(--bg2);border-radius:12px;padding:12px 14px;font-size:15px}.sol.show{display:block}
+.rules{font-size:15px;color:var(--mute);margin-top:12px}
+/* duotone annotated tour */
+.tour{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.shot{position:relative;margin:0;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:var(--cyan)}
+.shot img{width:100%;height:auto;display:block;filter:grayscale(1) contrast(1.15) brightness(.95);mix-blend-mode:multiply}
+.shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(63,224,255,.0),rgba(6,16,35,.35));mix-blend-mode:screen;pointer-events:none}
+.shot svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.marker{font-family:'Bricolage Grotesque';font-weight:800;font-size:13px;fill:var(--yellow)}
+.tourcap{font-size:14px;color:var(--mute);margin-top:8px}
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}.card h3{margin-top:0}
+.steps{counter-reset:s}.steps .card{position:relative;padding-top:46px}.steps .card::before{counter-increment:s;content:counter(s);position:absolute;top:12px;left:16px;width:28px;height:28px;border-radius:50%;background:var(--cyan);color:#061023;font-family:'Bricolage Grotesque';font-weight:800;display:grid;place-items:center}
+table{border-collapse:collapse;width:100%;font-size:15px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{font-family:'Bricolage Grotesque';font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--mute)}tr:last-child td{border-bottom:0}
+.story{border-left:3px solid var(--yellow);padding:4px 0 4px 18px;color:#d9e8f2}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:8px 0}summary{cursor:pointer;font-weight:600;font-family:'Bricolage Grotesque'}details p{margin:10px 0 0;color:#d9e8f2}
+.cta{border:1px solid var(--line);background:linear-gradient(180deg,#102542,#0b1a33);border-radius:18px;padding:26px 22px;text-align:center;margin-top:36px}.cta h2{margin-top:0}.cta p{color:var(--mute)}
+.sources{font-size:14px;color:var(--mute)}.sources ol{padding-left:20px}
+.hla-related{margin-top:36px}.hla-links{list-style:none;padding:0;margin:0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}.hla-links li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}.hla-links a{font-weight:600;text-decoration:none;color:var(--ink);display:block}.hla-links span{display:block;font-size:14px;color:var(--mute)}
+.hla-foot{border-top:1px solid var(--line);margin-top:40px;padding:24px 0 48px;font-size:14px;color:var(--mute)}.hla-foot a{color:var(--mute)}.hla-legal{font-size:12px}
+ul{padding-left:20px}li{margin:.3em 0}
+@media (max-width:600px){.myths{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){.myth button{transition:none}}
+
+</style>
+</head>
+
+<body>
+<header class="hero">
+<svg class="paper" width="420" height="420" viewBox="0 0 420 420" style="right:-120px;top:-80px" aria-hidden="true"><path d="M210 20 C 330 10, 410 120, 395 230 C 380 340, 260 410, 150 380 C 40 350, 10 210, 60 120 C 100 50, 150 25, 210 20 Z" fill="#102542"/><path d="M250 90 C 330 80, 380 160, 360 240 C 340 320, 240 350, 180 300 C 120 250, 130 150, 180 110 C 200 95, 225 92, 250 90 Z" fill="#163a66"/><circle cx="300" cy="160" r="34" fill="#ffd14a"/></svg>
+<div class="wrap">
+<nav class="crumb" aria-label="Breadcrumb"><a href="/">Honest Little Apps</a> › <a href="/games/">Pocket Puzzle Arcade</a> › Daily number puzzle</nav>
+<span class="eyebrow">Free daily number puzzle · new board every day at midnight UTC</span>
+<h1>What to do when <span>the coffee's still brewing.</span></h1>
+<p class="lede">A free daily number puzzle: flip bridges until every island hits its target sum. Two to four minutes, no sign-up, solution behind a tap.</p>
+<div class="myths"><div class="myth"><button type="button" aria-pressed="false" aria-label="Assumption: You have to be good at maths. Tap to flip."><div class="face front"><small>Assumption 1</small><b>You have to be good at maths</b><small>tap to flip</small></div><div class="face back"><small>Actually</small><span>Every move is adding single digits. The thinking is about which bridge to flip, not arithmetic speed.</span><small></small></div></button></div><div class="myth"><button type="button" aria-pressed="false" aria-label="Assumption: A daily puzzle eats twenty minutes. Tap to flip."><div class="face front"><small>Assumption 2</small><b>A daily puzzle eats twenty minutes</b><small>tap to flip</small></div><div class="face back"><small>Actually</small><span>Today&#x27;s board has five islands and eight bridges. Most people clear it in two to four minutes.</span><small></small></div></button></div><div class="myth"><button type="button" aria-pressed="false" aria-label="Assumption: Puzzle apps are mostly ads. Tap to flip."><div class="face front"><small>Assumption 3</small><b>Puzzle apps are mostly ads</b><small>tap to flip</small></div><div class="face back"><small>Actually</small><span>Sumbriska has no ads and no account. Regions 1 and 2, the Daily board, The Deep and Harbor Run are free.</span><small></small></div></button></div><div class="myth"><button type="button" aria-pressed="false" aria-label="Assumption: Hints are cheating. Tap to flip."><div class="face front"><small>Assumption 4</small><b>Hints are cheating</b><small>tap to flip</small></div><div class="face back"><small>Actually</small><span>In the app, hints, undo and step explanations never cost XP. Learning the logic is the point.</span><small></small></div></button></div></div>
+<p class="hint">Four assumptions about number puzzles. Tap a card to flip it.</p>
+<a class="badge" href="https://apps.apple.com/app/id6829238551?ct=games-daily-number-puzzle&mt=8" rel="noopener"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us?releaseDate=1751500800" alt="Download Number Puzzles: Sumbriska on the App Store" width="150" height="50"><span>Get Number Puzzles free · the full game on iPhone</span></a>
+
+<section class="puzzle" aria-labelledby="pz-h">
+<header><h2 id="pz-h">Today's board: <span id="pz-date">4 November 2026</span></h2><span class="meta">Par <b id="pz-par">4</b> · flips <b id="pz-moves">0</b></span></header>
+<svg class="board" id="board" viewBox="0 0 400 400" role="application" aria-label="Number puzzle board. Tap a bridge to flip its direction."></svg>
+<div class="status" id="pz-status" aria-live="polite">Tap any bridge. Its number moves to the other island.</div>
+<div class="ctr"><button type="button" id="pz-undo">Undo</button><button type="button" id="pz-reset">Reset</button><button type="button" id="pz-sol">Show solution</button><button type="button" id="pz-yday">Yesterday's board</button></div>
+<div class="sol" id="pz-soltext"></div>
+<p class="rules"><strong>Rules.</strong> Every island shows its target (small) and its current sum (large). Every bridge carries a number and points at one island; that island counts it. Tap a bridge to point it the other way. Solve when every sum matches its target. The board is built from today's date, so everyone gets the same puzzle.</p>
+</section>
+</div>
+</header>
+
+<main class="wrap">
+<section>
+<h2>What is this puzzle, in one breath?</h2>
+<p>It is the core rule of Sumbriska, the iPhone number puzzle we make: islands have target sums, bridges carry numbers, and flipping a bridge moves its number from one island to the other. There is no arithmetic beyond single-digit addition. The skill is seeing which island is short, which is over, and which bridge fixes both at once.</p>
+<ul>
+<li><strong>Daily:</strong> one board per calendar day, same for everyone, replayable.</li>
+<li><strong>Short:</strong> five islands, eight bridges, par between 3 and 6 flips.</li>
+<li><strong>Honest:</strong> the solution is one tap away and nothing is tracked.</li>
+</ul>
+</section>
+
+<section>
+<h2>The app, annotated</h2>
+<div class="tour"><div><figure class="shot"><img src="/assets/sumbriska/screen-1-390.webp" srcset="/assets/sumbriska/screen-1-390.webp 390w, /assets/sumbriska/screen-1-780.webp 780w" sizes="(max-width:600px) 90vw, 300px" width="390" height="844" alt="Sumbriska practice board with five islands showing targets 14, 12, 7, 16 and 29 and numbered bridges between them" loading="lazy"><svg viewBox="0 0 390 844" aria-hidden="true"><path d="M60 340 C 90 350, 120 360, 150 380" fill="none" stroke="#ffd14a" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="5 4"/><text x="30" y="330" class="marker">target above, sum inside</text></svg></figure><p class="tourcap">The app board: islands with a target and a running sum, bridges with a number. The two green islands already match.</p></div><div><figure class="shot"><img src="/assets/sumbriska/screen-3-390.webp" srcset="/assets/sumbriska/screen-3-390.webp 390w, /assets/sumbriska/screen-3-780.webp 780w" sizes="(max-width:600px) 90vw, 300px" width="390" height="844" alt="Sumbriska Two Tides board: one bridge layout shown twice, once for high tide and once for low tide" loading="lazy"><svg viewBox="0 0 390 844" aria-hidden="true"><path d="M60 420 C 120 400, 200 400, 260 430" fill="none" stroke="#ffd14a" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="5 4"/><text x="40" y="405" class="marker">same layout, two tides</text></svg></figure><p class="tourcap">Two Tides: one bridge arrangement has to satisfy two schedules at once. One puzzle, two answers that must agree.</p></div><div><figure class="shot"><img src="/assets/sumbriska/screen-2-390.webp" srcset="/assets/sumbriska/screen-2-390.webp 390w, /assets/sumbriska/screen-2-780.webp 780w" sizes="(max-width:600px) 90vw, 300px" width="390" height="844" alt="Sumbriska island screen for Orchard Isles showing 8 of 20 boards done, a resume button, Tide Orders and a building in progress" loading="lazy"><svg viewBox="0 0 390 844" aria-hidden="true"><path d="M250 620 C 290 600, 320 590, 340 560" fill="none" stroke="#ffd14a" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="5 4"/><text x="170" y="650" class="marker">built by solving</text></svg></figure><p class="tourcap">Every solved board builds your harbor. Orchard Isles is region 2, included free.</p></div></div>
+</section>
+
+<section>
+<h2>Who should pick something else</h2>
+<div class="cards">
+<div class="card"><h3>You want a race</h3><p>Harbor Run in the app is timed, but the game is built around unhurried thinking. If you want leaderboards and global rankings, this is the wrong harbor.</p></div>
+<div class="card"><h3>You want hundreds of free boards today</h3><p>The free download has regions 1 and 2 (20 boards each in the screenshots), the Daily board, The Deep and Harbor Run. Regions 3 to 6 sit behind the Voyage Pass subscription, and there is no free trial.</p></div>
+<div class="card"><h3>You want classic Hashi</h3><p>If "bridges puzzle" means Hashiwokakero to you, where you draw bridges so every island gets a set number of them, that is a different rule. Here the bridges already exist; you decide which way each one points.</p></div>
+</div>
+</section>
+
+<section>
+<h2>How a board goes, in three steps</h2>
+<div class="cards steps">
+<div class="card"><h3>Find the island that is furthest off</h3><p>Compare each island's sum with its target. The biggest gap usually names the bridge to flip first.</p></div>
+<div class="card"><h3>Flip the bridge that helps both ends</h3><p>A flip subtracts from one island and adds to the other. The best flips fix an island that is over and one that is under in a single tap.</p></div>
+<div class="card"><h3>Check the remainder, then the tide</h3><p>When one island is left wrong, trace its bridges; the last flip is usually forced. In the app, Two Tides boards make you check the same layout against a second schedule.</p></div>
+</div>
+</section>
+
+<section>
+<h2>How it compares with puzzles you already know</h2>
+<table>
+<thead><tr><th>Puzzle</th><th>What a move is</th><th>What you are tracking</th><th>Typical daily time</th></tr></thead>
+<tbody>
+<tr><td>Sumbriska daily board</td><td>Flip one bridge's direction</td><td>Each island's sum against its target</td><td>2 to 4 minutes</td></tr>
+<tr><td>Sudoku</td><td>Write one digit in a cell</td><td>Row, column and box constraints</td><td>5 to 20 minutes</td></tr>
+<tr><td>Hashi (bridges)</td><td>Draw or remove a bridge</td><td>Bridge counts per island, one connected map</td><td>3 to 10 minutes</td></tr>
+<tr><td>Word-of-the-day games</td><td>Guess a word</td><td>Letter feedback across six tries</td><td>1 to 5 minutes</td></tr>
+</tbody></table>
+<p>The honest difference: sums give you continuous feedback. You are never guessing blind; every flip tells you something.</p>
+</section>
+
+<section>
+<h2>A small scene, made up</h2>
+<p class="story">The kettle clicks off at 7:04. You have about ninety seconds before the pour and another three while it steeps. The daily board loads, five islands, one of them already green. You flip the 9 off the island that is over by nine and watch its neighbour land exactly. Two more flips, and the last island is forced. The coffee is still a touch too hot. That is the size of puzzle this is meant to be.</p>
+</section>
+
+<section>
+<h2>Questions people ask</h2>
+<details><summary>How does the daily number puzzle work?</summary><p>Each island shows a target. Each bridge carries a number and points at one island; that island counts the number in its sum. Tap a bridge to flip which island it points at. When every island&#x27;s sum equals its target, the board is solved. A new board appears every day, built from the date, so everyone gets the same puzzle.</p></details><details><summary>Is the puzzle on this page the same as the app?</summary><p>It uses the same core rule, flip bridges to match sums, with five islands and eight bridges. The iPhone app adds themed regions, Two Tides boards that must satisfy two schedules at once, timed Harbor Run, the endless Deep, a workshop for custom boards, and a harbor you build as you solve.</p></details><details><summary>Is Sumbriska free?</summary><p>Yes to download and play. Regions 1 and 2, the Daily board, The Deep and Harbor Run are included. An optional Voyage Pass subscription ($4.99 a month or $29.99 a year, no free trial) adds regions 3 to 6, side boards, Gale Run, the 3-4 ring workshop and cosmetics.</p></details><details><summary>Is it suitable for kids?</summary><p>The listing describes child profiles with no purchases and no links, an adult area behind PIN or Face ID, no ads, no accounts and no data collection, and it works offline. The board on this page collects nothing either.</p></details><details><summary>What is the minimum number of flips?</summary><p>The par shown above the board is the number of bridges pointing the wrong way at the start. Each bridge only has two states, so par is the fewest flips that can solve it. Extra flips are not penalised; they are just a sign you were exploring.</p></details>
+</section>
+
+<section class="cta">
+<h2>Get Number Puzzles free</h2>
+<p>Sumbriska on iPhone: six themed regions, Two Tides boards, a timed run, an endless dive, and a harbor that grows as you solve. No ads, no account, works offline.</p>
+<a class="badge" href="https://apps.apple.com/app/id6829238551?ct=games-daily-number-puzzle&mt=8" rel="noopener"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us?releaseDate=1751500800" alt="Download Number Puzzles: Sumbriska on the App Store" width="150" height="50"><span>Free on iPhone</span></a>
+</section>
+
+<section class="sources">
+<h2>Sources</h2>
+<ol>
+<li>Number Puzzles: Sumbriska, <a href="https://apps.apple.com/app/id6829238551?ct=games-daily-number-puzzle&mt=8" rel="noopener">App Store listing</a>, version 1.0.0, read 4 November 2026. Feature and pricing statements above come from this text.</li>
+<li>Hashiwokakero rules for the comparison row: <a href="https://www.nikoli.co.jp/en/puzzles/hashiwokakero/" rel="noopener">Nikoli</a>, the puzzle's original publisher.</li>
+</ol>
+</section>
+
+<section class="hla-related"><h2>More from Pocket Puzzle Arcade</h2><!--HLA:RELATED:4--></section>
+</main>
+<footer class="hla-foot"><p>Updated November 2026 · Written by Honest Little Apps, the studio that makes these apps. Features are described as the App Store listing shows them.</p>
+<nav><a href="/">Honest Little Apps</a> · <a href="/games/">Pocket Puzzle Arcade</a> · <a href="/about/">About</a> · <a href="/privacy/">Privacy</a></nav>
+<p class="hla-legal">Apple, the Apple logo and App Store are trademarks of Apple Inc.</p></footer>
+<script>
+(function(){
+ document.querySelectorAll('.myth button').forEach(function(b){ b.addEventListener('click',function(){ var m=b.closest('.myth'); var on=!m.classList.contains('is-flipped'); m.classList.toggle('is-flipped',on); b.setAttribute('aria-pressed',on?'true':'false'); }); });
+ // ---- daily puzzle ----
+ var NS='http://www.w3.org/2000/svg';
+ var P=[[200,60],[340,170],[290,330],[110,330],[60,170]]; // island positions
+ var E=[[0,1],[1,2],[2,3],[3,4],[4,0],[0,2],[1,3],[0,3]]; // bridges
+ function rng(seed){ return function(){ seed|=0; seed=seed+0x6D2B79F5|0; var t=Math.imul(seed^seed>>>15,1|seed); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+ function dayKey(offset){ var d=new Date(); d.setUTCDate(d.getUTCDate()+(offset||0)); return d.toISOString().slice(0,10); }
+ function build(key){ var seed=0; for(var i=0;i<key.length;i++) seed=(seed*31+key.charCodeAt(i))|0; var r=rng(seed);
+  var vals=E.map(function(){return 1+Math.floor(r()*9);}); var sol=E.map(function(){return r()<0.5?0:1;});
+  var tgt=[0,0,0,0,0]; E.forEach(function(e,i){ tgt[e[sol[i]]]+=vals[i]; });
+  var start=sol.slice(); var flips=0; for(var k=0;k<E.length;k++){ if(r()<0.5){ start[k]=1-start[k]; flips++; } }
+  if(flips<3){ for(var k2=0;k2<E.length&&flips<3;k2++){ if(start[k2]===sol[k2]){ start[k2]=1-start[k2]; flips++; } } }
+  return {key:key,vals:vals,sol:sol,tgt:tgt,start:start,par:flips}; }
+ var board=document.getElementById('board'), st=document.getElementById('pz-status'), mv=document.getElementById('pz-moves'), parEl=document.getElementById('pz-par'), dateEl=document.getElementById('pz-date'), solBox=document.getElementById('pz-soltext');
+ var G, dir, hist, moves, offset=0;
+ function sums(){ var s=[0,0,0,0,0]; E.forEach(function(e,i){ s[e[dir[i]]]+=G.vals[i]; }); return s; }
+ function render(){ while(board.firstChild) board.removeChild(board.firstChild); var s=sums();
+  E.forEach(function(e,i){ var a=P[e[0]],b=P[e[1]]; var g=document.createElementNS(NS,'g'); g.setAttribute('class','br'); g.setAttribute('tabindex','0'); g.setAttribute('role','button'); var to=P[e[dir[i]]], from=P[e[1-dir[i]]];
+   g.setAttribute('aria-label','Bridge '+G.vals[i]+' pointing at island '+(e[dir[i]]+1)+'. Activate to flip.');
+   var hit=document.createElementNS(NS,'line'); hit.setAttribute('x1',a[0]);hit.setAttribute('y1',a[1]);hit.setAttribute('x2',b[0]);hit.setAttribute('y2',b[1]); hit.setAttribute('class','hit'); g.appendChild(hit);
+   var l=document.createElementNS(NS,'line'); l.setAttribute('x1',a[0]);l.setAttribute('y1',a[1]);l.setAttribute('x2',b[0]);l.setAttribute('y2',b[1]); g.appendChild(l);
+   var mx=(a[0]+b[0])/2, my=(a[1]+b[1])/2; var dx=to[0]-from[0], dy=to[1]-from[1], len=Math.hypot(dx,dy); dx/=len; dy/=len;
+   var ax=mx+dx*22, ay=my+dy*22; var tri=document.createElementNS(NS,'polygon'); tri.setAttribute('class','arrow'); tri.setAttribute('points',(ax+dx*9)+','+(ay+dy*9)+' '+(ax-dy*7)+','+(ay+dx*7)+' '+(ax+dy*7)+','+(ay-dx*7)); g.appendChild(tri);
+   var c=document.createElementNS(NS,'circle'); c.setAttribute('cx',mx);c.setAttribute('cy',my);c.setAttribute('r',14);c.setAttribute('class','pill'); g.appendChild(c);
+   var t=document.createElementNS(NS,'text'); t.setAttribute('x',mx);t.setAttribute('y',my+5);t.setAttribute('class','val'); t.textContent=G.vals[i]; g.appendChild(t);
+   g.addEventListener('click',function(){flip(i);}); g.addEventListener('keydown',function(ev){ if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();flip(i);} });
+   board.appendChild(g); });
+  P.forEach(function(p,i){ var g=document.createElementNS(NS,'g'); g.setAttribute('class','isl'+(s[i]===G.tgt[i]?' ok':'')); var c=document.createElementNS(NS,'circle'); c.setAttribute('cx',p[0]);c.setAttribute('cy',p[1]);c.setAttribute('r',30); g.appendChild(c);
+   var t=document.createElementNS(NS,'text'); t.setAttribute('x',p[0]);t.setAttribute('y',p[1]+8); t.textContent=s[i]; g.appendChild(t);
+   var tg=document.createElementNS(NS,'text'); tg.setAttribute('x',p[0]);tg.setAttribute('y',p[1]-38);tg.setAttribute('class','tgt'); tg.textContent='target '+G.tgt[i]; g.appendChild(tg); board.appendChild(g); });
+  mv.textContent=moves; var done=s.every(function(v,i){return v===G.tgt[i];}); st.className='status'+(done?' win':'');
+  st.textContent=done?('Solved in '+moves+' flips (par '+G.par+'). The app has a fresh one every day, plus 40 free boards.'):(moves?'Keep going: '+s.filter(function(v,i){return v!==G.tgt[i];}).length+' island(s) still off.':'Tap any bridge. Its number moves to the other island.'); }
+ function flip(i){ hist.push(i); dir[i]=1-dir[i]; moves++; render(); }
+ function load(off){ offset=off; G=build(dayKey(off)); dir=G.start.slice(); hist=[]; moves=0; parEl.textContent=G.par; var d=new Date(G.key+'T00:00:00Z'); dateEl.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}); solBox.className='sol'; solBox.textContent=''; render(); }
+ document.getElementById('pz-undo').addEventListener('click',function(){ var i=hist.pop(); if(i===undefined) return; dir[i]=1-dir[i]; moves=Math.max(0,moves-1); render(); });
+ document.getElementById('pz-reset').addEventListener('click',function(){ load(offset); });
+ document.getElementById('pz-sol').addEventListener('click',function(){ dir=G.sol.slice(); hist=[]; moves=G.par; render(); solBox.className='sol show'; solBox.innerHTML='<strong>Solution shown.</strong> Arrows now point the right way: '+E.map(function(e,i){return G.vals[i]+' → island '+(e[G.sol[i]]+1);}).join(', ')+'. Press Reset to try it yourself.'; });
+ document.getElementById('pz-yday').addEventListener('click',function(){ load(offset===0?-1:0); this.textContent=offset===0?'Yesterday\'s board':'Today\'s board'; });
+ load(0);
+})();
+</script>
+</body>
+</html>

@@ -1,8 +1,8 @@
 {
  "name": "Pocket Puzzle Arcade",
- "tagline": "Little games you can finish in a coffee break",
- "baseUrl": "https://udrwu9c0tjuedqy2.github.io/hla-games",
- "indexNowKey": "2d8408f2c5df6e142cd2cd873a6a4d1f",
+ "tagline": "Playable demos, daily puzzles and tips for small iPhone games.",
+ "baseUrl": "https://pocket-puzzle-games.pages.dev",
+ "indexNowKey": "8bd26d7917bc1986a5b7e0357aee7fb8",
  "apps": [
   {
    "slug": "sumbriska",
