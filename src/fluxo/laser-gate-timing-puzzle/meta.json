@@ -1,0 +1,11 @@
+{
+  "title": "Laser Gate Timing Puzzle: Find a Departure That Clears Every Gate",
+  "description": "Solve three free timing puzzles using repeating open-and-closed gate cycles. Pick a departure tick, inspect each arrival, then reveal every clear start.",
+  "appSlug": "fluxo",
+  "strategy": "interactive-tool",
+  "query": "laser gate timing puzzle",
+  "tags": [],
+  "published": "2026-11-04",
+  "updated": "2026-11-04",
+  "draft": false
+}
