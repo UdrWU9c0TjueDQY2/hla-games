@@ -10,11 +10,11 @@ function render(message=''){
  $('gates').replaceChildren(...c.gates.map((gate,j)=>{
   const col=document.createElement('div');col.className='gate'+(j===i?' current':'')+(j<i?' visited':'');
   const n=document.createElement('span');n.textContent=j+1;col.append(n);
-  for(const lane of [1,0]){const cell=document.createElement('div');cell.className='cell'+(!safe(gate,lane)?' blocked':'')+(s.lanes[j]===lane?' route':'');cell.textContent=!safe(gate,lane)?'x':s.lanes[j]===lane?'?':'�';col.append(cell);}
+  for(const lane of [1,0]){const cell=document.createElement('div');cell.className='cell'+(!safe(gate,lane)?' blocked':'')+(s.lanes[j]===lane?' route':'');cell.textContent=!safe(gate,lane)?'\u00d7':s.lanes[j]===lane?'\u25cf':'\u00b7';col.append(cell);}
   return col;
  }));
  $('gate-description').textContent=s.complete?`You reached the exit in ${s.flips} flips. ${s.flips===min?'That matches the fewest possible.':'A shorter route uses '+min+' flips. Reset to try another route.'}`:`Next gate: ${c.gates[i]===0?'both lanes clear':c.gates[i]===1?'floor blocked; ceiling clear':'ceiling blocked; floor clear'}. You are on the ${laneName(s.lane)}.`;
- $('route-text').textContent=s.lanes.length?'Your route: '+s.lanes.map((l,j)=>`${j+1} ${laneName(l)}`).join('  '):`Start on the ${laneName(c.start)}. No gates passed yet.`;
+ $('route-text').textContent=s.lanes.length?'Your route: '+s.lanes.map((l,j)=>`${j+1} ${laneName(l)}`).join(' \u2192 '):`Start on the ${laneName(c.start)}. No gates passed yet.`;
  $('stay').disabled=$('flip').disabled=$('hint').disabled=s.complete;$('undo').disabled=!i;
  $('status').textContent=message||(s.complete?`Finished in ${s.flips} flips. ${s.flips===min?'One of the shortest routes.':'You can reach the exit with fewer flips.'}`:`Gate ${i+1}. ${$('gate-description').textContent} Choose Stay or Flip.`);
 }
