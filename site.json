@@ -1,0 +1,43 @@
+{
+ "name": "Pocket Puzzle Arcade",
+ "tagline": "Little games you can finish in a coffee break",
+ "baseUrl": "https://pocket-puzzle-arcade.pages.dev",
+ "indexNowKey": "2d8408f2c5df6e142cd2cd873a6a4d1f",
+ "apps": [
+  {
+   "slug": "sumbriska",
+   "name": "Number Puzzles: Sumbriska",
+   "id": 6829238551
+  },
+  {
+   "slug": "sumthread",
+   "name": "Sumthread",
+   "id": 6829816144
+  },
+  {
+   "slug": "number-beasts",
+   "name": "Number Beasts: Bond Lab",
+   "id": 6817125699
+  },
+  {
+   "slug": "fluxo",
+   "name": "Fluxo: Gravity Runner",
+   "id": 6787641780
+  },
+  {
+   "slug": "rushorb",
+   "name": "RushOrb: Storm Atlas",
+   "id": 6819697945
+  },
+  {
+   "slug": "cash-empire-clicker",
+   "name": "Cash Empire Clicker",
+   "id": 6787609925
+  },
+  {
+   "slug": "pastrush",
+   "name": "PastRush: History Detective",
+   "id": 6818795908
+  }
+ ]
+}
