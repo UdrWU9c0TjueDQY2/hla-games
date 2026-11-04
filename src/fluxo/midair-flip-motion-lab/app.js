@@ -1,0 +1,13 @@
+'use strict';const $=id=>document.getElementById(id);let frame=0,timer=null;
+function motion(t,f){return t<=f?{y:-t*t/2,v:-t,a:t<f?-1:1}:{y:-f*f/2-f*(t-f)+(t-f)*(t-f)/2,v:t-2*f,a:1};}
+const x=t=>44+t/3*562,y=p=>26+(p+2)/5.5*254;
+function path(f,end){let out='';for(let k=0;k<=end;k++){const t=k/20;out+=(k?' L':'M')+x(t).toFixed(3)+' '+y(motion(t,f).y).toFixed(3);}return out;}
+function draw(){const f=Number($('flip').value),t=frame/20,m=motion(t,f);$('setting').textContent='Flip at '+f.toFixed(2)+' s • turn at '+(2*f).toFixed(2)+' s';$('future').setAttribute('d',path(f,60));$('trace').setAttribute('d',path(f,frame));$('pilot').setAttribute('cx',x(t));$('pilot').setAttribute('cy',y(m.y));$('flip-line').setAttribute('x1',x(f));$('flip-line').setAttribute('x2',x(f));const direction=Math.abs(m.v)<1e-8?'momentarily still':m.v<0?'moving upward':'moving downward';$('readout').textContent='Time '+t.toFixed(2)+' s\nPosition '+m.y.toFixed(3)+' units\nVelocity '+m.v.toFixed(3)+' units/s\nPull '+(m.a<0?'upward':'downward')+' • '+direction;$('explanation').textContent=t===0?'Start at rest. The upward pull begins the motion.':t<f?'Before the flip: upward pull, gaining upward speed.':Math.abs(m.v)<1e-8?'At the turn: velocity is zero. The downward pull now starts downward motion.':m.v<0?'After the flip: the pull is downward, but the object is still moving upward. The downward pull is reducing its upward speed.':'After the turn: both the pull and the motion are downward.';$('step').disabled=frame===60||timer!==null;$('play').disabled=frame===60||timer!==null;$('pause').disabled=timer===null;}
+function pause(message){if(timer!==null)clearInterval(timer);timer=null;$('status').textContent=message||'Paused. Use Step or Play to continue.';draw();}
+function advance(){if(frame<60)frame++;if(frame===60){pause('Trace complete. Reset or change the flip to compare.');}else draw();}
+$('step').addEventListener('click',()=>{advance();$('status').textContent=frame===60?'Trace complete.':'Stepped to '+(frame/20).toFixed(2)+' seconds.';});
+$('play').addEventListener('click',()=>{if(timer!==null||frame===60)return;timer=setInterval(advance,100);$('status').textContent='Playing model steps. Pause whenever you want.';draw();});
+$('pause').addEventListener('click',()=>pause());
+function reset(){frame=0;pause('Ready. Press Play or Step.');}
+$('reset').addEventListener('click',reset);$('flip').addEventListener('input',reset);
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&timer!==null)pause('Paused because the tab was hidden.');});draw();
