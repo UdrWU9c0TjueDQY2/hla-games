@@ -221,8 +221,8 @@ const chosenDate = ordinal(query.get('date')) === null ? today : query.get('date
 const weekday = weekdayNames.findIndex(day => day.toLowerCase() === query.get('practice'));
 const pz = weekday >= 0 ? P[weekday] : dailyBoard(ordinal(chosenDate));
 const boardId = weekday >= 0 ? 'practice-' + weekday : 'daily-' + chosenDate;
-function boardUrl(date, practice) {
-  const url = new URL(location.href);
+function boardUrl(date, practice, base = location.href) {
+  const url = new URL(base);
   url.searchParams.delete('date'); url.searchParams.delete('practice');
   if (date) url.searchParams.set('date', date);
   if (practice) url.searchParams.set('practice', practice);
@@ -238,7 +238,12 @@ document.getElementById('open-board').addEventListener('click', () => {
 const playLink = document.querySelector('.play-link');
 if (weekday >= 0) playLink.textContent = 'Play the practice board ↓';
 else if (chosenDate !== today) playLink.textContent = 'Play the dated board ↓';
-document.getElementById('board-link').href = boardUrl(weekday < 0 ? chosenDate : null, weekday >= 0 ? weekdayNames[weekday].toLowerCase() : null);
+const publicBoardPage = new URL(location.pathname, location.origin);
+document.getElementById('board-link').href = boardUrl(
+  weekday < 0 ? chosenDate : null,
+  weekday >= 0 ? weekdayNames[weekday].toLowerCase() : null,
+  publicBoardPage
+);
 document.getElementById('pzt').textContent = weekday >= 0 ? weekdayNames[weekday] + ' practice' : 'Daily board · ' + chosenDate;
  var grid=document.getElementById('grid'), tg=document.getElementById('tg'), thread=document.getElementById('thread'), msg=document.getElementById('msg');
  var vals=[].concat.apply([],pz.grid), path=[], cps=[], seg=0, done=false;
