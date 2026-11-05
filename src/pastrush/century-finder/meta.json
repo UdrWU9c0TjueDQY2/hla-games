@@ -1,1 +1,15 @@
-{"title": "BCE Century Calculator: Find the Century of a BC Date", "description": "Place BCE and BC dates in the correct century with visual boundaries, examples and a short practice exercise.", "appSlug": "pastrush", "strategy": "interactive-reference", "query": "BCE century calculator what century is a BC date", "tags": ["history", "century", "chronology"], "published": "2026-11-04", "updated": "2026-11-04", "draft": false}
+{
+  "title": "BCE Century Calculator: Find the Century of a BC Date",
+  "description": "Place BCE and BC dates in the correct century with visual boundaries, examples and a short practice exercise.",
+  "appSlug": "pastrush",
+  "strategy": "interactive-reference",
+  "query": "BCE century calculator what century is a BC date",
+  "tags": [
+    "history",
+    "century",
+    "chronology"
+  ],
+  "published": "2026-11-04",
+  "updated": "2026-11-05",
+  "draft": false
+}
