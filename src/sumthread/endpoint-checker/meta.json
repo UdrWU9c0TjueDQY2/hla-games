@@ -1,0 +1,14 @@
+{
+  "title": "Grid Path Endpoint Checker: Can a Path Visit Every Square?",
+  "description": "Pick endpoints on three small grids. Check the alternating color rule, verify whether a complete route exists and reveal a numbered path.",
+  "appSlug": "sumthread",
+  "strategy": "interactive-exercise",
+  "query": "grid path checkerboard endpoints puzzle",
+  "tags": [
+    "path studies",
+    "puzzle",
+    "practice"
+  ],
+  "published": "2026-11-05",
+  "updated": "2026-11-05"
+}
