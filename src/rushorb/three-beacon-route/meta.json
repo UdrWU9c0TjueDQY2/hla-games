@@ -1,0 +1,14 @@
+{
+  "title": "Three-Beacon Route Puzzle: Find the Shortest Way Out",
+  "description": "Light three beacons, avoid walls and reach the gate on two original grids. Try your own route, undo moves and compare it with a verified shortest path.",
+  "appSlug": "rushorb",
+  "strategy": "interactive-exercise",
+  "query": "shortest path grid puzzle with checkpoints",
+  "tags": [
+    "storm maps",
+    "puzzle",
+    "practice"
+  ],
+  "published": "2026-11-05",
+  "updated": "2026-11-05"
+}
