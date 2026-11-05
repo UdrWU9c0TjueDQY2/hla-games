@@ -2,17 +2,18 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 from html import escape
 from fractions import Fraction
+from reportlab.graphics.barcode.qr import QrCodeWidget
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / 'src/cash-empire-clicker/idle-game-offline-earnings-calculator'
-W, H = 1200, 1520
+W, H = 1200, 1960
 BG, INK, MUTED, GOLD, CARD, GREEN = '#07152e', '#f5f7ff', '#c1cce1', '#f4c85b', '#122947', '#8ee5b5'
 img = Image.new('RGB', (W,H), BG)
 d = ImageDraw.Draw(img)
-parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc"><title id="title">Use the extra income, not the new total</title><desc id="desc">Two fictional upgrades: A costs120 tokens and adds4 per second, recovering its cost in30 seconds. B costs180 and adds9, recovering its cost in20 seconds. C costs300 and adds10, matching A at30 seconds. Full equivalent text and formulas are on the parent page.</desc><rect width="1200" height="1520" fill="{BG}"/>']
+parts = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-labelledby="title desc"><title id="title">Use the extra income, not the new total</title><desc id="desc">Two fictional upgrades: A costs 120 tokens and adds 4 per second, recovering its cost in 30 seconds. B costs 180 and adds 9, recovering its cost in 20 seconds. C costs 300 and adds 10, matching A at 30 seconds. Full equivalent text, source link and an optional direct Cash Empire Clicker App Store link follow.</desc><rect width="{W}" height="{H}" fill="{BG}"/>']
 fontroot=Path('/usr/share/fonts/truetype/dejavu')
 def rect(x,y,w,h,fill,r=0):
-    d.rounded_rectangle((x,y,x+w,y+h),radius=r,fill=fill)
+    d.rounded_rectangle((x,y,x+w-1,y+h-1),radius=r,fill=fill)
     parts.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="{fill}"/>')
 def line(x1,y1,x2,y2,color,width=2):
     d.line((x1,y1,x2,y2),fill=color,width=width)
@@ -53,6 +54,29 @@ text(64,1295,'EQUAL PAYBACK DOES NOT MEAN EQUAL COST',25,True,GOLD)
 text(64,1342,'A: 120 ÷ 4 = 30 s.  C: 300 ÷ 10 = 30 s.',29,True)
 text(64,1393,'Same payback; different upfront tokens and extra rate.',27)
 text(64,1462,'Original Cash Empire companion • not native gameplay • no real-money value',23,color=MUTED)
+apple='https://apps.apple.com/us/app/cash-empire-clicker/id6787609925'
+source='https://udrwu9c0tjuedqy2.github.io/hla-games/cash-empire-clicker/idle-game-offline-earnings-calculator/#upgrade-payback-card'
+rect(64,1530,1072,268,CARD,22)
+parts.append(f'<a href="{escape(apple)}" aria-label="Optional: Cash Empire Clicker on the App Store">')
+text(88,1551,'OPTIONAL GAME FOR IPHONE & IPAD',23,True,GOLD)
+text(88,1596,'Cash Empire Clicker',34,True)
+text(88,1648,'Free to play; optional one-time purchases.',25)
+text(88,1700,'Scan the QR or open the direct App Store URL:',22,color=MUTED)
+text(88,1741,apple,18,color=GREEN)
+code=QrCodeWidget(apple,barLevel='M');code.qr.make()
+modules=code.qr.modules
+assert len(code.qr.dataList)==1 and code.qr.dataList[0].data.decode('utf-8')==apple
+cell=4;quiet=4;side=(len(modules)+quiet*2)*cell;qx=1136-24-side;qy=1570
+rect(qx,qy,side,side,'#ffffff')
+for y,row in enumerate(modules):
+    for x,dark in enumerate(row):
+        if dark:rect(qx+(x+quiet)*cell,qy+(y+quiet)*cell,cell,cell,'#000000')
+parts.append('</a>')
+text(64,1831,'Honest Little Apps publishes Cash Empire Clicker and this companion.',23,color=MUTED)
+parts.append(f'<a href="{escape(source)}" aria-label="Source and full text equivalent">')
+text(64,1880,'Source: https://udrwu9c0tjuedqy2.github.io/hla-games/',20,color=GOLD)
+text(64,1916,'cash-empire-clicker/idle-game-offline-earnings-calculator/#upgrade-payback-card',20,color=GOLD)
+parts.append('</a>')
 parts.append('</svg>')
 OUT.mkdir(parents=True,exist_ok=True)
 (OUT/'incremental-payback-card.svg').write_text('\n'.join(parts)+'\n')
