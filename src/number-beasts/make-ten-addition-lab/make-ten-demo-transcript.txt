@@ -1,0 +1,16 @@
+Make Ten Addition Lab — 8 + 7
+Honest Little Apps | Captioned silent web activity demonstration | 18 seconds
+
+0:00–0:05
+The activity shows 8 blue counters in the first ten-frame and 7 orange counters in the second. Ask: “How many spaces are empty in the blue frame?”
+
+0:05–0:11
+After “Move the counters,” 2 orange counters fill the empty spots beside the 8 blue counters. Ask: “How many orange counters stayed in the second frame?” Five remain.
+
+0:11–0:18
+After “Show the total,” the activity displays 10 + 5 = 15. Ask: “What moved? What stayed the same?” Two counters moved between frames. All 15 counters are still on the board.
+
+Try the worked example:
+https://udrwu9c0tjuedqy2.github.io/hla-games/number-beasts/make-ten-addition-lab/?a=8&b=7#lab
+
+The demonstration uses three actual browser captures of the Make Ten Addition Lab web activity. The related iPhone and iPad game is Number Beasts: Bond Lab.

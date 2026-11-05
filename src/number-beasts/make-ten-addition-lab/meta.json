@@ -1,6 +1,6 @@
 {
   "title": "Make Ten Addition: Move the Counters, See the Remainder",
-  "description": "Try a free make-ten addition visualizer. Move counters between two ten-frames, split the second number, and see why 8 + 7 becomes 10 + 5.",
+  "description": "Use two interactive ten-frames to show why 8 + 7 becomes 10 + 5. Includes a printable classroom number talk, answer key, and an 18-second worked example.",
   "appSlug": "number-beasts",
   "strategy": "interactive-tool",
   "query": "make ten addition visualizer",
@@ -11,6 +11,6 @@
     "ten-frame"
   ],
   "published": "2026-11-04",
-  "updated": "2026-11-04",
+  "updated": "2026-11-05",
   "draft": false
 }
