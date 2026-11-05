@@ -10,13 +10,23 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.primary:hover{transform:none}}
 @media print{header,.hero,.screens,.store,.button,footer div{display:none}body{background:white;color:black}.wrap{max-width:none}.principle,.strategy,.faq,.app-grid,.pricing{display:block}.app-section{background:white;color:black}.eyebrow,.lede,p,.fine,.source-note,.strategy li p,.faq details p{color:black!important}details{display:block}details p{display:block}.principle{padding-top:0}.equation{background:#eee}.equation span,.equation small,.equation i,.equation b{color:black}.app-identity img{display:none}}
 
-.hla-links{padding:0;list-style:none;display:grid;gap:18px}.hla-links li{padding:18px;border:1px solid var(--line);border-radius:8px}.hla-links span{display:block;color:var(--muted);font-size:13px;margin-top:6px}@media(max-width:700px){.board.five-islands{height:400px}.five-islands .island{width:42px;height:60px}.five-islands .bridge{min-width:58px;width:58px;padding:2px;gap:1px;font-size:12px}.five-islands .bridge small{font-size:7px}.five-islands .island strong{font-size:22px}}</style><script type="module">const boards = [
-  {name:'The first flip',note:'One bridge. Two islands. Swap the numbers so both sums match.',nodes:[[20,50],[80,50]],edges:[[0,1,1,4]],solution:[1]},
-  {name:'The triangle',note:'Look at the island that needs the largest total. Which numbers can reach it?',nodes:[[50,16],[19,80],[81,80]],edges:[[0,1,1,3],[1,2,2,5],[0,2,4,1]],solution:[1,0,1]},
-  {name:'The outer route',note:'One move changes two totals. Check its neighbour before committing.',nodes:[[20,20],[80,20],[20,80],[80,80]],edges:[[0,1,2,6],[1,3,4,1],[2,3,3,5],[0,2,1,7]],solution:[1,1,0,1]},
-  {name:'The cross-current',note:'Start with the biggest target. Use Undo to explore a different route.',nodes:[[20,20],[80,20],[20,80],[80,80]],edges:[[0,1,1,5],[1,3,2,6],[2,3,4,1],[0,2,3,7],[0,3,1,4]],solution:[1,0,1,1,0]},
-  {name:'Two tides',note:'The same flips must match the targets at both tides. Switch the view to inspect each one.',nodes:[[50,16],[19,80],[81,80]],edges:[[0,1,2,5],[1,2,1,4],[0,2,3,1]],high:[[1,4],[3,2],[2,6]],solution:[1,1,0]},
-  {name:'The quiet harbour',note:'Five islands, one shared arrangement. Take your time: there is no timer.',nodes:[[50,13],[85,39],[72,85],[28,85],[15,39]],edges:[[0,1,1,6],[1,2,2,5],[2,3,3,1],[3,4,2,7],[4,0,4,1]],solution:[1,0,1,1,0]}
+.hla-links{padding:0;list-style:none;display:grid;gap:18px}.hla-links li{padding:18px;border:1px solid var(--line);border-radius:8px}.hla-links span{display:block;color:var(--muted);font-size:13px;margin-top:6px}@media(max-width:700px){.board.five-islands{height:400px}.five-islands .island{width:42px;height:60px}.five-islands .bridge{min-width:58px;width:58px;padding:2px;gap:1px;font-size:12px}.five-islands .bridge small{font-size:7px}.five-islands .island strong{font-size:22px}}
+.share-board{border-top:1px solid var(--line);margin-top:12px;padding:4px 0}
+.share-board summary{cursor:pointer;min-height:44px;padding:11px 2px;color:var(--mint);font-size:13px}
+.share-board summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.share-board p{font-size:13px;margin:4px 0 8px;color:#d3e3ea}
+.share-board .actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.share-board button,.share-board a{font:inherit;font-size:13px;min-height:44px;display:inline-flex;align-items:center}
+.share-board button{border:1px solid #78969f;border-radius:5px;padding:6px 12px;background:transparent;color:var(--ink)}
+.share-board input{box-sizing:border-box;width:100%;min-height:44px;background:#0d2331;color:var(--ink);border:1px solid #78969f;border-radius:5px;font:inherit;font-size:16px;padding:4px 8px}
+.share-board .feedback-line:empty{margin:0}
+</style><script type="module">const boards = [
+  {key:'first-flip',name:'The first flip',note:'One bridge. Two islands. Swap the numbers so both sums match.',nodes:[[20,50],[80,50]],edges:[[0,1,1,4]],solution:[1]},
+  {key:'triangle',name:'The triangle',note:'Look at the island that needs the largest total. Which numbers can reach it?',nodes:[[50,16],[19,80],[81,80]],edges:[[0,1,1,3],[1,2,2,5],[0,2,4,1]],solution:[1,0,1]},
+  {key:'outer-route',name:'The outer route',note:'One move changes two totals. Check its neighbour before committing.',nodes:[[20,20],[80,20],[20,80],[80,80]],edges:[[0,1,2,6],[1,3,4,1],[2,3,3,5],[0,2,1,7]],solution:[1,1,0,1]},
+  {key:'cross-current',name:'The cross-current',note:'Start with the biggest target. Use Undo to explore a different route.',nodes:[[20,20],[80,20],[20,80],[80,80]],edges:[[0,1,1,5],[1,3,2,6],[2,3,4,1],[0,2,3,7],[0,3,1,4]],solution:[1,0,1,1,0]},
+  {key:'two-tides',name:'Two tides',note:'The same flips must match the targets at both tides. Switch the view to inspect each one.',nodes:[[50,16],[19,80],[81,80]],edges:[[0,1,2,5],[1,2,1,4],[0,2,3,1]],high:[[1,4],[3,2],[2,6]],solution:[1,1,0]},
+  {key:'quiet-harbour',name:'The quiet harbour',note:'Five islands, one shared arrangement. Take your time: there is no timer.',nodes:[[50,13],[85,39],[72,85],[28,85],[15,39]],edges:[[0,1,1,6],[1,2,2,5],[2,3,3,1],[3,4,2,7],[4,0,4,1]],solution:[1,0,1,1,0]}
 ];
 function totals(board,bits,tide=0){
   if(!Array.isArray(bits)||bits.length!==board.edges.length||bits.some(x=>x!==0&&x!==1))throw new Error('Invalid bridge arrangement');
@@ -35,7 +45,39 @@ const completed=new Set();
 const letters='ABCDE';
 function announce(text){$('feedback').textContent=text;}
 function load(index){boardIndex=index;bits=boards[index].edges.map(()=>0);undo=[];tide=0;hintCount=0;build();render();announce(boards[index].note);}
+function updateBoardLink(){
+  const board = boards[boardIndex];
+  const url = new URL(document.querySelector('link[rel="canonical"]').href);
+  url.hash = 'board-' + board.key;
+  $('fresh-board').href = url.href;
+  $('share-url').value = url.href;
+  $('share-url').hidden = true;
+  $('share-status').textContent = '';
+}
+function openSharedBoard(){
+  const index = boards.findIndex(board => location.hash === '#board-' + board.key);
+  if (index < 0) return false;
+  load(index);
+  $('board-name').focus({preventScroll:true});
+  $('puzzle').scrollIntoView({block:'start', behavior:'instant'});
+  return true;
+}
+async function copyBoardLink(){
+  const url = $('share-url').value;
+  try {
+    await navigator.clipboard.writeText(url);
+    if ($('share-url').value === url) $('share-status').textContent = 'Board link copied.';
+  } catch {
+    if ($('share-url').value !== url) return;
+    const field = $('share-url');
+    field.hidden = false;
+    field.focus();
+    field.select();
+    $('share-status').textContent = 'Copy the selected link to share this board.';
+  }
+}
 function build(){
+ updateBoardLink();
  const b=boards[boardIndex];$('board-name').textContent=b.name;$('board-count').textContent=`BOARD ${boardIndex+1} / ${boards.length}`;$('board-select').value=String(boardIndex);
  $('tide-controls').hidden=!b.high;$('board').replaceChildren();$('board').classList.toggle('five-islands',b.nodes.length===5);
  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 100 100');svg.setAttribute('preserveAspectRatio','none');svg.setAttribute('aria-hidden','true');
@@ -60,7 +102,9 @@ $('reset').addEventListener('click',()=>load(boardIndex));
 $('hint').addEventListener('click',()=>{const b=boards[boardIndex],i=bits.findIndex((v,j)=>v!==b.solution[j]);if(i<0){announce('Every island is already matched.');return;}const [a,c]=b.edges[i];hintCount++;announce(`Hint ${hintCount}: try flipping the bridge between ${letters[a]} and ${letters[c]}. Watch both totals change.`);$(`bridge-${i}`).focus();});
 $('next').addEventListener('click',()=>{load((boardIndex+1)%boards.length);$('board-name').focus();});
 $('low-tide').addEventListener('click',()=>setTide(0));$('high-tide').addEventListener('click',()=>setTide(1));
-load(0);
+$('copy-board').addEventListener('click',copyBoardLink);
+window.addEventListener('hashchange',openSharedBoard);
+if (!openSharedBoard()) load(0);
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Bridge Sum Lab: Sumbriska Number Puzzle Sampler","description":"Six original browser practice boards explaining bridge-flip number puzzles.","url":"https://udrwu9c0tjuedqy2.github.io/hla-games/sumbriska/bridge-sum-lab/","publisher":{"@type":"Organization","name":"Honest Little Apps"},"about":{"@type":"VideoGame","name":"Number Puzzles: Sumbriska","url":"https://apps.apple.com/app/id6829238551","gamePlatform":["iPhone","iPad"]}}</script>
 </head><body>
@@ -79,6 +123,7 @@ load(0);
 <div class="tools"><button id="undo" type="button" disabled>↶ Undo</button><button id="reset" type="button">Reset</button><button id="hint" type="button">A little hint</button></div>
 <div class="board-bottom"><label for="board-select">Explore a board<select id="board-select"></select></label><button type="button" class="button next" id="next" disabled>Next board →</button></div>
 <div id="success-card" class="success-card" hidden><strong>That’s the click.</strong><span>Keep going here, or <a href="#app">take Sumbriska with you</a>.</span></div>
+<details class="share-board"><summary>Share this board</summary><p>The link opens the same puzzle from its first move. Your flips and hints stay here.</p><div class="actions"><button type="button" id="copy-board">Copy board link</button><a id="fresh-board" target="_blank" rel="noopener">Open fresh board in a new tab</a></div><input type="text" id="share-url" aria-label="Board link" readonly hidden><p id="share-status" class="feedback-line" role="status"></p></details>
 <p id="progress" class="progress">0 of 6 explored &amp; solved</p>
 <noscript><p class="noscript">Enable JavaScript to play this browser sampler. The explanation and App Store links below work without it.</p></noscript>
 </div>
