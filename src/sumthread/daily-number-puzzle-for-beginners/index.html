@@ -42,6 +42,10 @@ h1{font-size:clamp(36px,6.2vw,62px);max-width:14ch;color:#fff}h1 em{font-style:i
 details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:8px 0}summary{cursor:pointer;font-weight:600}details p{margin:10px 0 0}
 .story{border-left:3px solid var(--teal);padding-left:16px}.story .t{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal2);font-weight:700;margin-bottom:2px}.story p{margin:0 0 .9em}
 /* puzzle */
+.board-next{margin:10px 0 16px;padding:14px 16px;border-left:4px solid var(--teal2);background:var(--paper);border-radius:4px}
+.board-next p{margin:5px 0 8px}
+.board-next a{display:inline-flex;align-items:center;min-height:44px;color:var(--teal2);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.board-next a:focus-visible{outline:3px solid var(--teal2);outline-offset:3px}
 .pz{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;margin:14px 0;box-shadow:0 10px 30px rgba(43,38,32,.08)}
 .pz header{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}.pz h3{margin:0;font-weight:600;font-size:20px}
 .tg{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.tg span{border:2px solid var(--line);border-radius:999px;padding:4px 12px;font-weight:600;font-variant-numeric:tabular-nums}.tg span.on{border-color:var(--amber);background:#fff3e2}.tg span.done{border-color:var(--teal);background:#e3f3f3;color:var(--teal2)}
@@ -91,6 +95,11 @@ details{background:var(--card);border:1px solid var(--line);border-radius:12px;p
 <div class="st"><span>Current segment: <b id="cur">0</b> / <b id="need">—</b></span><span>Tiles used: <b id="used">0</b> / 9</span></div>
 <div class="act"><button type="button" id="undo">Undo</button><button type="button" id="reset">Reset</button></div>
 <p class="msg" role="status" id="msg">Tap any tile to start.</p>
+<aside class="board-next" id="board-next" aria-labelledby="board-next-title" hidden>
+<h3 id="board-next-title">Try a 4×4 Daily Thread</h3>
+<p>Sumthread on iPhone has a fresh 4×4 puzzle each day and saves your progress offline.</p>
+<a href="https://apps.apple.com/app/id6829816144?ct=games-daily-number-puzzle-for&amp;mt=8" rel="noopener">Get Sumthread on the App Store</a>
+</aside>
 <div class="sol" id="sol"><div class="under"><b>Solution:</b> <span id="soltext"></span></div><canvas role="button" aria-label="Reveal the solution by scratching or pressing Enter"></canvas></div>
 <p>Each local calendar date has its own web board. Choose a weekday below to play one of the seven original practice boards. Both modes are separate from the iPhone daily.</p>
 <div class="act"><label for="board-mode">Choose a board <select id="board-mode"><option value="today">Today’s daily</option></select></label><button type="button" id="open-board">Open board</button></div>
@@ -265,7 +274,9 @@ function restorePath() {
   msg.textContent = done ? 'Solved. This board is complete.' : 'Your path is restored on this browser.';
 }
  function adj(a,b){ var ra=Math.floor(a/3),ca=a%3,rb=Math.floor(b/3),cb=b%3; return Math.abs(ra-rb)+Math.abs(ca-cb)===1; }
- function render(){ var focusedTile=grid.contains(document.activeElement) ? document.activeElement.dataset.i : undefined; savePath(); var t=0; var segStart=cps.length?cps[cps.length-1]+1:0; var cur=0; for(var i=segStart;i<path.length;i++) cur+=vals[path[i]]; var ti=cps.length; var need=pz.targets[ti];
+ function render(){
+  document.getElementById('board-next').hidden = !done;
+  var focusedTile=grid.contains(document.activeElement) ? document.activeElement.dataset.i : undefined; savePath(); var t=0; var segStart=cps.length?cps[cps.length-1]+1:0; var cur=0; for(var i=segStart;i<path.length;i++) cur+=vals[path[i]]; var ti=cps.length; var need=pz.targets[ti];
   grid.innerHTML=vals.map(function(v,i){ var k=path.indexOf(i); var cls=[]; if(k>-1) cls.push('on'); if(k>=0 && k===path.length-1 && !done) cls.push('head'); if(cps.indexOf(k)>-1) cls.push('cp'); var reach = path.length && k===-1 && adj(path[path.length-1],i) && !done; if(reach) cls.push('reach'); var exact = reach && need!==undefined && cur+v===need; return '<button type="button" data-i="'+i+'" class="'+cls.join(' ')+'"'+(exact?' style="border-color:var(--amber);background:#fff3e2"':'')+'>'+(k>-1?'<small>'+(k+1)+'</small>':'')+v+'</button>'; }).join('');
   tg.innerHTML=pz.targets.map(function(x,i){ return '<span class="'+(i<cps.length?'done':(i===cps.length&&!done?'on':''))+'">'+x+'</span>'; }).join('');
   document.getElementById('cur').textContent=cur; document.getElementById('need').textContent=need===undefined?'—':need; document.getElementById('used').textContent=path.length;
