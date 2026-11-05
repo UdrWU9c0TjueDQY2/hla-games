@@ -2,7 +2,7 @@
 <section class="game"><label for="course">Choose a map</label> <select id="course"><option>Breakwater</option><option>Split canyon</option></select><h2 id="title"></h2><p>Move one square up, down, left or right. Revisit open squares as often as you like. Walls block the orb and the gate opens only after all three beacons are lit.</p>
 <p class="key"><b>●</b> Orb &nbsp; <b>◇</b> Unlit beacon &nbsp; <b>◆</b> Lit &nbsp; <b>G</b> Gate &nbsp; <b>▧</b> Wall</p>
 <div id="grid" tabindex="0" role="group" aria-label="Beacon map. Use arrow keys to move or tap an adjacent square."></div><p id="score" class="score"></p>
-<div class="pad" aria-label="Move the orb"><button data-dir="-5">↑ Up</button><button data-dir="-1">← Left</button><button data-dir="1">Right →</button><button data-dir="5">↓ Down</button></div><div class="actions"><button id="undo">Undo</button><button id="reset">Restart map</button></div><p id="message" aria-live="polite" class="status"></p><details id="help"><summary>Reveal a shortest route from the start</summary><p id="guide"></p></details></section>
+<div class="pad" aria-label="Move the orb"><button data-dir="-5">↑ Up</button><button data-dir="-1">← Left</button><button data-dir="1">Right →</button><button data-dir="5">↓ Down</button></div><div class="actions"><button id="hint">Hint for my next move</button><button id="undo">Undo</button><button id="reset">Restart map</button></div><p id="message" aria-live="polite" class="status"></p><details id="help"><summary>Reveal a shortest route from the start</summary><p id="guide"></p></details></section>
 <noscript><p>On paper, draw a three-by-three grid. Start at the top left, put beacons on top right, middle center and bottom left, and finish at bottom right. Move one square per step. One eight-step solution is right, right, down, left, left, down, right, right.</p></noscript>
 <section class="app"><h2>Take the orb into RushOrb</h2><p>This untimed grid companion uses original maps. In RushOrb: Storm Atlas, steer through stages, change the weather, light three beacons and cross the finish gate. The app is free to download with optional in-app purchases.</p><a class="cta" href="https://apps.apple.com/us/app/rushorb-storm-atlas/id6819697945">Explore RushOrb on iPhone</a> <p><a href="../weather-rule-practice/">Try the weather rules practice</a></p></section></main><footer><a href="https://udrwu9c0tjuedqy2.github.io/hla-games/">Pocket Puzzle Arcade</a> · <a href="https://udrwu9c0tjuedqy2.github.io/hla-games/privacy/">Privacy</a></footer><script>const maps=[
  {name:'Breakwater',rows:['S..#B','.#...','B..#.','##...','..B.G']},
@@ -12,8 +12,8 @@ const el=id=>document.getElementById(id),names={[-5]:'up',[5]:'down',[-1]:'left'
 let tiles,beacons,gate,path,best;
 function neighbours(p){const n=[];if(p>=5)n.push(p-5);if(p<20)n.push(p+5);if(p%5)n.push(p-1);if(p%5!==4)n.push(p+1);return n.filter(q=>tiles[q]!=='#')}
 function collect(p,mask){const bit=beacons.indexOf(p);return bit<0?mask:mask|(1<<bit)}
-function shortest(start){
- const queue=[{p:start,mask:0,dirs:[]}],seen=new Set([start+':0']);
+function shortest(start, initialMask = 0){
+ const queue=[{p:start,mask:initialMask,dirs:[]}],seen=new Set([start+':'+initialMask]);
  for(let j=0;j<queue.length;j++){const {p,mask,dirs}=queue[j];if(p===gate&&mask===7)return dirs;
  for(const q of neighbours(p)){if(q===gate&&mask!==7)continue;const next=collect(q,mask),key=q+':'+next;if(seen.has(key))continue;seen.add(key);queue.push({p:q,mask:next,dirs:[...dirs,q-p]});}}
  throw new Error('Map lacks a complete route');
@@ -28,7 +28,7 @@ function draw(){
   b.setAttribute('aria-label','Row '+(Math.floor(i/5)+1)+', column '+(i%5+1)+': '+state+(here===i?', orb here':''));
  });
  el('score').textContent='Beacons '+[1,2,4].filter(bit=>lit&bit).length+' / 3 · Moves '+used;
- el('undo').disabled=path.length<2;el('message').textContent=won?'Gate reached in '+used+' moves. '+(used===best.length?'You matched the shortest route.':'A shortest route uses '+best.length+'.'):'';
+ el('hint').disabled=won;el('undo').disabled=path.length<2;el('message').textContent=won?'Gate reached in '+used+' moves. '+(used===best.length?'You matched the shortest route.':'A shortest route uses '+best.length+'.'):'';
 }
 function move(to){
  const p=path[path.length-1],mask=path.reduce((m,k)=>collect(k,m),0);if(p===gate)return;
@@ -42,6 +42,10 @@ function reset(){
  if(!el('grid').childElementCount)for(let i=0;i<25;i++){const b=document.createElement('button');b.type='button';b.tabIndex=-1;b.addEventListener('click',()=>move(i));el('grid').append(b)}
  draw();
 }
+el('hint').addEventListener('click',()=>{
+ const remaining=shortest(path[path.length-1],path.reduce((mask,p)=>collect(p,mask),0));
+ el('message').textContent='Move '+names[remaining[0]]+'. A shortest route from here takes '+remaining.length+(remaining.length===1?' move.':' moves.');
+});
 el('course').addEventListener('change',reset);el('reset').addEventListener('click',reset);el('undo').addEventListener('click',()=>{if(path.length>1)path.pop();draw()});
 document.querySelectorAll('.pad button').forEach(b=>b.addEventListener('click',()=>move(path[path.length-1]+Number(b.dataset.dir))));
 el('grid').addEventListener('keydown',e=>{const d={ArrowUp:-5,ArrowDown:5,ArrowLeft:-1,ArrowRight:1}[e.key];if(d){e.preventDefault();move(path[path.length-1]+d)}});
