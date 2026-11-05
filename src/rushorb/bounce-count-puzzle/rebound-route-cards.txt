@@ -1,0 +1,19 @@
+TWO WAYS TO LAND
+Track positions 0 through 6. Starting position is step zero. Reverse at each end without a pause. For each card find two counts between 1 and 12 steps: one arriving right and one arriving left. A partner can give an arrival direction while the other player solves.
+
+Card 1. Start 2, moving right. Land at 5.
+Card 2. Start 5, moving left. Land at 2.
+Card 3. Start 1, moving left. Land at 4.
+Card 4. Start 4, moving right. Land at 3.
+Card 5. Start 3, moving left. Land at 5.
+Card 6. Start 0, moving right. Land at 2.
+
+ANSWER KEY
+Card 1: arrives moving right in 3 steps; arrives moving left in 5 steps.
+Card 2: arrives moving right in 7 steps; arrives moving left in 3 steps.
+Card 3: arrives moving right in 5 steps; arrives moving left in 9 steps.
+Card 4: arrives moving right in 11 steps; arrives moving left in 5 steps.
+Card 5: arrives moving right in 8 steps; arrives moving left in 10 steps.
+Card 6: arrives moving right in 2 steps; arrives moving left in 10 steps.
+
+Play the browser puzzle: https://udrwu9c0tjuedqy2.github.io/hla-games/rushorb/bounce-count-puzzle/
