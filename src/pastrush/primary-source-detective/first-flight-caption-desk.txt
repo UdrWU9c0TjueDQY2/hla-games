@@ -1,0 +1,45 @@
+FIRST FLIGHT: THE CAPTION DESK
+A classroom source lab from Honest Little Apps
+
+STUDENT SHEET · 8–10 MINUTES
+
+Edit a museum caption for December 17, 1903. The draft deliberately contains an error:
+
+“This photograph proves the first flight lasted 57 seconds.”
+
+Your source file
+
+A. Photograph. One frame shows the Flyer lifting off. A still image does not record elapsed time.
+Library of Congress: https://www.loc.gov/pictures/item/00652085/
+
+B. Telegram. Orville told his father there had been four flights. The message as received reports 57 seconds for the longest one.
+Library of Congress: https://www.loc.gov/item/mcc.061/
+
+C. Archive account. The Library of Congress identifies the first flight as 12 seconds and the fourth, longest flight as 59 seconds.
+Library of Congress: https://www.loc.gov/item/today-in-history/december-17/
+
+1. Mark the mix-up. Which flight does 57 refer to in the telegram? Which source supplies the first flight’s duration?
+2. Rewrite the caption in one or two sentences. Distinguish what the image shows from how you know the timing.
+3. Add an editor’s note. Briefly reconcile 57 and 59 without assuming who caused the difference.
+
+FACILITATOR KEY · SHARE AFTER THE EDIT
+
+Model caption. The photograph shows the Flyer lifting off on December 17, 1903. The Library of Congress identifies this as Orville Wright’s first flight, which lasted 12 seconds. The still image alone cannot tell us its duration.
+
+1. First vs. longest. The telegram reports 57 seconds for the longest of four flights. It does not assign that number to the first flight. The archive account gives 12 seconds for the first flight.
+2. Image vs. elapsed time. Give credit for naming the visible event and attributing its duration to the archival account. A photo by itself cannot tell you how long the flight continued.
+3. Disagreement vs. blame. The Smithsonian and the Library of Congress give 59 seconds for the longest flight. The telegram is evidence of what its recipient read: 57. These texts do not identify who caused the discrepancy.
+
+Discuss: If the telegram is wrong about two seconds, what is it still evidence of? A defensible answer: what was communicated to the family that day.
+
+Library of Congress collection essay:
+https://www.loc.gov/collections/wilbur-and-orville-wright-papers/articles-and-essays/collection-highlights/first-flight/
+Smithsonian telegraph key:
+https://airandspace.si.edu/collection-media/NASM-A19710854000-NASM2018-10848-000001
+
+Free browser lesson with both archival scans:
+https://udrwu9c0tjuedqy2.github.io/hla-games/pastrush/primary-source-detective/#first-flight
+Optional PastRush game for iPhone or iPad:
+https://apps.apple.com/us/app/pastrush-history-detective/id6818795908
+
+Educators and editors may copy, print, adapt and share this original exercise with credit to Honest Little Apps. Mark substantive edits. Archive records retain their own reuse terms.
