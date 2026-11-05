@@ -1,6 +1,6 @@
 {
-  "title": "Primary Source Detective: Six Historical Evidence Challenges",
-  "description": "Judge what a letter, poster, photograph and other sources can support. Six fictional practice cases with explanations.",
+  "title": "Primary Source Detective: Wright Brothers Photo and Telegram",
+  "description": "Compare a 1903 Wright flight photograph and telegram from the Library of Congress. Check your reading, then try six fictional source-analysis cases.",
   "appSlug": "pastrush",
   "strategy": "interactive-exercise",
   "query": "primary source analysis practice",
@@ -10,6 +10,7 @@
     "practice"
   ],
   "published": "2026-11-04",
-  "updated": "2026-11-04",
-  "draft": false
+  "updated": "2026-11-05",
+  "draft": false,
+  "linkText": "Wright brothers evidence lesson and six practice cases"
 }
