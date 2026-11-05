@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><meta name="referrer" content="no-referrer"><title>Read the Wright telegram | PastRush classroom exercise</title>
+<style>*{box-sizing:border-box}html{background:#f4efdf;color:#28291f}body{margin:0;font:16px/1.45 system-ui,sans-serif}main{max-width:44rem;margin:auto;padding:clamp(14px,4vw,28px)}h1,h2{font-family:Georgia,serif;line-height:1.12}h1{font-size:clamp(26px,6vw,39px);margin:0 0 .5rem}h2{font-size:1.3rem;margin:.5rem 0}.source{border-left:4px solid #8e5731;background:#fffaf0;padding:10px 15px}.source p{margin:.35em 0}small{font-weight:650;color:#5f4937}.choices{display:flex;gap:7px;flex-wrap:wrap}button{font:inherit;font-weight:650;min-height:44px;border:1px solid #52452c;border-radius:6px;background:#fffaf0;color:#302719;padding:6px 12px;cursor:pointer}button[aria-pressed=true]{background:#3f432c;color:#fff}button:focus-visible,a:focus-visible{outline:3px solid #005baa;outline-offset:2px}a{color:#21495c}#feedback{margin:.7rem 0}footer{margin-top:1.1rem;font-size:.87rem}footer a{display:inline-block;padding:5px 1px} [hidden]{display:none!important}</style></head>
+<body><main><h1>Read the Wright telegram</h1><div class="source"><small>December 17, 1903 · Orville Wright to his father</small><p>Orville reported four flights on Thursday morning. Near the end he asked his father to inform the press and mentioned being home for Christmas.</p></div>
+<p>For each claim, decide what this message alone supports.</p><small id="count">Claim 1 of 4</small><h2 id="question" tabindex="-1">The brothers made four flights that morning.</h2>
+<div class="choices" aria-label="Choose how the telegram supports this claim"><button data-choice="0">Reported event</button><button data-choice="1">Requested action</button><button data-choice="2">Unconfirmed outcome</button></div>
+<p id="feedback" role="status"></p><button id="next" hidden>Next claim</button>
+<noscript><p>The first claim is a reported event. A request to inform the press does not establish that an editor ran a story. Enable JavaScript to try the exercise.</p></noscript>
+<footer>Honest Little Apps · <a href="https://www.loc.gov/pictures/resource/cph.3b12982/" target="_blank" rel="noopener noreferrer">Read the original scan</a> · <a href="https://apps.apple.com/ca/app/pastrush-history-detective/id6818795908" target="_blank" rel="noopener noreferrer">PastRush on the Canadian App Store</a></footer></main>
+<script>
+const claims=[
+  ['The brothers made four flights that morning.',0,'Orville reports four flights to his father. The telegram is evidence of what Orville reported.'],
+  ['Orville wanted his father to tell the press.',1,'The instruction asks his father to take action. It does not tell us whether his father followed it.'],
+  ['A newspaper published the news that afternoon.',2,'No publication is named or dated here. A dated newspaper issue would help you check that outcome.'],
+  ['Orville arrived home by Christmas.',2,'The message points ahead to Christmas. A later letter or diary entry could help establish when he actually arrived.']
+];
+const byId=id=>document.getElementById(id);
+const buttons=[...document.querySelectorAll('[data-choice]')];
+let index=0,score=0,locked=false;
+function showClaim(){
+  locked=false;byId('question').textContent=claims[index][0];byId('count').textContent='Claim '+(index+1)+' of '+claims.length;
+  byId('feedback').textContent='';byId('next').hidden=true;
+  for(const button of buttons){button.setAttribute('aria-pressed','false');button.setAttribute('aria-disabled','false')}
+}
+for(const button of buttons)button.addEventListener('click',()=>{
+  if(locked)return;
+  locked=true;const [,answer,why]=claims[index];const matched=Number(button.dataset.choice)===answer;
+  if(matched)score++;
+  button.setAttribute('aria-pressed','true');
+  for(const other of buttons)other.setAttribute('aria-disabled','true');
+  const last=index===claims.length-1;
+  byId('feedback').textContent=(matched?'Correct. ':'Best match: '+buttons[answer].textContent+'. ')+why+(last?' You classified '+score+' of '+claims.length+' claims correctly.':'');
+  byId('next').textContent=last?'Try again':'Next claim';byId('next').hidden=false;
+});
+byId('next').addEventListener('click',()=>{index=(index+1)%claims.length;if(index===0)score=0;showClaim();byId('question').focus()});
+showClaim();
+</script></body></html>
