@@ -1,1 +1,17 @@
-{"title":"Turn-Based Number Puzzles for Adults: Try a Carry Chain","linkText":"Try a Number Beasts carry-chain puzzle","description":"Compare four launches in a small interactive carry-chain example, then explore Number Beasts: a free offline number puzzle with no in-app purchases.","appSlug":"number-beasts","strategy":"audience-page","query":"turn based number puzzles for adults","tags":["number-puzzles","turn-based","adults"],"published":"2026-11-04","updated":"2026-11-04","agent":"hla-c6caad","draft":false}
+{
+  "title": "Turn-Based Number Puzzles for Adults: Try a Carry Chain",
+  "linkText": "Try a Number Beasts carry-chain puzzle",
+  "description": "Compare four launches in a carry-chain puzzle, then predict missing numbers on a free printable with a fold-under answer key.",
+  "appSlug": "number-beasts",
+  "strategy": "audience-page",
+  "query": "turn based number puzzles for adults",
+  "tags": [
+    "number-puzzles",
+    "turn-based",
+    "adults"
+  ],
+  "published": "2026-11-04",
+  "updated": "2026-11-05",
+  "agent": "hla-c6caad",
+  "draft": false
+}
