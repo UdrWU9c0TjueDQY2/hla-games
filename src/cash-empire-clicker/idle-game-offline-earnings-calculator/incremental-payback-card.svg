@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1520" viewBox="0 0 1200 1520" role="img" aria-labelledby="title desc"><title id="title">Use the extra income, not the new total</title><desc id="desc">Two fictional upgrades: A costs120 tokens and adds4 per second, recovering its cost in30 seconds. B costs180 and adds9, recovering its cost in20 seconds. C costs300 and adds10, matching A at30 seconds. Full equivalent text and formulas are on the parent page.</desc><rect width="1200" height="1520" fill="#07152e"/>
+<text x="64" y="63" fill="#f4c85b" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="25">HONEST LITTLE APPS / FICTIONAL GAME MATH</text>
+<text x="64" y="156" fill="#f5f7ff" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="60">Use the extra income.</text>
+<text x="64" y="229" fill="#f5f7ff" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="60">Not the new total.</text>
+<text x="64" y="298" fill="#8ee5b5" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="34">Payback time = cost ÷ extra tokens per second</text>
+<text x="64" y="344" fill="#c1cce1" font-family="DejaVu Sans, sans-serif" font-weight="400" font-size="28">Both examples start at 10 tokens/s. Rates stay constant.</text>
+<rect x="64" y="390" width="512" height="360" rx="22" fill="#122947"/>
+<text x="92" y="443" fill="#f4c85b" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="29">UPGRADE A</text>
+<text x="92" y="499" fill="#f5f7ff" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="32">Cost: 120 tokens</text>
+<text x="92" y="550" fill="#f5f7ff" font-family="DejaVu Sans, sans-serif" font-weight="400" font-size="28">New total: 14 tokens/s</text>
+<text x="92" y="593" fill="#f5f7ff" font-family="DejaVu Sans, sans-serif" font-weight="400" font-size="27">Extra: 14 − 10 = 4 tokens/s</text>
+<text x="92" y="672" fill="#8ee5b5" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="34">120 ÷ 4 = 30 seconds</text>
+<rect x="624" y="390" width="512" height="360" rx="22" fill="#122947"/>
+<text x="652" y="443" fill="#f4c85b" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="29">UPGRADE B</text>
+<text x="652" y="499" fill="#f5f7ff" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="32">Cost: 180 tokens</text>
+<text x="652" y="550" fill="#f5f7ff" font-family="DejaVu Sans, sans-serif" font-weight="400" font-size="28">New total: 19 tokens/s</text>
+<text x="652" y="593" fill="#f5f7ff" font-family="DejaVu Sans, sans-serif" font-weight="400" font-size="27">Extra: 19 − 10 = 9 tokens/s</text>
+<text x="652" y="672" fill="#8ee5b5" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="34">180 ÷ 9 = 20 seconds</text>
+<text x="64" y="817" fill="#f4c85b" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="25">TIME TO RECOVER THE UPGRADE COST</text>
+<text x="64" y="891" fill="#f5f7ff" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="32">A</text>
+<rect x="122" y="860" width="840" height="42" rx="8" fill="#95aed4"/>
+<text x="982" y="888" fill="#f5f7ff" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="26">30 s</text>
+<text x="64" y="969" fill="#f5f7ff" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="32">B</text>
+<rect x="122" y="938" width="560" height="42" rx="8" fill="#8ee5b5"/>
+<text x="702" y="966" fill="#f5f7ff" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="26">20 s</text>
+<text x="64" y="1055" fill="#f5f7ff" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="32">B costs more, but pays back 10 seconds sooner.</text>
+<line x1="64" y1="1102" x2="1136" y2="1102" stroke="#46607e" stroke-width="2"/>
+<text x="64" y="1161" fill="#f4c85b" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="25">THE TOTAL-RATE TRAP</text>
+<text x="64" y="1210" fill="#f5f7ff" font-family="DejaVu Sans, sans-serif" font-weight="400" font-size="27">120 ÷ 14 and 180 ÷ 19 include income you already had.</text>
+<text x="64" y="1252" fill="#f5f7ff" font-family="DejaVu Sans, sans-serif" font-weight="400" font-size="27">They give the wrong comparison for the upgrade alone.</text>
+<text x="64" y="1320" fill="#f4c85b" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="25">EQUAL PAYBACK DOES NOT MEAN EQUAL COST</text>
+<text x="64" y="1371" fill="#f5f7ff" font-family="DejaVu Sans, sans-serif" font-weight="700" font-size="29">A: 120 ÷ 4 = 30 s.  C: 300 ÷ 10 = 30 s.</text>
+<text x="64" y="1420" fill="#f5f7ff" font-family="DejaVu Sans, sans-serif" font-weight="400" font-size="27">Same payback; different upfront tokens and extra rate.</text>
+<text x="64" y="1485" fill="#c1cce1" font-family="DejaVu Sans, sans-serif" font-weight="400" font-size="23">Original Cash Empire companion • not native gameplay • no real-money value</text>
+</svg>

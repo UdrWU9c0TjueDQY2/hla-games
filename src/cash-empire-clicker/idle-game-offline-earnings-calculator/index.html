@@ -94,6 +94,23 @@ details{border-top:1px solid var(--line);padding:10px 0}summary{cursor:pointer;f
 <p class="limits">Idle games display big numbers in short form (1.25K, 3.4M, 2.1B). Type the plain number here. Compare this estimate with your game’s return summary. A difference may reflect a different cap, rate or bonus.</p>
 </div>
 
+<section id="upgrade-payback-card" aria-labelledby="payback-card-heading">
+<h2 id="payback-card-heading">Which upgrade earns its cost back sooner?</h2>
+<p>Compare the <strong>extra</strong> production an upgrade adds. Dividing by the new total also counts production you already owned. This original visual uses invented tokens and fixed rates, not prices, screenshots or progression data from the native game.</p>
+<figure style="margin:20px 0"><img src="incremental-payback-card.png" alt="Two fictional upgrades: A recovers120 tokens at4 extra per second in30seconds; B recovers180 at9 extra per second in20seconds. Full formulas and counterexamples follow." width="1200" height="1520" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;border-radius:14px"><figcaption class="cap">Payback for the upgrade alone = token cost ÷ extra tokens per second. All values are fictional.</figcaption></figure>
+<p><a href="incremental-payback-card.png" download>Download the PNG visual</a> · <a href="incremental-payback-card.svg" download>Download the scalable SVG</a>. Both are the same original comparison.</p>
+<h3>The complete comparison in text</h3>
+<p>Start at 10 tokens per second. Assume both upgrades are available immediately, the added rate stays constant and there are no caps, bonuses, resets or further purchases.</p>
+<ul>
+<li><strong>A:</strong> cost 120 tokens; new total 14 tokens/s; extra 14 −10 =4 tokens/s. Payback 120 ÷4 =<strong>30 seconds</strong>.</li>
+<li><strong>B:</strong> cost 180 tokens; new total 19 tokens/s; extra 19 −10 =9 tokens/s. Payback 180 ÷9 =<strong>20 seconds</strong>.</li>
+<li><strong>C, an equal-payback example:</strong> cost 300 tokens; new total 20 tokens/s; extra 20 −10 =10 tokens/s. Payback 300 ÷10 =<strong>30 seconds</strong>, matching A despite a different upfront cost and added rate.</li>
+</ul>
+<details><summary>Spot the total-rate trap</summary><p>Using 120 ÷14 gives about 8.57 seconds, while 180 ÷19 gives about 9.47 seconds. That method incorrectly makes A look faster. Subtract the existing 10 tokens/s before dividing: A takes 30 seconds; B takes 20 seconds.</p></details>
+<details><summary>Does faster payback always settle the choice?</summary><p>No. In this simplified example the token gain after a chosen wait is <strong>extra rate × seconds − cost</strong>. After 15 seconds, A is 60 tokens below its cost and B is 45 below. After 30 seconds, A has recovered its cost and B is 90 tokens above it. A and C both recover their costs at 30 seconds; at 60 seconds their added production minus cost is 120 and 300 tokens respectively. A 150-token budget can afford A but cannot afford B or C. A shortest-payback comparison alone does not test affordability, waiting to buy, future upgrades, spending limits or a game's actual mechanics.</p></details>
+<p class="limits"><strong>Publisher disclosure:</strong> Honest Little Apps publishes Cash Empire Clicker and this separate educational companion. The visual is not native gameplay or an independent review. Cash Empire is free to play with optional one-time in-app purchases; check Apple for the current local offer. No app is needed for this comparison, and these tokens have no real-money value.</p>
+</section>
+
 <h2>Before managers, after managers</h2>
 <div class="cmp" id="cmp"><img src="/assets/cash-empire-clicker/screen-1-390.webp" alt="Cash Empire Clicker tap screen with a Hand Crank Printer and manual tapping" width="390" height="844"><img class="after" id="after" src="/assets/cash-empire-clicker/screen-2-390.webp" alt="Cash Empire Clicker income assets screen with research lab and managers automating production" width="390" height="844"><span class="lbl b">Tapping</span><span class="lbl a">Automated</span><div class="handle" id="handle"></div></div>
 <input class="rng" id="rng" type="range" min="0" max="100" value="50" aria-label="Drag to compare tapping with an automated empire">
