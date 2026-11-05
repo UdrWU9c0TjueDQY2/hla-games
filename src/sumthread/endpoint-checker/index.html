@@ -2,18 +2,32 @@
 <section class="game"><label for="shape">Board</label> <select id="shape"><option>Square · 3 × 3</option><option>Rectangle · 4 × 3</option><option>Ladder · 3 × 2</option></select><div class="endpoints"><label>Start <select id="start"></select></label><label>Finish <select id="end"></select></label></div>
 <label for="pick">Tap a square to set the </label><select id="pick"><option value="start">Start</option><option value="end">Finish</option></select><div id="board" role="group" aria-label="Endpoint board"></div><div class="actions"><button id="test" class="primary">Check these endpoints</button><button id="show" hidden>Show one complete path</button></div><p id="result" class="status" aria-live="polite"></p><p id="trail"></p></section>
 <section id="walkthrough"><h2>Watch two endpoint attempts</h2><p>See why A1 to B1 fails, then follow a complete route from A1 to C3.</p><video controls playsinline preload="none" aria-label="Sixteen-second silent demonstration of the endpoint checker" width="360" height="640" style="display:block;width:min(100%,20rem);height:auto;background:#102d34" src="./endpoint-colors.mp4"></video><details><summary>Read the walkthrough</summary><p>Nine squares contain five cream and four blue. Each move changes color, so a path starting on cream must end on cream after eight moves. B1 is blue. C3 is cream. One complete route runs A1, B1, C1, C2, B2, A2, A3, B3, C3.</p></details></section><section><h2>Why shade the squares?</h2><p>A horizontal or vertical step always changes color. On nine squares, the start and finish must both use the color that appears five times. On a board with equal numbers of both colors, the ends must have opposite colors.</p><p>Passing that check is only a first test. Try the ladder with B1 and B2 as the ends. Both colors are represented, yet those two middle squares separate the left side from the right. A single path between the middle ends cannot cover both sides without revisiting an end.</p></section>
-<section class="app"><h2>Add ordered sums in Sumthread</h2><p>This original lab isolates the path rule. In Sumthread, a single orthogonal path also has to reach its target sums in order. Try the <a href="../daily-number-puzzle-for-beginners/">daily browser puzzle</a> or explore the iPhone game.</p><a class="cta" href="https://apps.apple.com/ca/app/sumthread/id6829816144">View Sumthread on the App Store (Canada)</a></section></main><footer><a href="https://udrwu9c0tjuedqy2.github.io/hla-games/">Pocket Puzzle Arcade</a> · <a href="https://udrwu9c0tjuedqy2.github.io/hla-games/privacy/">Privacy</a></footer><script>const boards=[[3,3],[4,3],[3,2]],el=id=>document.getElementById(id);let cols,rows,witness=[];
+<section id="path-counts"><h2>How many full-grid paths are there?</h2><p>On the 3-by-3 board, only 10 of the 36 possible endpoint pairs work. Each of those ten pairs has exactly two paths. Try A1 to C3 in the checker, then see if you can draw the other route.</p><table style="width:100%;border-collapse:collapse;text-align:left"><caption>Counts across the three boards in this lab</caption><thead><tr><th scope="col">Board</th><th scope="col">Endpoint pairs</th><th scope="col">Pairs that work</th><th scope="col">Full paths</th></tr></thead><tbody><tr><th scope="row">3 × 3</th><td>36</td><td>10</td><td>20</td></tr><tr><th scope="row">4 × 3</th><td>66</td><td>29</td><td>62</td></tr><tr><th scope="row">3 × 2</th><td>15</td><td>8</td><td>8</td></tr></tbody></table><details><summary>How the paths were counted</summary><p>Tiles have fixed addresses. A path moves to a neighboring tile horizontally or vertically and visits every tile once. An endpoint pair counts once regardless of order. Walking the same path backwards also counts once. Reflections or rotations that use a different set of edges count as different routes.</p><p>For every pair we enumerated legal moves, then independently verified the count by working backward through subsets of visited tiles. These counts apply to the empty rectangular boards shown here. Ordered sum targets in the separate iPhone game introduce another constraint.</p></details><p><a href="./endpoint-path-counts.csv" download>Download counts for all 117 endpoint pairs (CSV)</a> · <a href="./count-endpoint-paths.py" download>Download the reproduction script (Python)</a></p></section><section class="app"><h2>Add ordered sums in Sumthread</h2><p>This original lab isolates the path rule. In Sumthread, a single orthogonal path also has to reach its target sums in order. Try the <a href="../daily-number-puzzle-for-beginners/">daily browser puzzle</a> or explore the iPhone game.</p><a class="cta" href="https://apps.apple.com/ca/app/sumthread/id6829816144">View Sumthread on the App Store (Canada)</a></section></main><footer><a href="https://udrwu9c0tjuedqy2.github.io/hla-games/">Pocket Puzzle Arcade</a> · <a href="https://udrwu9c0tjuedqy2.github.io/hla-games/privacy/">Privacy</a></footer><script>const boards=[[3,3],[4,3],[3,2]],el=id=>document.getElementById(id);let cols,rows,witness=[];
 const name=i=>String.fromCharCode(65+i%cols)+(Math.floor(i/cols)+1);
 const shade=i=>(i%cols+Math.floor(i/cols))%2;
 function adjacent(i){const c=i%cols,r=Math.floor(i/cols);return [[c-1,r],[c+1,r],[c,r-1],[c,r+1]].filter(([x,y])=>x>=0&&x<cols&&y>=0&&y<rows).map(([x,y])=>y*cols+x)}
-function findPath(start,end){
- const path=[start],seen=new Set(path);
- function visit(at){
-  if(at===end)return path.length===cols*rows;
-  for(const n of adjacent(at)){if(seen.has(n))continue;seen.add(n);path.push(n);if(visit(n))return true;path.pop();seen.delete(n)}
-  return false;
+function countPaths(start,end) {
+ const path = [start], seen = new Set(path);
+ let first = [], total = 0;
+ function visit(at) {
+   if (at === end) {
+     if (path.length === cols * rows) {
+       total++;
+       if (total === 1) first = path.slice();
+     }
+     return;
+   }
+   for (const next of adjacent(at)) {
+     if (seen.has(next)) continue;
+     seen.add(next);
+     path.push(next);
+     visit(next);
+     path.pop();
+     seen.delete(next);
+   }
  }
- return visit(start)?path:[];
+ visit(start);
+ return {first,total};
 }
 function draw(annotate=false){const start=Number(el('start').value),end=Number(el('end').value);el('board').style.gridTemplateColumns='repeat('+cols+', 1fr)';
  el('board').replaceChildren(...Array.from({length:cols*rows},(_,i)=>{const sq=document.createElement('button');sq.type='button';sq.className=shade(i)?'blue':'cream';
@@ -29,7 +43,7 @@ el('test').addEventListener('click',()=>{clear();const a=Number(el('start').valu
  if(a===b){out.textContent='Choose two different endpoint squares. Returning to the start would visit it twice.';return}
  if(count%2===1&&(shade(a)!==0||shade(b)!==0)){out.textContent='Impossible by color. The nine-square board has five cream squares and four blue. Both endpoints must be cream.';return}
  if(count%2===0&&shade(a)===shade(b)){out.textContent='Impossible by color. The board has the same number of each color, so the endpoints must use opposite colors.';return}
- witness=findPath(a,b);if(witness.length){out.textContent='Possible. The color rule fits, and a complete '+count+'-square path exists.';el('show').hidden=false}
+ const result=countPaths(a,b);witness=result.first;if(result.total){out.textContent='Possible. '+result.total+(result.total===1?' complete path visits':' different complete paths visit')+' all '+count+' squares from '+name(a)+' to '+name(b)+'.';el('show').hidden=false}
  else{out.textContent='Impossible despite matching colors. Every non-repeating orthogonal path from '+name(a)+' was checked; none covers all squares and ends at '+name(b)+'.'}
 });
 el('show').addEventListener('click',()=>{draw(true);el('trail').textContent='Follow the squares in order: '+witness.map(name).join(' → ')+'.';});reset();</script></body></html>
