@@ -84,6 +84,17 @@ ul{padding-left:20px}li{margin:.3em 0}
 @media (max-width:600px){.myths{grid-template-columns:1fr 1fr}}
 @media (prefers-reduced-motion:reduce){.myth button{transition:none}}
 
+
+.puzzle-comparison{max-width:100%;overflow-x:auto}
+.puzzle-comparison table{min-width:34rem}
+.puzzle-comparison:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.bridge-guide{margin:20px 0 4px;border-top:1px solid var(--line);padding-top:12px}
+.bridge-guide>summary{cursor:pointer;color:var(--cyan);padding:10px 0;font-weight:700;min-height:44px}
+.bridge-guide summary:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.bridge-guide-body{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);align-items:start;gap:16px;margin:8px 0}
+.bridge-guide video{width:100%;max-width:300px;height:auto;aspect-ratio:9/16;background:var(--bg);border-radius:10px;display:block}
+.bridge-guide-body p{margin:0 0 12px}
+@media(max-width:580px){.bridge-guide-body{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 
@@ -106,6 +117,13 @@ ul{padding-left:20px}li{margin:.3em 0}
 <div class="ctr"><button type="button" id="pz-undo">Undo</button><button type="button" id="pz-reset">Reset</button><button type="button" id="pz-sol">Show solution</button><button type="button" id="pz-yday">Yesterday's board</button></div>
 <div class="sol" id="pz-soltext"></div>
 <p class="rules"><strong>Rules.</strong> Every island shows its target (small) and its current sum (large). Every bridge carries a number and points at one island; that island counts it. Tap a bridge to point it the other way. Solve when every sum matches its target. The board is built from today's date, so everyone gets the same puzzle.</p>
+<details class="bridge-guide" id="bridge-flip-guide"><summary>Watch a bridge flip in 20 seconds</summary>
+<div class="bridge-guide-body"><video controls playsinline preload="none" width="720" height="1280" poster="bridge-flip-poster.webp" aria-label="Sumbriska bridge-flip example with on-screen captions">
+<source src="bridge-flip.mp4" type="video/mp4"><track kind="captions" src="bridge-flip.vtt" srclang="en" label="English">
+</video><div><p><strong>One number moves between two islands.</strong> This example comes from the 5 November 2026 browser board. The right island has 3 and needs 8. Flip the bridge marked 5 toward it. The right island rises to 8 and the top drops from 10 to 5.</p>
+<p>To reach its target of zero, the top island must send its remaining 3 and 2 away. The final two flips bring the lower islands to their targets. On a different board, look for a zero or a gap that one bridge can fill.</p>
+<p><a href="bridge-flip.mp4" download>Download the captioned video (259 KB)</a></p></div></div></details>
+
 </section>
 </div>
 </header>
@@ -146,14 +164,14 @@ ul{padding-left:20px}li{margin:.3em 0}
 
 <section>
 <h2>How it compares with puzzles you already know</h2>
-<table>
+<div class="puzzle-comparison" tabindex="0" role="region" aria-label="Puzzle comparison table"><table>
 <thead><tr><th>Puzzle</th><th>What a move is</th><th>What you are tracking</th><th>Typical daily time</th></tr></thead>
 <tbody>
 <tr><td>Sumbriska daily board</td><td>Flip one bridge's direction</td><td>Each island's sum against its target</td><td>2 to 4 minutes</td></tr>
 <tr><td>Sudoku</td><td>Write one digit in a cell</td><td>Row, column and box constraints</td><td>5 to 20 minutes</td></tr>
 <tr><td>Hashi (bridges)</td><td>Draw or remove a bridge</td><td>Bridge counts per island, one connected map</td><td>3 to 10 minutes</td></tr>
 <tr><td>Word-of-the-day games</td><td>Guess a word</td><td>Letter feedback across six tries</td><td>1 to 5 minutes</td></tr>
-</tbody></table>
+</tbody></table></div>
 <p>The honest difference: sums give you continuous feedback. You are never guessing blind; every flip tells you something.</p>
 </section>
 

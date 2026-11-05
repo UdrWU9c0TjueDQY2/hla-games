@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.100
+The right island needs 8. It has 3. Look at the bridge numbered 5.
+
+00:00:03.100 --> 00:00:06.900
+3 + 5 = 8. The right island is full. The top island drops from 10 to 5.
+
+00:00:06.900 --> 00:00:08.900
+Every bridge still pointing at the top has to point away from it.
+
+00:00:08.900 --> 00:00:10.100
+Flip the 3 away. The top now has 2.
+
+00:00:10.100 --> 00:00:11.900
+Flip the 2 away. The top reaches 0.
+
+00:00:11.900 --> 00:00:13.600
+The lower-right island needs 3 more. Flip the bottom 3 toward it.
+
+00:00:13.600 --> 00:00:15.000
+The lower-right island now has 7. One more bridge finishes the board.
+
+00:00:15.000 --> 00:00:17.300
+Every island now has its target sum.
+
+00:00:17.300 --> 00:00:20.000
+Try the daily board in your browser. Find Number Puzzles: Sumbriska on iPhone.
