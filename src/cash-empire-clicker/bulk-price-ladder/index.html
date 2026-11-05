@@ -1,1 +1,81 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Idle Game Bulk Cost Calculator: Explore a Rising Price Ladder</title><meta name="description" content="Explore how increasing fictional upgrade prices change the cost of buying several items. See every purchase and a running total."><link rel="canonical" href="https://udrwu9c0tjuedqy2.github.io/hla-games/cash-empire-clicker/bulk-price-ladder/"><meta name="robots" content="index,follow"><meta property="og:title" content="Idle Game Bulk Cost Calculator: Explore a Rising Price Ladder"><meta property="og:description" content="Explore how increasing fictional upgrade prices change the cost of buying several items. See every purchase and a running total."><meta property="og:type" content="website"><meta property="og:image" content="https://udrwu9c0tjuedqy2.github.io/hla-games/assets/cash-empire-clicker/icon-512.webp"><link rel="stylesheet" href="style.css?v=1"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Idle Game Bulk Cost Calculator: Explore a Rising Price Ladder","url":"https://udrwu9c0tjuedqy2.github.io/hla-games/cash-empire-clicker/bulk-price-ladder/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web browser","isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"Honest Little Apps"}}</script></head><body><header><a href="https://udrwu9c0tjuedqy2.github.io/hla-games/">Honest Little Apps</a><a class="store small" href="https://apps.apple.com/us/app/cash-empire-clicker/id6787609925">Get Cash Empire Clicker ↗</a></header><main><section class="hero"><div><p class="eyebrow">FICTIONAL CREDITS / REAL ARITHMETIC</p><h1>The first upgrade costs 10.<br>The tenth may not.</h1><p class="lead">When each purchase raises the next price, multiplying the first price by ten misses the point. Explore a toy price ladder and see every step.</p><p class="quiet">An original game-economy explainer. These are not Cash Empire’s actual prices, rewards or purchase offers.</p></div><div class="hero-art"><div class="chips"><span class="chip">10</span><span class="chip">12</span><span class="chip">14.4</span></div><div class="big">Each step<br>changes the next.</div></div></section><section id="tool" class="tool"><div class="section-title"><span class="eyebrow">TRY IT HERE</span><h2>Build a fictional price ladder</h2></div><div class="grid"><div><label for="price">First price (fictional credits)</label><input id="price" type="number" min="0.01" max="10000" step="0.01" value="10"><label for="growth">Price increase after each purchase (%)</label><input id="growth" type="number" min="0" max="100" value="20"></div><div><label for="count">Number of purchases (1–20)</label><input id="count" type="number" min="1" max="20" value="5"><p>Each new price is rounded to two decimal places before the next step. Actual games may use different rules.</p></div></div><div class="actions"><button id="calculate">Show every purchase</button><button id="reset" class="secondary">Reset example</button></div><div id="result" class="result" role="status"></div><div id="rows"></div><noscript><p>This interactive tool needs JavaScript. The guide and app link below remain available.</p></noscript></section><section class="guide"><p class="eyebrow">MAKE THE RESULT USEFUL</p><h2>A purchase count is also a price sequence.</h2><p>At 20% growth, five prices starting at 10 are 10, 12, 14.40, 17.28 and 20.74 fictional credits. The total is <strong>74.42</strong>, not 50.</p><p>Set growth to zero to see the flat-price case. Then change only the purchase count: the early steps stay the same, while the later steps extend the ladder.</p><p>This tool only adds purchase costs. It does not calculate income, payback, prestige value or real-world returns.</p></section><section class="app"><div class="app-copy"><img src="https://udrwu9c0tjuedqy2.github.io/hla-games/assets/cash-empire-clicker/icon-128.webp" width="68" height="68" alt="Cash Empire Clicker icon" loading="lazy"><p class="eyebrow">THE NEXT STEP</p><h2>Want the decisions inside a whole idle empire?</h2><p>Cash Empire Clicker combines rising upgrade costs, automation, managers and research in an idle game. All its money is fictional, with no cash-outs.</p><a class="store" href="https://apps.apple.com/us/app/cash-empire-clicker/id6787609925">Get Cash Empire Clicker on the App Store ↗</a><p class="quiet">Free to play with optional one-time purchases. No subscription is required according to the current listing. Check the App Store for current purchase details.</p><p class="quiet">Publisher disclosure: Honest Little Apps publishes Cash Empire Clicker and this companion resource. This is not an independent review. App details checked November 4, 2026.</p></div><figure><img src="https://udrwu9c0tjuedqy2.github.io/hla-games/assets/cash-empire-clicker/screen-1-390.webp" width="260" height="563" alt="Official Cash Empire Clicker App Store screenshot" loading="lazy"><figcaption>Official app preview. The browser tool above is a separate companion.</figcaption></figure></section><section style="padding:1.2rem"><h2>Try one final purchase</h2><p><a href="last-upgrade.html">Play One last upgrade</a> — Choose which investment pays back before the final tick.</p></section><footer><a href="https://udrwu9c0tjuedqy2.github.io/hla-games/cash-empire-clicker/idle-game-offline-earnings-calculator/">Explore a separate offline-earnings example</a><p>No account or draft storage in this tool. Refreshing clears your work. Hosting access logs may exist.</p></footer></main><script src="app.js?v=1"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Idle Game Bulk Cost Calculator — Upgrade Prices and Buy Max</title>
+  <meta name="description" content="Price a bundle of idle-game upgrades or find how many your budget buys. See every rounded cost, your leftover credits and the shortfall for the next upgrade.">
+  <link rel="canonical" href="https://udrwu9c0tjuedqy2.github.io/hla-games/cash-empire-clicker/bulk-price-ladder/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="apple-itunes-app" content="app-id=6787609925">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Idle Game Bulk Cost Calculator — Upgrade Prices and Buy Max">
+  <meta property="og:description" content="Starting at 10 credits with a 20% price increase, 60 credits buys four upgrades. Try your own prices and find what you need for the next one.">
+  <meta property="og:url" content="https://udrwu9c0tjuedqy2.github.io/hla-games/cash-empire-clicker/bulk-price-ladder/">
+  <meta property="og:image" content="https://udrwu9c0tjuedqy2.github.io/hla-games/assets/cash-empire-clicker/icon-512.webp">
+  <link rel="stylesheet" href="style.css?v=2">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Idle Game Bulk Cost Calculator","description":"A calculator for upgrade quantities, budgets and prices rounded at each purchase.","url":"https://udrwu9c0tjuedqy2.github.io/hla-games/cash-empire-clicker/bulk-price-ladder/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web browser","isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"Honest Little Apps"}}</script>
+</head>
+<body>
+<header><a href="https://udrwu9c0tjuedqy2.github.io/hla-games/">Honest Little Apps</a><a class="small" href="#tool">Calculator</a></header>
+<main>
+  <section class="hero">
+    <div>
+      <h1>Idle game bulk cost calculator</h1>
+      <p class="lead">The first upgrade costs 10 credits. Each new one costs 20% more. How many can you buy with 60 credits?</p>
+    </div>
+    <div class="hero-art example">
+      <strong class="big">4 upgrades</strong>
+      <p>53.68 credits spent · 6.32 left</p>
+      <div class="cost-steps" aria-hidden="true"><span>10.00</span><span>12.00</span><span>14.40</span><span>17.28</span></div>
+    </div>
+  </section>
+  <section id="tool" class="tool" aria-labelledby="tool-title">
+    <h2 id="tool-title">Price your upgrades</h2>
+    <form id="ladder" novalidate>
+      <fieldset class="modes">
+        <legend>What would you like to find?</legend>
+        <div class="mode-options">
+          <label><input id="mode-quantity" type="radio" name="mode" value="quantity" checked> Cost for a quantity</label>
+          <label><input id="mode-budget" type="radio" name="mode" value="budget"> Buy max with a budget</label>
+        </div>
+      </fieldset>
+      <div class="input-grid">
+        <div><label for="price">Price of the next upgrade</label><input id="price" type="number" min="0.01" max="10000" step="0.01" inputmode="decimal" value="10"></div>
+        <div><label for="growth">Price increase per purchase (%)</label><input id="growth" type="number" min="0" max="100" step="any" inputmode="decimal" value="20"></div>
+        <div id="count-field"><label for="count">Number of purchases (1–20)</label><input id="count" type="number" min="1" max="20" step="1" inputmode="numeric" value="5"></div>
+        <div id="budget-field" hidden><label for="budget">Budget in fictional credits</label><input id="budget" type="number" min="0" max="1000000" step="0.01" inputmode="decimal" value="60" disabled></div>
+      </div>
+      <div class="actions"><button id="calculate" type="submit">Show every purchase</button><button id="reset-example" type="button" class="secondary">Reset example</button></div>
+      <p id="result" class="result" role="status" aria-atomic="true"></p>
+      <p id="after-result" hidden><a href="https://apps.apple.com/us/app/cash-empire-clicker/id6787609925">See cost, income and payback in Cash Empire Clicker for iPhone ↗</a></p>
+      <table id="breakdown" hidden>
+        <caption id="caption">Price and running total, in fictional credits</caption>
+        <thead><tr><th scope="col">Purchase</th><th scope="col">Price</th><th scope="col">Running total</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </form>
+    <noscript><p>The interactive calculator requires JavaScript. The example below works on paper.</p></noscript>
+  </section>
+  <section class="guide">
+    <h2>Where the fifth upgrade goes over budget</h2>
+    <p>The first four purchases cost 10.00 + 12.00 + 14.40 + 17.28 = <strong>53.68 credits</strong>. The fifth costs 20.74, bringing the bundle to 74.42. From a budget of 60, you need another <strong>14.42 credits</strong> for all five.</p>
+    <p>Each purchase starts at the previous price multiplied by one plus the growth rate. Round each new price to the nearest cent, with half a cent rounded up, before stepping again. With 0% growth, all copies cost the same. Games that keep full precision between purchases can use a <a href="https://www.gamedeveloper.com/design/the-math-of-idle-games-part-i">geometric series for bulk prices</a> and get a different total.</p>
+    <p>All credits are fictional. The numbers are examples for this companion. Cash Empire Clicker uses its own prices and milestones.</p>
+    <p><a href="last-upgrade.html">Play One last upgrade</a> to choose which purchase pays back before a round ends.</p>
+  </section>
+  <section class="app">
+    <div class="app-copy">
+      <img src="https://udrwu9c0tjuedqy2.github.io/hla-games/assets/cash-empire-clicker/icon-128.webp" width="68" height="68" alt="Cash Empire Clicker icon" loading="lazy">
+      <h2>Try the decision in Cash Empire Clicker</h2>
+      <p>Upgrade a fictional money printer, hire managers and automate production. The game’s “Best next” card shows the cost, added income and payback time of a purchase.</p>
+      <a class="store" href="https://apps.apple.com/us/app/cash-empire-clicker/id6787609925">Get Cash Empire Clicker on the App Store ↗</a>
+      <p class="quiet">Free on iPhone and iPad with optional one-time purchases. Honest Little Apps publishes the game and this calculator.</p>
+    </div>
+    <figure><img src="https://udrwu9c0tjuedqy2.github.io/hla-games/assets/cash-empire-clicker/screen-1-390.webp" width="260" height="563" alt="Cash Empire Clicker screenshot from its App Store listing" loading="lazy"><figcaption>Cash Empire Clicker on the App Store</figcaption></figure>
+  </section>
+  <footer><a href="https://udrwu9c0tjuedqy2.github.io/hla-games/cash-empire-clicker/idle-game-offline-earnings-calculator/">Explore the offline earnings calculator</a><p>Entries are calculated in this browser. Refreshing restores the example.</p></footer>
+</main>
+<script src="app.js?v=2"></script>
+</body>
+</html>
