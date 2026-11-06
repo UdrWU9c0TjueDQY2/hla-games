@@ -1,0 +1,27 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.500
+Three creatures, three berries.
+Each can walk at most three spaces.
+
+2
+00:00:03.500 --> 00:00:06.700
+Fern starts at 4. Berry 7 is the only
+one Fern can reach in three steps.
+
+3
+00:00:06.700 --> 00:00:09.700
+Moss starts at 5. With berry 7 gone,
+the nearest remaining berry is 8.
+
+4
+00:00:09.700 --> 00:00:12.500
+Pip starts at 6. The berry left at 9
+is exactly three spaces away.
+
+5
+00:00:12.500 --> 00:00:17.000
+Fern: 4 → 7. Moss: 5 → 8. Pip: 6 → 9.
+Every creature walked three spaces.
+
