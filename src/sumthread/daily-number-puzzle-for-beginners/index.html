@@ -67,10 +67,32 @@ details{background:var(--card);border:1px solid var(--line);border-radius:12px;p
 @media (max-width:560px){.shots{grid-template-columns:1fr}.con{width:140px;opacity:.3}}
 
 .hero .play-link{display:inline-block;padding:.65em 1em;border-radius:.6em;background:#ffd9a8;color:#182e31;font-weight:700;text-decoration:none}.hero .play-link:focus-visible{outline:3px solid white;outline-offset:3px}
+
+.board-print-sheet {display:none}
+@media print {
+  @page {margin:16mm}
+  body {background:white!important;color:#182d2b}
+  body > :not(.board-print-sheet) {display:none!important}
+  .board-print-sheet {display:block;font:12pt/1.45 Arial,sans-serif;max-width:170mm;margin:auto}
+  .board-print-sheet h1 {font:700 25pt/1.15 Georgia,serif;color:#182d2b;margin:4mm 0}
+  .board-print-sheet p {margin:3mm 0}
+  .board-print-grid {display:grid;grid-template-columns:repeat(3,22mm);gap:0;margin:6mm 0}
+  .board-print-grid span {height:22mm;display:grid;place-items:center;border:1pt solid #364b46;color:#182d2b;font:700 20pt Arial,sans-serif}
+  .board-print-sheet a {color:#182d2b;text-decoration:underline}
+}
 </style>
 </head>
 
 <body>
+<section class="board-print-sheet" aria-label="Printable number path">
+<p>HONEST LITTLE APPS · SUMTHREAD WEB COMPANION</p>
+<h1 id="paper-title">Number path</h1>
+<p><strong>Reach these sums in order</strong> <span id="paper-targets"></span></p>
+<p>Number your visits from 1 to 9 or draw a line. Start on any square. Move one square up, down, left or right each time and visit every square exactly once. When a section reaches its target, circle that square and restart the sum at zero on the next square.</p>
+<div id="paper-grid" class="board-print-grid"></div>
+<p><strong>Check your route.</strong> The last target must end on visit 9. Are the three circled squares in the right order?</p>
+<p><a id="paper-replay" href="#pz">Open this exact board to check a route</a></p>
+</section>
 <div class="flood">
 <div class="wrap">
 <nav class="crumb" aria-label="Breadcrumb"><a href="/">Honest Little Apps</a> › <a href="/">Pocket Puzzle Arcade</a> › Daily number puzzle for beginners</nav>
@@ -103,6 +125,8 @@ details{background:var(--card);border:1px solid var(--line);border-radius:12px;p
 <div class="sol" id="sol"><div class="under"><b>Solution:</b> <span id="soltext"></span></div><canvas role="button" aria-label="Reveal the solution by scratching or pressing Enter"></canvas></div>
 <p>Each local calendar date has its own web board. Choose a weekday below to play one of the seven original practice boards. Both modes are separate from the iPhone daily.</p>
 <div class="act"><label for="board-mode">Choose a board <select id="board-mode"><option value="today">Today’s daily</option></select></label><button type="button" id="open-board">Open board</button></div>
+<div class="act"><button type="button" id="print-current-board">Print this board without the answer</button></div>
+<p>For a newsletter or puzzle column, <a href="../ordered-sums-thread-01/the-switchback.pdf">download The Switchback reprint edition</a>. Its second page includes the key and reprint terms.</p>
 <p><a id="board-link" href="#pz">Link to this board</a> · Your last 30 played boards can resume in this browser.</p>
 </section>
 <p class="lead">Sudoku asks you to hold nine constraints in your head at once. Wordle asks you to know words. This asks you to add small numbers and not lift your finger. The rule: one path through every tile, no diagonals, no revisits, and your running total must hit each target in order; when it does, the tile locks, and you start counting again from zero. The last target has to land on the last tile. That is the whole game, and it is enough.</p>
@@ -245,6 +269,15 @@ document.getElementById('board-link').href = boardUrl(
   publicBoardPage
 );
 document.getElementById('pzt').textContent = weekday >= 0 ? weekdayNames[weekday] + ' practice' : 'Daily board · ' + chosenDate;
+document.getElementById('paper-title').textContent = document.getElementById('pzt').textContent;
+document.getElementById('paper-targets').textContent = pz.targets.join(' → ');
+document.getElementById('paper-replay').href = document.getElementById('board-link').href;
+for (const value of pz.grid.flat()) {
+  const cell = document.createElement('span');
+  cell.textContent = String(value);
+  document.getElementById('paper-grid').append(cell);
+}
+document.getElementById('print-current-board').addEventListener('click', () => window.print());
  var grid=document.getElementById('grid'), tg=document.getElementById('tg'), thread=document.getElementById('thread'), msg=document.getElementById('msg');
  var vals=[].concat.apply([],pz.grid), path=[], cps=[], seg=0, done=false;
 // Only board IDs and tile indices are stored. Blocked or full storage leaves play available.
