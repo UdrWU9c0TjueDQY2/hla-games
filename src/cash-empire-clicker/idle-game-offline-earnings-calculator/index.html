@@ -63,7 +63,7 @@ details{border-top:1px solid var(--line);padding:10px 0}summary{cursor:pointer;f
 .cta{display:inline-block;background:var(--gold);color:var(--navy);text-decoration:none;font:700 1.05rem Outfit,sans-serif;padding:14px 22px;border-radius:999px;margin:8px 0}
 .end{background:var(--card);border-radius:18px;padding:22px 18px;margin:28px 0 18px;text-align:center}.end .hla-badge{display:inline-block;margin-top:8px}
 .limits{font-size:.95rem;color:var(--mute)}
-</style>
+.race-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(9rem,100%),1fr));gap:.8rem}.race-grid label{display:block}.race-grid input{display:block;width:100%;min-height:44px;box-sizing:border-box;font:inherit}.race-result{padding:1rem;margin:1rem 0;border-left:4px solid currentColor}.race-result p{margin-bottom:0}#race-form button{min-height:44px;margin-top:1rem}</style>
 </head>
 <body>
 <div class="wrap">
@@ -109,7 +109,9 @@ details{border-top:1px solid var(--line);padding:10px 0}summary{cursor:pointer;f
 <details><summary>Spot the total-rate trap</summary><p>Using 120 ÷14 gives about 8.57 seconds, while 180 ÷19 gives about 9.47 seconds. That method incorrectly makes A look faster. Subtract the existing 10 tokens/s before dividing: A takes 30 seconds; B takes 20 seconds.</p></details>
 <details><summary>Does faster payback always settle the choice?</summary><p>No. In this simplified example the token gain after a chosen wait is <strong>extra rate × seconds − cost</strong>. After 15 seconds, A is 60 tokens below its cost and B is 45 below. After 30 seconds, A has recovered its cost and B is 90 tokens above it. A and C both recover their costs at 30 seconds; at 60 seconds their added production minus cost is 120 and 300 tokens respectively. A 150-token budget can afford A but cannot afford B or C. A shortest-payback comparison alone does not test affordability, waiting to buy, future upgrades, spending limits or a game's actual mechanics.</p></details>
 <p class="limits"><strong>Publisher disclosure:</strong> Honest Little Apps publishes Cash Empire Clicker and this separate educational companion. The visual is not native gameplay or an independent review. Cash Empire is free to play with optional one-time in-app purchases; check Apple for the current local offer. No app is needed for this comparison, and these tokens have no real-money value.</p>
-</section>
+</section><section id="unlock-race" aria-labelledby="unlock-title"><h2 id="unlock-title">Buy the upgrade or save for the unlock?</h2><p>Race two strategies to the same fictional token balance. Saving keeps your current rate. Buying spends tokens on one boost as soon as you can afford it.</p>
+<form id="race-form" novalidate><div class="race-grid"><label>Tokens on hand<input type="number" id="race-balance" min="0" max="1000000" step="1" value="20" required></label><label>Tokens per tick<input type="number" id="race-income" min="0" max="1000000" step="1" value="5" required></label><label>Unlock price<input type="number" id="race-goal" min="1" max="1000000" step="1" value="100" required></label><label>Boost price<input type="number" id="race-cost" min="0" max="1000000" step="1" value="30" required></label><label>Extra tokens per tick<input type="number" id="race-gain" min="1" max="1000000" step="1" value="5" required></label></div><button type="submit">Compare the two routes</button></form>
+<div class="race-result" aria-live="polite"><strong id="race-winner"></strong><p id="race-explanation"></p></div><p class="cap">Each tick adds a whole payout. A boost can be bought between ticks and first pays on the next tick. This browser example uses invented prices. It assumes no caps, resets or extra purchases.</p></section>
 
 <h2>Before managers, after managers</h2>
 <div class="cmp" id="cmp"><img src="/assets/cash-empire-clicker/screen-1-390.webp" alt="Cash Empire Clicker tap screen with a Hand Crank Printer and manual tapping" width="390" height="844"><img class="after" id="after" src="/assets/cash-empire-clicker/screen-2-390.webp" alt="Cash Empire Clicker income assets screen with research lab and managers automating production" width="390" height="844"><span class="lbl b">Tapping</span><span class="lbl a">Automated</span><div class="handle" id="handle"></div></div>
@@ -165,5 +167,34 @@ var down=false;function fromX(x){var b=c.getBoundingClientRect();var v=Math.max(
 c.addEventListener('pointerdown',function(e){down=true;fromX(e.clientX);});window.addEventListener('pointermove',function(e){if(down)fromX(e.clientX);});window.addEventListener('pointerup',function(){down=false;});set(50);
 })();
 </script>
-</body>
+<script>
+(() => {
+  const el = id => document.getElementById('race-' + id);
+  const ticks = (remaining, rate) => remaining <= 0 ? 0 : rate ? Math.ceil(remaining / rate) : Infinity;
+  const unit = n => n + (n === 1 ? ' tick' : ' ticks');
+  function compareRace() {
+    const [balance, income, goal, cost, gain] = ['balance','income','goal','cost','gain'].map(id => el(id).valueAsNumber);
+    const show = (heading, detail) => { el('winner').textContent = heading; el('explanation').textContent = detail; };
+    if (![balance,income,goal,cost,gain].every(n => Number.isInteger(n) && n >= 0 && n <= 1000000) || goal < 1 || gain < 1) {
+      show('Check the five values.', 'Use whole numbers up to 1,000,000. Unlock price and extra tokens per tick must be at least 1.');
+      return;
+    }
+    const direct = ticks(goal - balance, income);
+    if (!direct) { show('The unlock is available now.', 'Your current balance already covers its price.'); return; }
+    const wait = ticks(cost - balance, income);
+    if (!Number.isFinite(wait)) { show('Neither route can start.', 'There is no income per tick and the current balance cannot buy the boost.'); return; }
+    if (direct <= wait) { show('Save for the unlock.', 'You reach it in ' + unit(direct) + ', before spending anything on the boost.'); return; }
+    const after = balance + wait * income - cost;
+    const remaining = ticks(goal - after, income + gain);
+    const boosted = wait + remaining;
+    const detail = 'Boost route: wait ' + unit(wait) + ', spend ' + cost + ', keep ' + after + ' tokens, then earn ' + (income + gain) + ' per tick for ' + unit(remaining) + '.';
+    if (!Number.isFinite(direct)) { show('Buying the boost reaches the unlock in ' + unit(boosted) + '.', 'Saving alone earns no tokens. ' + detail); return; }
+    const lead = direct === boosted ? 'Both routes take ' + unit(direct) + '.' : (direct < boosted ? 'Saving wins by ' : 'Buying wins by ') + unit(Math.abs(direct - boosted)) + '.';
+    show(lead, 'Saving: ' + unit(direct) + '. Buying: ' + unit(boosted) + '. ' + detail);
+  }
+  el('form').addEventListener('submit', event => { event.preventDefault(); compareRace(); });
+  el('form').addEventListener('input', compareRace);
+  compareRace();
+})();
+</script></body>
 </html>
