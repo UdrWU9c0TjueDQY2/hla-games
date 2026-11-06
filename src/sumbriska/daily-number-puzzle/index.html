@@ -13,7 +13,7 @@
 <link rel="preload" href="/assets/fonts/bricolage-grotesque-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Honest Little Apps", "item": "https://honest-little-apps.pages.dev/"}, {"@type": "ListItem", "position": 2, "name": "Pocket Puzzle Arcade", "item": "https://honest-little-apps.pages.dev/games/"}, {"@type": "ListItem", "position": 3, "name": "Daily number puzzle", "item": "https://honest-little-apps.pages.dev/sumbriska/daily-number-puzzle/"}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How does the daily number puzzle work?", "acceptedAnswer": {"@type": "Answer", "text": "Each island shows a target. Each bridge carries a number and points at one island; that island counts the number in its sum. Tap a bridge to flip which island it points at. When every island's sum equals its target, the board is solved. A new board appears every day, built from the date, so everyone gets the same puzzle."}}, {"@type": "Question", "name": "Is the puzzle on this page the same as the app?", "acceptedAnswer": {"@type": "Answer", "text": "It uses the same core rule, flip bridges to match sums, with five islands and eight bridges. The iPhone app adds themed regions, Two Tides boards that must satisfy two schedules at once, timed Harbor Run, the endless Deep, a workshop for custom boards, and a harbor you build as you solve."}}, {"@type": "Question", "name": "Is Sumbriska free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes to download and play. Regions 1 and 2, the Daily board, The Deep and Harbor Run are included. An optional Voyage Pass subscription ($4.99 a month or $29.99 a year, no free trial) adds regions 3 to 6, side boards, Gale Run, the 3-4 ring workshop and cosmetics."}}, {"@type": "Question", "name": "Is it suitable for kids?", "acceptedAnswer": {"@type": "Answer", "text": "The listing describes child profiles with no purchases and no links, an adult area behind PIN or Face ID, no ads, no accounts and no data collection, and it works offline. The board on this page collects nothing either."}}, {"@type": "Question", "name": "What is the minimum number of flips?", "acceptedAnswer": {"@type": "Answer", "text": "The par shown above the board is the number of bridges pointing the wrong way at the start. Each bridge only has two states, so par is the fewest flips that can solve it. Extra flips are not penalised; they are just a sign you were exploring."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How does the daily number puzzle work?", "acceptedAnswer": {"@type": "Answer", "text": "Each island shows a target. Each bridge carries a number and points at one island; that island counts the number in its sum. Tap a bridge to flip which island it points at. When every island's sum equals its target, the board is solved. A new board appears every day, built from the date, so everyone gets the same puzzle."}}, {"@type": "Question", "name": "Is the puzzle on this page the same as the app?", "acceptedAnswer": {"@type": "Answer", "text": "It uses the same core rule, flip bridges to match sums, with five islands and eight bridges. The iPhone app adds themed regions, Two Tides boards that must satisfy two schedules at once, timed Harbor Run, the endless Deep, a workshop for custom boards, and a harbor you build as you solve."}}, {"@type": "Question", "name": "Is Sumbriska free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes to download and play. Regions 1 and 2, the Daily board, The Deep and Harbor Run are included. An optional Voyage Pass subscription ($4.99 a month or $29.99 a year, no free trial) adds regions 3 to 6, side boards, Gale Run, the 3-4 ring workshop and cosmetics."}}, {"@type": "Question", "name": "Is it suitable for kids?", "acceptedAnswer": {"@type": "Answer", "text": "The listing describes child profiles with no purchases and no links, an adult area behind PIN or Face ID, no ads, no accounts and no data collection, and it works offline. The board on this page collects nothing either."}}, {"@type": "Question", "name": "What is the minimum number of flips?", "acceptedAnswer": {"@type": "Answer", "text": "Each of the eight bridges can point two ways. The game checks all 256 arrangements, keeps those that meet all five targets, and finds the smallest number of arrows that must change from the start. That minimum is par. You can solve the puzzle using more flips."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Free Daily Number Puzzle: Flip Bridges, Match Sums", "description": "A free daily number puzzle to play in your browser: flip bridges so every island hits its target sum. New board every day, solution behind a tap.", "url": "https://honest-little-apps.pages.dev/sumbriska/daily-number-puzzle/", "image": "https://honest-little-apps.pages.dev/sumbriska/daily-number-puzzle/og.png", "datePublished": "2026-11-03", "dateModified": "2026-11-03", "author": {"@type": "Organization", "name": "Honest Little Apps", "url": "https://honest-little-apps.pages.dev/"}, "publisher": {"@type": "Organization", "name": "Honest Little Apps", "url": "https://honest-little-apps.pages.dev/"}, "mainEntityOfPage": "https://honest-little-apps.pages.dev/sumbriska/daily-number-puzzle/"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Sumbriska daily number puzzle", "applicationCategory": "GameApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript", "url": "https://honest-little-apps.pages.dev/sumbriska/daily-number-puzzle/", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "Honest Little Apps"}}</script>
 
@@ -95,6 +95,7 @@ ul{padding-left:20px}li{margin:.3em 0}
 .bridge-guide video{width:100%;max-width:300px;height:auto;aspect-ratio:9/16;background:var(--bg);border-radius:10px;display:block}
 .bridge-guide-body p{margin:0 0 12px}
 @media(max-width:580px){.bridge-guide-body{grid-template-columns:minmax(0,1fr)}}
+.census-play{border:2px solid #173456;background:#ffd14a;color:#102542;border-radius:.4rem;padding:.7rem 1rem;font:inherit;font-weight:700;cursor:pointer}.census-play:focus-visible,.census-details summary:focus-visible{outline:3px solid #916500;outline-offset:3px}.census-details{margin:1rem 0}.census-details summary{cursor:pointer;padding:.6rem 0}.census-numbers{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,10rem),1fr));gap:.65rem}.census-numbers div{background:#eaf2fa;color:#183352;padding:.8rem}.census-numbers strong,.census-numbers span{display:block}.census-numbers strong{font-size:1.25rem}
 </style>
 </head>
 
@@ -111,12 +112,13 @@ ul{padding-left:20px}li{margin:.3em 0}
 <a class="badge" href="https://apps.apple.com/app/id6829238551?ct=games-daily-number-puzzle&mt=8" rel="noopener"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us?releaseDate=1751500800" alt="Download Number Puzzles: Sumbriska on the App Store" width="150" height="50"><span>Get Number Puzzles free · the full game on iPhone</span></a>
 
 <section class="puzzle" aria-labelledby="pz-h">
-<header><h2 id="pz-h">Today's board: <span id="pz-date">4 November 2026</span></h2><span class="meta">Par <b id="pz-par">4</b> · flips <b id="pz-moves">0</b></span></header>
+<header><h2 id="pz-h" tabindex="-1"><span id="pz-board-kind">Today’s board</span>: <span id="pz-date">loading</span></h2><span class="meta">Par <b id="pz-par">–</b> · flips <b id="pz-moves">0</b></span></header>
 <svg class="board" id="board" viewBox="0 0 400 400" role="application" aria-label="Number puzzle board. Tap a bridge to flip its direction."></svg>
 <div class="status" id="pz-status" aria-live="polite">Tap any bridge. Its number moves to the other island.</div>
 <div class="ctr"><button type="button" id="pz-undo">Undo</button><button type="button" id="pz-reset">Reset</button><button type="button" id="pz-sol" aria-controls="pz-soltext" aria-expanded="false">Show solution</button><button type="button" id="pz-yday">Yesterday's board</button></div>
 <div class="sol" id="pz-soltext"></div>
 <p class="rules"><strong>Rules.</strong> Every island shows its target (small) and its current sum (large). Every bridge carries a number and points at one island; that island counts it. Tap a bridge to point it the other way. Solve when every sum matches its target. The board is built from today's date, so everyone gets the same puzzle.</p>
+<p class="rules"><a href="#board-census">Can two solutions take different numbers of flips?</a> See a worked board and the results for 365 dates.</p>
 <p class="rules"><a href="two-island-bridge-practice.html">Practice two bridge flips on paper or on screen</a>. Predict both totals before revealing the answers.</p>
 <details class="bridge-guide" id="bridge-flip-guide"><summary>Watch a bridge flip in 20 seconds</summary>
 <div class="bridge-guide-body"><video controls playsinline preload="none" width="720" height="1280" poster="bridge-flip-poster.webp" aria-label="Sumbriska bridge-flip example with on-screen captions">
@@ -135,11 +137,24 @@ ul{padding-left:20px}li{margin:.3em 0}
 <p>It is the core rule of Sumbriska, the iPhone number puzzle we make: islands have target sums, bridges carry numbers, and flipping a bridge moves its number from one island to the other. There is no arithmetic beyond single-digit addition. The skill is seeing which island is short, which is over, and which bridge fixes both at once.</p>
 <ul>
 <li><strong>Daily:</strong> one board per calendar day, same for everyone, replayable.</li>
-<li><strong>Short:</strong> five islands and eight bridges. Par is the flip count for one known solution.</li>
+<li><strong>Short:</strong> five islands and eight bridges. Par is the fewest flips from the starting arrows to any valid solution.</li>
 <li><strong>Honest:</strong> the solution is one tap away and nothing is tracked.</li>
 </ul>
 </section>
 
+<section id="board-census" aria-labelledby="census-title">
+<h2 id="census-title">Can two solutions take different numbers of flips?</h2>
+<p>Yes. On the April 10 example, two flips solve the board. A second solution takes five. Both end with exactly the same total on every island.</p>
+<button class="census-play" type="button" id="pz-example">Load the April 10 board</button>
+<details class="census-details"><summary>See the two moves and the extra loop</summary>
+<p>Turn the 9 from island 1 toward island 2. Turn the 8 from island 5 toward island 4. The five totals now read 5, 13, 13, 12 and 4. No single move can fix all four islands that start off target.</p>
+<p>For a second solution, send a 4 from island 2 to 3, a 4 from 3 to 4, and a 4 from 4 back to 2. Each of those islands gives away exactly what it receives. That loop explains why two different arrow patterns can produce the same totals.</p></details>
+<h3>What happened across 365 date seeds</h3>
+<p>Honest Little Apps generated every board dated November 6, 2025 through November 5, 2026 with this web companion’s generator. For each date, all 256 arrangements were checked against all five targets. This describes the browser generator, including dates before this page existed. It measures no players, play times or native app boards.</p>
+<div class="census-numbers"><div><strong>360 boards</strong><span>One valid arrangement</span></div><div><strong>5 boards</strong><span>Two valid arrangements</span></div><div><strong>1 board</strong><span>A shorter solution than the generator’s original answer</span></div></div>
+<p>For the 360 boards with one solution, the generator’s stored answer gave the minimum. Of the other five, only April 10 had a shorter alternative. The par above now checks all possible answers before displaying the minimum.</p>
+<p><a href="bridge-board-census.csv" download>Download the 365 dated results (CSV)</a> · <a href="reproduce-bridge-census.mjs" download>Get the standalone checking script</a>. To reproduce the file locally, run <code>node reproduce-bridge-census.mjs</code>. It needs no packages, account or network connection.</p>
+</section>
 <section>
 <h2>The app, annotated</h2>
 <div class="tour"><div><figure class="shot"><img src="/assets/sumbriska/screen-1-390.webp" srcset="/assets/sumbriska/screen-1-390.webp 390w, /assets/sumbriska/screen-1-780.webp 780w" sizes="(max-width:600px) 90vw, 300px" width="390" height="844" alt="Sumbriska practice board with five islands showing targets 14, 12, 7, 16 and 29 and numbered bridges between them" loading="lazy"><svg viewBox="0 0 390 844" aria-hidden="true"><path d="M60 340 C 90 350, 120 360, 150 380" fill="none" stroke="#ffd14a" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="5 4"/><text x="30" y="330" class="marker">target above, sum inside</text></svg></figure><p class="tourcap">The app board: islands with a target and a running sum, bridges with a number. The two green islands already match.</p></div><div><figure class="shot"><img src="/assets/sumbriska/screen-3-390.webp" srcset="/assets/sumbriska/screen-3-390.webp 390w, /assets/sumbriska/screen-3-780.webp 780w" sizes="(max-width:600px) 90vw, 300px" width="390" height="844" alt="Sumbriska Two Tides board: one bridge layout shown twice, once for high tide and once for low tide" loading="lazy"><svg viewBox="0 0 390 844" aria-hidden="true"><path d="M60 420 C 120 400, 200 400, 260 430" fill="none" stroke="#ffd14a" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="5 4"/><text x="40" y="405" class="marker">same layout, two tides</text></svg></figure><p class="tourcap">Two Tides: one bridge arrangement has to satisfy two schedules at once. One puzzle, two answers that must agree.</p></div><div><figure class="shot"><img src="/assets/sumbriska/screen-2-390.webp" srcset="/assets/sumbriska/screen-2-390.webp 390w, /assets/sumbriska/screen-2-780.webp 780w" sizes="(max-width:600px) 90vw, 300px" width="390" height="844" alt="Sumbriska island screen for Orchard Isles showing 8 of 20 boards done, a resume button, Tide Orders and a building in progress" loading="lazy"><svg viewBox="0 0 390 844" aria-hidden="true"><path d="M250 620 C 290 600, 320 590, 340 560" fill="none" stroke="#ffd14a" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="5 4"/><text x="170" y="650" class="marker">built by solving</text></svg></figure><p class="tourcap">Every solved board builds your harbor. Orchard Isles is region 2, included free.</p></div></div>
@@ -159,19 +174,19 @@ ul{padding-left:20px}li{margin:.3em 0}
 <div class="cards steps">
 <div class="card"><h3>Find the island that is furthest off</h3><p>Compare each island's sum with its target. The biggest gap usually names the bridge to flip first.</p></div>
 <div class="card"><h3>Flip the bridge that helps both ends</h3><p>A flip subtracts from one island and adds to the other. The best flips fix an island that is over and one that is under in a single tap.</p></div>
-<div class="card"><h3>Check the remainder, then the tide</h3><p>When one island is left wrong, trace its bridges; the last flip is usually forced. In the app, Two Tides boards make you check the same layout against a second schedule.</p></div>
+<div class="card"><h3>Check the remainder, then the tide</h3><p>The grand total always stays the same. If one island has too much, at least one other island has too little. Trace the bridges between them. In the app, Two Tides boards make you check the same layout against a second schedule.</p></div>
 </div>
 </section>
 
 <section>
 <h2>How it compares with puzzles you already know</h2>
 <div class="puzzle-comparison" tabindex="0" role="region" aria-label="Puzzle comparison table"><table>
-<thead><tr><th>Puzzle</th><th>What a move is</th><th>What you are tracking</th><th>Typical daily time</th></tr></thead>
+<thead><tr><th>Puzzle</th><th>What a move is</th><th>What you are tracking</th></tr></thead>
 <tbody>
-<tr><td>Sumbriska daily board</td><td>Flip one bridge's direction</td><td>Each island's sum against its target</td><td>2 to 4 minutes</td></tr>
-<tr><td>Sudoku</td><td>Write one digit in a cell</td><td>Row, column and box constraints</td><td>5 to 20 minutes</td></tr>
-<tr><td>Hashi (bridges)</td><td>Draw or remove a bridge</td><td>Bridge counts per island, one connected map</td><td>3 to 10 minutes</td></tr>
-<tr><td>Word-of-the-day games</td><td>Guess a word</td><td>Letter feedback across six tries</td><td>1 to 5 minutes</td></tr>
+<tr><td>Sumbriska daily board</td><td>Flip one bridge's direction</td><td>Each island's sum against its target</td></tr>
+<tr><td>Sudoku</td><td>Write one digit in a cell</td><td>Row, column and box constraints</td></tr>
+<tr><td>Hashi (bridges)</td><td>Draw or remove a bridge</td><td>Bridge counts per island, one connected map</td></tr>
+<tr><td>Word-of-the-day games</td><td>Guess a word</td><td>Letter feedback across six tries</td></tr>
 </tbody></table></div>
 <p>The honest difference: sums give you continuous feedback. You are never guessing blind; every flip tells you something.</p>
 </section>
@@ -183,7 +198,7 @@ ul{padding-left:20px}li{margin:.3em 0}
 
 <section>
 <h2>Questions people ask</h2>
-<details><summary>How does the daily number puzzle work?</summary><p>Each island shows a target. Each bridge carries a number and points at one island; that island counts the number in its sum. Tap a bridge to flip which island it points at. When every island&#x27;s sum equals its target, the board is solved. A new board appears every day, built from the date, so everyone gets the same puzzle.</p></details><details><summary>Is the puzzle on this page the same as the app?</summary><p>It uses the same core rule, flip bridges to match sums, with five islands and eight bridges. The iPhone app adds themed regions, Two Tides boards that must satisfy two schedules at once, timed Harbor Run, the endless Deep, a workshop for custom boards, and a harbor you build as you solve.</p></details><details><summary>Is Sumbriska free?</summary><p>Yes to download and play. Regions 1 and 2, the Daily board, The Deep and Harbor Run are included. An optional Voyage Pass subscription ($4.99 a month or $29.99 a year, no free trial) adds regions 3 to 6, side boards, Gale Run, the 3-4 ring workshop and cosmetics.</p></details><details><summary>Is it suitable for kids?</summary><p>The listing describes child profiles with no purchases and no links, an adult area behind PIN or Face ID, no ads, no accounts and no data collection, and it works offline. The board on this page collects nothing either.</p></details><details><summary>What is the minimum number of flips?</summary><p>The par shown above the board is the number of bridges pointing the wrong way at the start. Each bridge only has two states, so par is the fewest flips that can solve it. Extra flips are not penalised; they are just a sign you were exploring.</p></details>
+<details><summary>How does the daily number puzzle work?</summary><p>Each island shows a target. Each bridge carries a number and points at one island; that island counts the number in its sum. Tap a bridge to flip which island it points at. When every island&#x27;s sum equals its target, the board is solved. A new board appears every day, built from the date, so everyone gets the same puzzle.</p></details><details><summary>Is the puzzle on this page the same as the app?</summary><p>It uses the same core rule, flip bridges to match sums, with five islands and eight bridges. The iPhone app adds themed regions, Two Tides boards that must satisfy two schedules at once, timed Harbor Run, the endless Deep, a workshop for custom boards, and a harbor you build as you solve.</p></details><details><summary>Is Sumbriska free?</summary><p>Yes to download and play. Regions 1 and 2, the Daily board, The Deep and Harbor Run are included. An optional Voyage Pass subscription ($4.99 a month or $29.99 a year, no free trial) adds regions 3 to 6, side boards, Gale Run, the 3-4 ring workshop and cosmetics.</p></details><details><summary>Is it suitable for kids?</summary><p>The listing describes child profiles with no purchases and no links, an adult area behind PIN or Face ID, no ads, no accounts and no data collection, and it works offline. The board on this page collects nothing either.</p></details><details><summary>What is the minimum number of flips?</summary><p>Each of the eight bridges can point two ways. The game checks all 256 arrangements, keeps those that meet all five targets, and finds the smallest number of arrows that must change from the start. That minimum is par. You can solve the puzzle using more flips.</p></details>
 </section>
 
 <section class="cta">
@@ -226,25 +241,45 @@ ul{padding-left:20px}li{margin:.3em 0}
     start[0]=1-start[0];
     flips+=start[0]===sol[0]?-1:1;
   }
-  return {key:key,vals:vals,sol:sol,tgt:tgt,start:start,par:flips}; }
+  // One set of totals can have several solutions. Compare every orientation with the starting board.
+  var nearest=nearestSolution(vals,tgt,start,sol,flips);
+  return {key:key,vals:vals,sol:nearest.arrows,tgt:tgt,start:start,par:nearest.distance}; }
+ function nearestSolution(values,targets,start,witness,witnessDistance){
+  var bestArrows=witness;
+  var bestDistance=witnessDistance;
+  for(var mask=0;mask<(1<<E.length);mask++){
+    var totals=[0,0,0,0,0], arrows=[], distance=0;
+    E.forEach(function(edge,i){
+      var side=(mask>>i)&1;
+      arrows.push(side);
+      totals[edge[side]]+=values[i];
+      if(side!==start[i]) distance++;
+    });
+    if(distance<bestDistance && totals.every(function(value,i){return value===targets[i];})){
+      bestDistance=distance;
+      bestArrows=arrows;
+    }
+  }
+  return {arrows:bestArrows,distance:bestDistance};
+ }
  var board=document.getElementById('board'), st=document.getElementById('pz-status'), mv=document.getElementById('pz-moves'), parEl=document.getElementById('pz-par'), dateEl=document.getElementById('pz-date'), solBox=document.getElementById('pz-soltext');
- var G, dir, hist, moves, offset=0, showingSolution=false;
+ var G, dir, hist, moves, offset=0, example=false, showingSolution=false;
  var solutionButton=document.getElementById('pz-sol');
  function sums(directions){ var s=[0,0,0,0,0]; E.forEach(function(e,i){ s[e[directions[i]]]+=G.vals[i]; }); return s; }
  function render(){ while(board.firstChild) board.removeChild(board.firstChild); var directions=showingSolution?G.sol:dir; var s=sums(directions);
   E.forEach(function(e,i){ var a=P[e[0]],b=P[e[1]]; var g=document.createElementNS(NS,'g'); g.setAttribute('class','br'); g.setAttribute('tabindex',showingSolution?'-1':'0'); g.setAttribute('role','button'); g.setAttribute('aria-disabled',String(showingSolution)); var to=P[e[directions[i]]], from=P[e[1-directions[i]]];
-   g.setAttribute('aria-label','Bridge '+G.vals[i]+' pointing at island '+(e[directions[i]]+1)+(showingSolution?'. Solution preview.':'. Activate to flip.'));
+   g.setAttribute('aria-label','Bridge '+G.vals[i]+' between islands '+(e[0]+1)+' and '+(e[1]+1)+', pointing at island '+(e[directions[i]]+1)+(showingSolution?'. Solution preview.':'. Activate to flip.'));
    var hit=document.createElementNS(NS,'line'); hit.setAttribute('x1',a[0]);hit.setAttribute('y1',a[1]);hit.setAttribute('x2',b[0]);hit.setAttribute('y2',b[1]); hit.setAttribute('class','hit'); g.appendChild(hit);
    var l=document.createElementNS(NS,'line'); l.setAttribute('x1',a[0]);l.setAttribute('y1',a[1]);l.setAttribute('x2',b[0]);l.setAttribute('y2',b[1]); g.appendChild(l);
    var mx=(a[0]+b[0])/2, my=(a[1]+b[1])/2; var dx=to[0]-from[0], dy=to[1]-from[1], len=Math.hypot(dx,dy); dx/=len; dy/=len;
    var ax=mx+dx*22, ay=my+dy*22; var tri=document.createElementNS(NS,'polygon'); tri.setAttribute('class','arrow'); tri.setAttribute('points',(ax+dx*9)+','+(ay+dy*9)+' '+(ax-dy*7)+','+(ay+dx*7)+' '+(ax+dy*7)+','+(ay-dx*7)); g.appendChild(tri);
    var c=document.createElementNS(NS,'circle'); c.setAttribute('cx',mx);c.setAttribute('cy',my);c.setAttribute('r',14);c.setAttribute('class','pill'); g.appendChild(c);
    var t=document.createElementNS(NS,'text'); t.setAttribute('x',mx);t.setAttribute('y',my+5);t.setAttribute('class','val'); t.textContent=G.vals[i]; g.appendChild(t);
-   g.addEventListener('click',function(){flip(i);}); g.addEventListener('keydown',function(ev){ if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();flip(i);} });
+   g.addEventListener('click',function(){flip(i);}); g.addEventListener('keydown',function(ev){ if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();flip(i); if(!showingSolution) board.querySelectorAll('.br')[i].focus();} });
    board.appendChild(g); });
   P.forEach(function(p,i){ var g=document.createElementNS(NS,'g'); g.setAttribute('class','isl'+(s[i]===G.tgt[i]?' ok':'')); var c=document.createElementNS(NS,'circle'); c.setAttribute('cx',p[0]);c.setAttribute('cy',p[1]);c.setAttribute('r',30); g.appendChild(c);
    var t=document.createElementNS(NS,'text'); t.setAttribute('x',p[0]);t.setAttribute('y',p[1]+8); t.textContent=s[i]; g.appendChild(t);
-   var tg=document.createElementNS(NS,'text'); tg.setAttribute('x',p[0]);tg.setAttribute('y',p[1]-38);tg.setAttribute('class','tgt'); tg.textContent='target '+G.tgt[i]; g.appendChild(tg); board.appendChild(g); });
+   var tg=document.createElementNS(NS,'text'); tg.setAttribute('x',p[0]);tg.setAttribute('y',p[1]-38);tg.setAttribute('class','tgt'); tg.textContent='Island '+(i+1)+' · target '+G.tgt[i]; g.appendChild(tg); board.appendChild(g); });
   mv.textContent=moves; var done=s.every(function(v,i){return v===G.tgt[i];}); st.className='status'+(done&&!showingSolution?' win':'');
   if(showingSolution){ st.textContent='Solution preview. Your board and flip count are saved for this round.'; return; }
   st.textContent=done?('Solved in '+moves+(moves===1?' flip':' flips')+' (par '+G.par+'). All five island totals match.'):(moves?'Keep going: '+s.filter(function(v,i){return v!==G.tgt[i];}).length+' island(s) still off.':'Tap any bridge. Its number moves to the other island.'); }
@@ -258,11 +293,14 @@ ul{padding-left:20px}li{margin:.3em 0}
   solBox.className=show?'sol show':'sol';
   solBox.textContent=show?'Solution arrows: '+E.map(function(e,i){return G.vals[i]+' → island '+(e[G.sol[i]]+1);}).join(', ')+'. Return to your board to continue from your last move.':'';
  }
- function load(off){ offset=off; G=build(dayKey(off)); dir=G.start.slice(); hist=[]; moves=0; parEl.textContent=G.par; var d=new Date(G.key+'T00:00:00Z'); dateEl.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}); setPreview(false); render(); }
+ function load(off,workedExample){ offset=off; example=Boolean(workedExample); G=build(example?'2026-04-10':dayKey(off)); document.getElementById('pz-board-kind').textContent=example?'Worked example':(off?'Yesterday’s board':'Today’s board'); document.getElementById('pz-yday').textContent=example||off?'Today’s board':'Yesterday’s board'; dir=G.start.slice(); hist=[]; moves=0; parEl.textContent=G.par; var d=new Date(G.key+'T00:00:00Z'); dateEl.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}); setPreview(false); render(); }
  document.getElementById('pz-undo').addEventListener('click',function(){ var i=hist.pop(); if(i===undefined) return; dir[i]=1-dir[i]; moves=Math.max(0,moves-1); render(); });
- document.getElementById('pz-reset').addEventListener('click',function(){ load(offset); });
+ document.getElementById('pz-reset').addEventListener('click',function(){ load(offset,example); });
  solutionButton.addEventListener('click',function(){ setPreview(!showingSolution); render(); });
- document.getElementById('pz-yday').addEventListener('click',function(){ load(offset===0?-1:0); this.textContent=offset===0?'Yesterday\'s board':'Today\'s board'; });
+ document.getElementById('pz-yday').addEventListener('click',function(){ load(example||offset!==0?0:-1); });
+ document.getElementById('pz-example').addEventListener('click',function(){
+   load(0,true); document.getElementById('pz-h').focus();
+ });
  load(0);
 })();
 </script>
