@@ -2,3 +2,4 @@
 
 
 :root{--ink:#192344;--paper:#eef1fb}.art{background:#192344;color:#e6f4ff;border-radius:4px;box-shadow:8px 8px 0 #6ce7df}.app{background:#dce5f5}h1{font-family:system-ui;font-weight:850;letter-spacing:-.04em}.arrivals{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.gate{padding:20px;background:#f3dfe6;border-top:5px solid #953e59}.gate.open{background:#ddf3e9;border-color:#26735b}.rules{padding:10px;border-bottom:1px solid #b6bfd9}select{font-size:17px;padding:12px}[hidden]{display:none!important}@media(max-width:740px){.arrivals{grid-template-columns:1fr}}
+.challenge{margin-top:24px;padding:20px;border:2px solid #57669b;border-radius:8px;background:#eef4ff}.challenge h3{margin-top:0}.challenge textarea{margin-top:8px;min-height:7rem}.challenge .fine{margin-bottom:0}
