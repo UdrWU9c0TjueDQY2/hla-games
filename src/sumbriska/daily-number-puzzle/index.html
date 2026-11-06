@@ -105,12 +105,8 @@ ul{padding-left:20px}li{margin:.3em 0}
 <div class="wrap">
 <nav class="crumb" aria-label="Breadcrumb"><a href="/">Honest Little Apps</a> › <a href="/">Pocket Puzzle Arcade</a> › Daily number puzzle</nav>
 <span class="eyebrow">Free daily number puzzle · new board every day at midnight UTC</span>
-<h1>What to do when <span>the coffee's still brewing.</span></h1>
-<p class="lede">A free daily number puzzle: flip bridges until every island hits its target sum. Two to four minutes, no sign-up, solution behind a tap.</p>
-<div class="myths"><div class="myth"><button type="button" aria-pressed="false" aria-label="Assumption: You have to be good at maths. Tap to flip."><div class="face front"><small>Assumption 1</small><b>You have to be good at maths</b><small>tap to flip</small></div><div class="face back"><small>Actually</small><span>Every move is adding single digits. The thinking is about which bridge to flip, not arithmetic speed.</span><small></small></div></button></div><div class="myth"><button type="button" aria-pressed="false" aria-label="Assumption: A daily puzzle eats twenty minutes. Tap to flip."><div class="face front"><small>Assumption 2</small><b>A daily puzzle eats twenty minutes</b><small>tap to flip</small></div><div class="face back"><small>Actually</small><span>Today&#x27;s board has five islands and eight bridges. Most people clear it in two to four minutes.</span><small></small></div></button></div><div class="myth"><button type="button" aria-pressed="false" aria-label="Assumption: Puzzle apps are mostly ads. Tap to flip."><div class="face front"><small>Assumption 3</small><b>Puzzle apps are mostly ads</b><small>tap to flip</small></div><div class="face back"><small>Actually</small><span>Sumbriska has no ads and no account. Regions 1 and 2, the Daily board, The Deep and Harbor Run are free.</span><small></small></div></button></div><div class="myth"><button type="button" aria-pressed="false" aria-label="Assumption: Hints are cheating. Tap to flip."><div class="face front"><small>Assumption 4</small><b>Hints are cheating</b><small>tap to flip</small></div><div class="face back"><small>Actually</small><span>In the app, hints, undo and step explanations never cost XP. Learning the logic is the point.</span><small></small></div></button></div></div>
-<p class="hint">Four assumptions about number puzzles. Tap a card to flip it.</p>
-<a class="badge" href="https://apps.apple.com/app/id6829238551?ct=games-daily-number-puzzle&mt=8" rel="noopener"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us?releaseDate=1751500800" alt="Download Number Puzzles: Sumbriska on the App Store" width="150" height="50"><span>Get Number Puzzles free · the full game on iPhone</span></a>
-
+<h1>Flip bridges to <span>match the island sums.</span></h1>
+<p class="lede">Tap an arrow to move its number to the other island. Match all five targets in today’s free, untimed browser puzzle.</p>
 <section class="puzzle" aria-labelledby="pz-h">
 <header><h2 id="pz-h" tabindex="-1"><span id="pz-board-kind">Today’s board</span>: <span id="pz-date">loading</span></h2><span class="meta">Par <b id="pz-par">–</b> · flips <b id="pz-moves">0</b></span></header>
 <svg class="board" id="board" viewBox="0 0 400 400" role="application" aria-label="Number puzzle board. Tap a bridge to flip its direction."></svg>
@@ -222,7 +218,6 @@ ul{padding-left:20px}li{margin:.3em 0}
 <p class="hla-legal">Apple, the Apple logo and App Store are trademarks of Apple Inc.</p></footer>
 <script>
 (function(){
- document.querySelectorAll('.myth button').forEach(function(b){ b.addEventListener('click',function(){ var m=b.closest('.myth'); var on=!m.classList.contains('is-flipped'); m.classList.toggle('is-flipped',on); b.setAttribute('aria-pressed',on?'true':'false'); }); });
  // ---- daily puzzle ----
  var NS='http://www.w3.org/2000/svg';
  var P=[[200,60],[340,170],[290,330],[110,330],[60,170]]; // island positions
