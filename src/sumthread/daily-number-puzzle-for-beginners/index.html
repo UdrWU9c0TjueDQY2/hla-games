@@ -122,7 +122,7 @@ details{background:var(--card);border:1px solid var(--line);border-radius:12px;p
 <p>Sumthread on iPhone has a fresh 4×4 puzzle each day and saves your progress offline.</p>
 <a href="https://apps.apple.com/app/id6829816144?ct=games-daily-number-puzzle-for&amp;mt=8" rel="noopener">Get Sumthread on the App Store</a>
 </aside>
-<div class="sol" id="sol"><div class="under"><b>Solution:</b> <span id="soltext"></span></div><canvas role="button" aria-label="Reveal the solution by scratching or pressing Enter"></canvas></div>
+<div class="sol" id="sol"><div class="under" aria-hidden="true"><b>Solution:</b> <span id="soltext"></span></div><canvas role="button" aria-label="Reveal the solution by scratching or pressing Enter"></canvas></div>
 <p>Each local calendar date has its own web board. Choose a weekday below to play one of the seven original practice boards. Both modes are separate from the iPhone daily.</p>
 <div class="act"><label for="board-mode">Choose a board <select id="board-mode"><option value="today">Today’s daily</option></select></label><button type="button" id="open-board">Open board</button></div>
 <div class="act"><button type="button" id="print-current-board">Print this board without the answer</button></div>
@@ -338,7 +338,7 @@ function restorePath() {
  function size(){ var r=c.getBoundingClientRect(); w=c.width=Math.max(1,Math.round(r.width*2)); h=c.height=Math.max(1,Math.round(r.height*2)); ctx=c.getContext('2d'); var g=ctx.createLinearGradient(0,0,w,0); g.addColorStop(0,'#d8cfbf'); g.addColorStop(.5,'#ece5d8'); g.addColorStop(1,'#d8cfbf'); ctx.fillStyle=g; ctx.fillRect(0,0,w,h); ctx.fillStyle='#6b6257'; var fontSize=Math.round(Math.min(h*.32,w*.052)); ctx.font='bold '+fontSize+'px "IBM Plex Sans", sans-serif'; ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('Scratch to reveal the solution', w/2, h/2, w*.9); ctx.globalCompositeOperation='destination-out'; }
  size(); window.addEventListener('resize',function(){ if(!dn) size(); });
  function scratch(e){ var r=c.getBoundingClientRect(); var x=(e.clientX-r.left)/r.width*w, y=(e.clientY-r.top)/r.height*h; ctx.beginPath(); ctx.arc(x,y,h*.35,0,Math.PI*2); ctx.fill(); }
- function check(){ if(dn) return; var img=ctx.getImageData(0,0,w,h).data, n=0, t=0; for(var k=3;k<img.length;k+=4*16){ t++; if(img[k]===0) n++; } if(n/t>0.5){ dn=true; sol.classList.add('done'); } }
+ function check(){ if(dn) return; var img=ctx.getImageData(0,0,w,h).data, n=0, t=0; for(var k=3;k<img.length;k+=4*16){ t++; if(img[k]===0) n++; } if(n/t>0.5){ dn=true; sol.classList.add('done'); sol.querySelector('.under').removeAttribute('aria-hidden'); } }
  c.addEventListener('pointerdown',function(e){ down=true; c.setPointerCapture(e.pointerId); scratch(e); e.preventDefault(); }); c.addEventListener('pointermove',function(e){ if(down) scratch(e); }); c.addEventListener('pointerup',function(){ down=false; check(); }); c.addEventListener('pointercancel',function(){ down=false; check(); });
  c.tabIndex=0; c.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); ctx.fillRect(0,0,w,h); check(); } });
 })();
