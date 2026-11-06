@@ -46,6 +46,7 @@ details{background:var(--card);border:1px solid var(--line);border-radius:12px;p
 .board-next p{margin:5px 0 8px}
 .board-next a{display:inline-flex;align-items:center;min-height:44px;color:var(--teal2);font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .board-next a:focus-visible{outline:3px solid var(--teal2);outline-offset:3px}
+.result-share{margin:14px 0 18px;padding:16px;background:var(--paper);border:1px solid var(--line);border-radius:4px}.result-share[hidden]{display:none}.result-share h3{margin:0 0 8px}.result-share label{display:block;font-size:14px;font-weight:700;margin:12px 0 6px}.result-share textarea{display:block;box-sizing:border-box;width:100%;min-width:0;resize:vertical;border:1px solid var(--mute);border-radius:4px;padding:10px;font:14px/1.55 ui-monospace,monospace;color:var(--ink);background:#fff}.result-share textarea:focus-visible,.result-share button:focus-visible{outline:3px solid var(--teal2);outline-offset:3px}.result-share p{font-size:14px;line-height:1.6}.result-share [role="status"]{min-height:1.5em}
 .pz{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;margin:14px 0;box-shadow:0 10px 30px rgba(43,38,32,.08)}
 .pz header{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}.pz h3{margin:0;font-weight:600;font-size:20px}
 .tg{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.tg span{border:2px solid var(--line);border-radius:999px;padding:4px 12px;font-weight:600;font-variant-numeric:tabular-nums}.tg span.on{border-color:var(--amber);background:#fff3e2}.tg span.done{border-color:var(--teal);background:#e3f3f3;color:var(--teal2)}
@@ -124,6 +125,14 @@ details{background:var(--card);border:1px solid var(--line);border-radius:12px;p
 <p>Sumthread on iPhone has a fresh 4×4 puzzle each day and saves your progress offline.</p>
 <a href="https://apps.apple.com/app/id6829816144?ct=games-daily-number-puzzle-for&amp;mt=8" rel="noopener">Get Sumthread on the App Store</a>
 </aside>
+<section class="result-share" id="result-share" aria-labelledby="result-share-title" hidden>
+<h3 id="result-share-title">Board complete. Pass on the challenge.</h3>
+<p>This optional result leaves out the tile values, target values and solution. Copy or select the text to share it yourself. Nothing is posted or sent for you.</p>
+<label for="result-share-text">Spoiler-free browser result — select all to copy manually</label>
+<textarea id="result-share-text" readonly rows="6"></textarea>
+<div class="act"><button type="button" id="result-copy" disabled>Copy completed result</button></div>
+<p id="result-copy-status" role="status"></p>
+</section>
 <div class="sol" id="sol"><div class="under" aria-hidden="true"><b>Solution:</b> <span id="soltext"></span></div><canvas role="button" aria-label="Reveal the solution by scratching or pressing Enter"></canvas></div>
 <p>Each local calendar date has its own web board. Choose a weekday below to play one of the seven original practice boards. Both modes are separate from the iPhone daily.</p>
 <div class="act"><label for="board-mode">Choose a board <select id="board-mode"><option value="today">Today’s daily</option></select></label><button type="button" id="open-board">Open board</button></div>
@@ -259,6 +268,7 @@ const selector = document.getElementById('board-mode');
 weekdayNames.forEach(name => selector.add(new Option(name + ' practice', name.toLowerCase())));
 selector.value = weekday >= 0 ? weekdayNames[weekday].toLowerCase() : 'today';
 document.getElementById('open-board').addEventListener('click', () => {
+  resultModePending = true; syncResultShare();
   location.assign(boardUrl(null, selector.value === 'today' ? null : selector.value));
 });
 const playLink = document.querySelector('.play-link');
@@ -282,6 +292,47 @@ for (const value of pz.grid.flat()) {
 document.getElementById('print-current-board').addEventListener('click', () => window.print());
  var grid=document.getElementById('grid'), tg=document.getElementById('tg'), thread=document.getElementById('thread'), msg=document.getElementById('msg');
  var vals=[].concat.apply([],pz.grid), path=[], cps=[], seg=0, done=false;
+// Completion text comes only from validated current play state; it never includes a route.
+const resultShare = document.getElementById('result-share');
+const resultText = document.getElementById('result-share-text');
+const resultCopy = document.getElementById('result-copy');
+const resultStatus = document.getElementById('result-copy-status');
+const activeMode = weekday >= 0 ? weekdayNames[weekday].toLowerCase() : 'today';
+let resultModePending = false, resultCopyVersion = 0;
+function syncResultShare() {
+  resultCopyVersion++;
+  resultStatus.textContent = '';
+  const complete = done && !resultModePending;
+  resultShare.hidden = !complete;
+  resultCopy.disabled = !complete;
+  if (!complete) { resultText.value = ''; return; }
+  const mode = weekday >= 0 ? 'Practice board · ' + weekdayNames[weekday] : 'Daily board · ' + chosenDate;
+  resultText.value = ['Sumthread — free browser companion', mode,
+    'Completed: ' + path.length + '/9 tiles · ' + cps.length + '/' + pz.targets.length + ' targets',
+    'Try this board:', document.getElementById('board-link').href,
+    'A separate browser puzzle by Honest Little Apps.'].join('\n');
+}
+selector.addEventListener('change', () => {
+  resultModePending = selector.value !== activeMode;
+  syncResultShare();
+});
+resultCopy.addEventListener('click', async () => {
+  if (resultShare.hidden || resultCopy.disabled || !resultText.value) return;
+  const snapshot = resultText.value, version = ++resultCopyVersion;
+  resultCopy.disabled = true;
+  resultStatus.textContent = '';
+  try {
+    await navigator.clipboard.writeText(snapshot);
+    if (version === resultCopyVersion && !resultShare.hidden && resultText.value === snapshot)
+      resultStatus.textContent = 'Completed result copied. Nothing has been posted or sent.';
+  } catch {
+    if (version === resultCopyVersion && !resultShare.hidden && resultText.value === snapshot)
+      resultStatus.textContent = 'Copy is unavailable. Select all of the result text above to copy it manually.';
+  } finally {
+    if (version === resultCopyVersion && !resultShare.hidden && resultText.value === snapshot)
+      resultCopy.disabled = false;
+  }
+});
 // Only board IDs and tile indices are stored. Blocked or full storage leaves play available.
 const progressKey = 'hla-sumthread-beginner-paths-v1';
 function historyEntries() {
@@ -325,6 +376,7 @@ function restorePath() {
  }
  function render(){
   document.getElementById('board-next').hidden = !done;
+  syncResultShare();
   var focusedTile=grid.contains(document.activeElement) ? document.activeElement.dataset.i : undefined; savePath(); var t=0; var segStart=cps.length?cps[cps.length-1]+1:0; var cur=0; for(var i=segStart;i<path.length;i++) cur+=vals[path[i]]; var ti=cps.length; var need=pz.targets[ti];
   grid.innerHTML=vals.map(function(v,i){ var k=path.indexOf(i); var cls=[]; if(k>-1) cls.push('on'); if(k>=0 && k===path.length-1 && !done) cls.push('head'); if(cps.indexOf(k)>-1) cls.push('cp'); var reach = path.length && k===-1 && adj(path[path.length-1],i) && !done; if(reach) cls.push('reach'); var exact = reach && need!==undefined && cur+v===need; return '<button type="button" aria-label="'+tileLabel(i)+'" data-i="'+i+'" class="'+cls.join(' ')+'"'+(exact?' style="border-color:var(--amber);background:#fff3e2"':'')+'>'+(k>-1?'<small>'+(k+1)+'</small>':'')+v+'</button>'; }).join('');
   tg.innerHTML=pz.targets.map(function(x,i){ return '<span class="'+(i<cps.length?'done':(i===cps.length&&!done?'on':''))+'">'+x+'</span>'; }).join('');
@@ -347,4 +399,5 @@ function restorePath() {
 </script>
 </body>
 </html>
+
 
