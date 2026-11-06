@@ -95,5 +95,20 @@
     round = 0;
     showRound(true);
   });
+  const copyButton = byId('copy-embed');
+  if (copyButton) {
+    copyButton.addEventListener('click', async () => {
+      const field = byId('embed-code');
+      const status = byId('copy-embed-status');
+      try {
+        await navigator.clipboard.writeText(field.value);
+        status.textContent = 'Embed code copied.';
+      } catch {
+        field.focus();
+        field.select();
+        status.textContent = 'The code is selected. Copy it with your browser or keyboard.';
+      }
+    });
+  }
   showRound();
 })();
