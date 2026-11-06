@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.000
+Can A1 finish at B1? Cover all nine squares once, moving up, down, left or right.
+
+00:00:04.000 --> 00:00:08.000
+Five cream squares and four blue. Every move changes color. After eight moves, finish on cream.
+
+00:00:08.000 --> 00:00:12.000
+Try A1 to C3. Both endpoints are cream. Find a route that visits every square once.
+
+00:00:12.000 --> 00:00:16.040
+Follow A1, B1, C1, C2, B2, A2, A3, B3, C3. The route finishes without a repeat.
