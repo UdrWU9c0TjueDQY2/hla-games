@@ -1,1 +1,15 @@
-{"title":"Number Puzzle Strategy: Does Route Order Matter?","description":"Six visual route-order challenges with full traces, stopping rules and carry explanations.","appSlug":"number-beasts","strategy":"interactive-practice","query":"number puzzle strategy route order carry planning","tags":["number-puzzles","strategy","number-bonds"],"published":"2026-11-04","updated":"2026-11-04","draft":false}
+{
+  "title": "Number Puzzle Strategy: Does Route Order Matter?",
+  "description": "Try six route-order puzzles with step-by-step explanations, or download the two-page puzzle pack with writing spaces and a separate answer key.",
+  "appSlug": "number-beasts",
+  "strategy": "interactive-practice",
+  "query": "number puzzle strategy route order carry planning",
+  "tags": [
+    "number-puzzles",
+    "strategy",
+    "number-bonds"
+  ],
+  "published": "2026-11-04",
+  "updated": "2026-11-05",
+  "draft": false
+}
