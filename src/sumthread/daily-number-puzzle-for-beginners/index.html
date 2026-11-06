@@ -113,7 +113,7 @@ details{background:var(--card);border:1px solid var(--line);border-radius:12px;p
 <header><h3 id="pzt">Today’s board</h3><span style="font-size:14px;color:var(--mute)">3×3 · choose one tile at a time · no clock</span></header>
 <p>Start on any tile. When your sum hits a target, start counting the next one from zero. Finish the last target on the last tile.</p>
 <div class="tg" id="tg"></div>
-<div class="gridwrap"><svg class="thread" id="thread" viewBox="0 0 300 300" preserveAspectRatio="none" aria-hidden="true"></svg><div class="grid" id="grid" aria-label="Puzzle grid"></div></div>
+<div class="gridwrap"><svg class="thread" id="thread" viewBox="0 0 300 300" preserveAspectRatio="none" aria-hidden="true"></svg><div class="grid" id="grid" role="group" aria-label="Number path puzzle: three rows and three columns"></div></div>
 <div class="st"><span>Current segment: <b id="cur">0</b> / <b id="need">—</b></span><span>Tiles used: <b id="used">0</b> / 9</span></div>
 <div class="act"><button type="button" id="undo">Undo</button><button type="button" id="reset">Reset</button></div>
 <p class="msg" role="status" id="msg">Tap any tile to start.</p>
@@ -312,10 +312,19 @@ function restorePath() {
   msg.textContent = done ? 'Solved. This board is complete.' : 'Your path is restored on this browser.';
 }
  function adj(a,b){ var ra=Math.floor(a/3),ca=a%3,rb=Math.floor(b/3),cb=b%3; return Math.abs(ra-rb)+Math.abs(ca-cb)===1; }
+ function tileLabel(i){
+  var step=path.indexOf(i);
+  var label='Row '+(Math.floor(i/3)+1)+', column '+(i%3+1)+': '+vals[i]+'.';
+  if(step<0) return label+' Not in the path.';
+  label+=' Path step '+(step+1)+'.';
+  if(cps.indexOf(step)>-1) label+=' Target checkpoint.';
+  if(step===path.length-1) label+=done?' Final tile.':' Current path end.';
+  return label;
+ }
  function render(){
   document.getElementById('board-next').hidden = !done;
   var focusedTile=grid.contains(document.activeElement) ? document.activeElement.dataset.i : undefined; savePath(); var t=0; var segStart=cps.length?cps[cps.length-1]+1:0; var cur=0; for(var i=segStart;i<path.length;i++) cur+=vals[path[i]]; var ti=cps.length; var need=pz.targets[ti];
-  grid.innerHTML=vals.map(function(v,i){ var k=path.indexOf(i); var cls=[]; if(k>-1) cls.push('on'); if(k>=0 && k===path.length-1 && !done) cls.push('head'); if(cps.indexOf(k)>-1) cls.push('cp'); var reach = path.length && k===-1 && adj(path[path.length-1],i) && !done; if(reach) cls.push('reach'); var exact = reach && need!==undefined && cur+v===need; return '<button type="button" data-i="'+i+'" class="'+cls.join(' ')+'"'+(exact?' style="border-color:var(--amber);background:#fff3e2"':'')+'>'+(k>-1?'<small>'+(k+1)+'</small>':'')+v+'</button>'; }).join('');
+  grid.innerHTML=vals.map(function(v,i){ var k=path.indexOf(i); var cls=[]; if(k>-1) cls.push('on'); if(k>=0 && k===path.length-1 && !done) cls.push('head'); if(cps.indexOf(k)>-1) cls.push('cp'); var reach = path.length && k===-1 && adj(path[path.length-1],i) && !done; if(reach) cls.push('reach'); var exact = reach && need!==undefined && cur+v===need; return '<button type="button" aria-label="'+tileLabel(i)+'" data-i="'+i+'" class="'+cls.join(' ')+'"'+(exact?' style="border-color:var(--amber);background:#fff3e2"':'')+'>'+(k>-1?'<small>'+(k+1)+'</small>':'')+v+'</button>'; }).join('');
   tg.innerHTML=pz.targets.map(function(x,i){ return '<span class="'+(i<cps.length?'done':(i===cps.length&&!done?'on':''))+'">'+x+'</span>'; }).join('');
   document.getElementById('cur').textContent=cur; document.getElementById('need').textContent=need===undefined?'—':need; document.getElementById('used').textContent=path.length;
   var pts=path.map(function(i){ var r=Math.floor(i/3),c=i%3; return (c*100+50)+','+(r*100+50); }); if(focusedTile!==undefined) grid.children[Number(focusedTile)].focus({preventScroll:true}); thread.innerHTML = path.length>1 ? '<polyline points="'+pts.join(' ')+'" fill="none" stroke="#1f8a8a" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>' : ''; }
