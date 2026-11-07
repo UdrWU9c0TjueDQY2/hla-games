@@ -1,0 +1,14 @@
+{
+  "title": "Position and Motion Quiz",
+  "description": "27 independent movement-rule questions with selectable answers. All grid, lane and timing rules are stated within each challenge.",
+  "appSlug": "fluxo",
+  "strategy": "worked-scenario-quiz",
+  "query": "position logic quiz",
+  "tags": [
+    "worked examples",
+    "mini challenges",
+    "fluxo"
+  ],
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+}

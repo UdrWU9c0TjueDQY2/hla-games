@@ -1,0 +1,14 @@
+{
+  "title": "Grove Decisions and Clues",
+  "description": "27 fictional creature questions combining deduction, planning and story constraints. Nine families contain three distinct cases.",
+  "appSlug": "puffgrove",
+  "strategy": "worked-scenario-quiz",
+  "query": "cozy creature quiz",
+  "tags": [
+    "worked examples",
+    "mini challenges",
+    "puffgrove"
+  ],
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+}

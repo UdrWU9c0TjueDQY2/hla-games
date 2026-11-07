@@ -1,0 +1,14 @@
+{
+  "title": "28 Number-Path Mini-Challenges with Worked Answers",
+  "description": "Audit a route, recover a missing sum, choose matching checkpoints and spot an illegal move in 28 original number-path challenges.",
+  "appSlug": "sumthread",
+  "strategy": "worked-scenario-quiz",
+  "query": "number path puzzle questions",
+  "tags": [
+    "worked examples",
+    "mini challenges",
+    "sumthread"
+  ],
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+}
