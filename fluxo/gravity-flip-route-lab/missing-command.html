@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><title>The missing flip | Fluxo browser challenge</title><style>*{box-sizing:border-box}body{margin:0;background:#eaf3fa;color:#16263a;font:17px/1.55 system-ui,sans-serif}main{max-width:48rem;margin:auto;padding:1.4rem clamp(1rem,5vw,3rem) 3rem}a{color:#244f68}h1{font:700 clamp(2.7rem,8vw,4.4rem)/1 Georgia,serif;margin:2rem 0 .6rem}.board{background:#182f47;color:white;padding:clamp(1rem,4vw,2rem);border-radius:1rem;margin:1.5rem 0}.board h2{margin:.25rem 0 1rem}.facts{display:grid;gap:.5rem}.facts p{background:#30495d;padding:.8rem;border-radius:.4rem;margin:0}.buttons{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}button,.store{font:inherit;font-weight:650;min-height:44px;border:none;padding:.6rem 1rem;border-radius:.4rem;background:#9ee8ff;color:#13283c;cursor:pointer}button:disabled{opacity:.72}button:focus-visible,a:focus-visible{outline:3px solid #ec7839;outline-offset:3px}.store{display:inline-block;background:#244f68;color:white;text-decoration:none}footer p{max-width:39rem}[hidden]{display:none!important}</style></head><body><main><a href="./">← Back to the gravity route lab</a><h1>The missing flip</h1><p>Recover a missing command from an orb’s starting lane and recorded finish. Hold keeps its lane. Flip switches between floor and ceiling. Each round hides one command.</p><section class="board"><span id="round"></span><h2 id="prompt" tabindex="-1"></h2><div class="facts" id="facts"></div><div id="options" class="buttons"></div><p id="feedback" role="status"></p><button id="next" hidden>Next round</button></section><footer><h2>Continue on iPhone</h2><p>This is an original six-round browser puzzle from Honest Little Apps. The replay uses a two-lane model for this exercise.</p><a class="store" href="https://apps.apple.com/us/app/fluxo-gravity-runner/id6787641780">Explore Fluxo on the App Store</a></footer><noscript>Enable JavaScript to play.</noscript></main><script>
+const rounds=[
+[0,[1,0,1,1],0],[1,[0,1,1,0],1],[0,[0,1,0,1],2],[1,[1,1,0,0],3],[0,[1,0,0,1],1],[1,[0,1,0,1],2]];
+function puzzle(i){
+const [start,cmd,blank]=rounds[i];const lane=['floor','ceiling'];let end=start;
+const tape=cmd.map((v,j)=>j===blank?'?':v?'Flip':'Hold');
+for(const bit of cmd)end^=bit;
+let cursor=start;const path=cmd.map(bit=>lane[cursor^=bit]);
+return {prompt:'Which command is missing?',facts:['Start on the '+lane[start]+'. End on the '+lane[end]+'.','Commands: '+tape.join(' → ')],choices:['Hold','Flip'],answer:cmd[blank],why:'The missing command is '+(cmd[blank]?'Flip':'Hold')+'. After each command the orb reaches: '+path.join(' → ')+'.'};
+}
+const el=id=>document.getElementById(id);let n=0,score=0,answered=false;
+function render(){
+ answered=false;el('round').textContent='Round '+(n+1)+' of '+rounds.length;
+ const q=puzzle(n);el('prompt').textContent=q.prompt;el('facts').replaceChildren();el('options').replaceChildren();
+ for(const fact of q.facts){const p=document.createElement('p');p.textContent=fact;el('facts').append(p);}
+ el('feedback').textContent='';el('next').hidden=true;
+ q.choices.forEach((label,j)=>{const b=document.createElement('button');b.textContent=label;b.onclick=()=>{
+ if(answered)return;answered=true;const correct=j===q.answer;if(correct)score++;el('feedback').textContent=(correct?'Correct. ':'Answer: '+q.choices[q.answer]+'. ')+q.why;
+ for(const option of el('options').children)option.disabled=true;el('next').hidden=false;el('next').textContent=n+1===rounds.length?'See result':'Next round';el('next').focus();
+ };el('options').append(b);});}
+el('next').onclick=()=>{if(n===rounds.length){n=0;score=0;render();}else if(++n<rounds.length){render();}else{el('round').textContent='Complete';el('prompt').textContent=score+' correct out of '+rounds.length;el('feedback').textContent='';el('facts').replaceChildren();el('options').replaceChildren();el('next').textContent='Play again';}el('prompt').focus();};render();
+</script></body></html>

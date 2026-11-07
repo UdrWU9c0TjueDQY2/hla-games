@@ -1,0 +1,832 @@
+[
+ {
+  "title": "A small puzzle break | Honest Little Apps",
+  "description": "Eight pencil-and-paper game activities. Original exercises with copy and print controls.",
+  "appSlug": "portfolio",
+  "strategy": "independent-activity-collection",
+  "query": "a small puzzle break",
+  "tags": [
+   "original activity",
+   "printable",
+   "games"
+  ],
+  "path": "/activities/practical-try-it-cards/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/activities/practical-try-it-cards/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Pocket Puzzle Arcade: Mini-Challenges with Worked Answers",
+  "description": "Choose a free challenge collection, compare answer choices and read the worked explanation. Original companion activities from Honest Little Apps.",
+  "appSlug": "resources",
+  "strategy": "challenge-collection-index",
+  "query": "pocket puzzle arcade practice questions",
+  "tags": [
+   "mini challenges"
+  ],
+  "path": "/activities/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/activities/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Idle Workshop Decisions",
+  "description": "27 original fictional economy questions with selectable answers and worked solutions. Nine families contain three cases each.",
+  "appSlug": "cash-empire-clicker",
+  "strategy": "worked-scenario-quiz",
+  "query": "idle upgrade decisions",
+  "tags": [
+   "worked examples",
+   "mini challenges",
+   "cash-empire-clicker"
+  ],
+  "path": "/cash-empire-clicker/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/cash-empire-clicker/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Position and Motion Quiz",
+  "description": "27 independent movement-rule questions with selectable answers. All grid, lane and timing rules are stated within each challenge.",
+  "appSlug": "fluxo",
+  "strategy": "worked-scenario-quiz",
+  "query": "position logic quiz",
+  "tags": [
+   "worked examples",
+   "mini challenges",
+   "fluxo"
+  ],
+  "path": "/fluxo/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/fluxo/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Number Bond Choices",
+  "description": "27 original arithmetic choice questions with complete working. Nine families contain three cases each for varied practice.",
+  "appSlug": "number-beasts",
+  "strategy": "worked-scenario-quiz",
+  "query": "number bond multiple choice",
+  "tags": [
+   "worked examples",
+   "mini challenges",
+   "number-beasts"
+  ],
+  "path": "/number-beasts/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/number-beasts/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "27 Fictional Archive Reasoning Challenges",
+  "description": "Solve original chronology, ledger, cipher, source, and map cases with explained answers and explicit assumptions.",
+  "appSlug": "pastrush",
+  "strategy": "worked-scenario-quiz",
+  "query": "archive reasoning puzzles",
+  "tags": [
+   "worked examples",
+   "mini challenges",
+   "pastrush"
+  ],
+  "path": "/pastrush/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/pastrush/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Grove Decisions and Clues",
+  "description": "27 fictional creature questions combining deduction, planning and story constraints. Nine families contain three distinct cases.",
+  "appSlug": "puffgrove",
+  "strategy": "worked-scenario-quiz",
+  "query": "cozy creature quiz",
+  "tags": [
+   "worked examples",
+   "mini challenges",
+   "puffgrove"
+  ],
+  "path": "/puffgrove/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/puffgrove/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Route Choice Workshop",
+  "description": "27 independent route and resource puzzles with selectable answers. Fictional rules are fully stated; no native mechanics are assumed.",
+  "appSlug": "rushorb",
+  "strategy": "worked-scenario-quiz",
+  "query": "route choice puzzles",
+  "tags": [
+   "worked examples",
+   "mini challenges",
+   "rushorb"
+  ],
+  "path": "/rushorb/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/rushorb/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Island Transfer Decisions",
+  "description": "27 original island-number questions with worked solutions. Transfers, costs and target conditions are explicit independent web rules.",
+  "appSlug": "sumbriska",
+  "strategy": "worked-scenario-quiz",
+  "query": "number transfer quiz",
+  "tags": [
+   "worked examples",
+   "mini challenges",
+   "sumbriska"
+  ],
+  "path": "/sumbriska/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/sumbriska/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "28 Number-Path Mini-Challenges with Worked Answers",
+  "description": "Audit a route, recover a missing sum, choose matching checkpoints and spot an illegal move in 28 original number-path challenges.",
+  "appSlug": "sumthread",
+  "strategy": "worked-scenario-quiz",
+  "query": "number path puzzle questions",
+  "tags": [
+   "worked examples",
+   "mini challenges",
+   "sumthread"
+  ],
+  "path": "/sumthread/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/sumthread/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Mint Bottleneck Puzzle: Three Factory Shifts",
+  "description": "Allocate scarce upgrade tokens across three machines. Find the limiting station, compare output and solve three fictional production-line challenges.",
+  "appSlug": "cash-empire-clicker",
+  "strategy": "interactive-exercise",
+  "query": "production line bottleneck puzzle",
+  "tags": [
+   "mint arcade",
+   "puzzle",
+   "practice"
+  ],
+  "path": "/cash-empire-clicker/mint-bottleneck-shift/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/cash-empire-clicker/mint-bottleneck-shift/",
+  "published": "2026-11-05",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Gravity Flip Parity Puzzle: Odd or Even? | Fluxo",
+  "description": "Count odd and even gravity flips, predict the final ceiling or floor, and check eight original routes with explanations.",
+  "appSlug": "fluxo",
+  "strategy": "interactive-game",
+  "query": "gravity flip puzzle",
+  "tags": [
+   "gravity",
+   "parity",
+   "odd even",
+   "logic game"
+  ],
+  "path": "/fluxo/flip-parity-puzzle/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/fluxo/flip-parity-puzzle/",
+  "published": "2026-11-05",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Gravity Runner Flipbook: Printable 12-Frame Animation",
+  "description": "Print a one-sheet runner animation, stack twelve numbered cards and watch the floor-to-ceiling flip. Use the frame scrubber before cutting.",
+  "appSlug": "fluxo",
+  "strategy": "interactive-exercise",
+  "query": "printable runner animation flipbook",
+  "tags": [
+   "paper arcade",
+   "puzzle",
+   "practice"
+  ],
+  "path": "/fluxo/gravity-flipbook/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/fluxo/gravity-flipbook/",
+  "published": "2026-11-05",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Apollo 11 Moonwalk Timeline Puzzle",
+  "description": "Order five moonwalk records using mission time and UTC. This free browser exercise includes a clock conversion, elapsed-time question and NASA source key.",
+  "appSlug": "pastrush",
+  "strategy": "interactive-exercise",
+  "query": "Apollo 11 timeline sequencing activity",
+  "tags": [
+   "history desk",
+   "puzzle",
+   "practice"
+  ],
+  "path": "/pastrush/apollo-11-moonwalk-sequence/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/pastrush/apollo-11-moonwalk-sequence/",
+  "published": "2026-11-05",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "The Grove Shelf: Two Cozy Ordering Logic Puzzles",
+  "description": "Arrange a woodland shelf using position clues. Two original browser puzzles include hints, clue-specific feedback and explained solutions.",
+  "appSlug": "puffgrove",
+  "strategy": "interactive-exercise",
+  "query": "ordering logic puzzle for beginners",
+  "tags": [
+   "grove puzzles",
+   "puzzle",
+   "practice"
+  ],
+  "path": "/puffgrove/grove-shelf-logic/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/puffgrove/grove-shelf-logic/",
+  "published": "2026-11-05",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Three-Beacon Route Puzzle: Find the Shortest Way Out",
+  "description": "Light three beacons, avoid walls and reach the gate on two original grids. Try your own route, undo moves and compare it with a verified shortest path.",
+  "appSlug": "rushorb",
+  "strategy": "interactive-exercise",
+  "query": "shortest path grid puzzle with checkpoints",
+  "tags": [
+   "storm maps",
+   "puzzle",
+   "practice"
+  ],
+  "path": "/rushorb/three-beacon-route/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/rushorb/three-beacon-route/",
+  "published": "2026-11-05",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Bridge-Sum Puzzle Maker: Create and Share an Island Challenge",
+  "description": "Choose four island targets, test every bridge orientation and share your own playable number puzzle. Recipients get a fresh unsolved board.",
+  "appSlug": "sumbriska",
+  "strategy": "interactive-exercise",
+  "query": "make your own number logic puzzle",
+  "tags": [
+   "island workshop",
+   "puzzle",
+   "practice"
+  ],
+  "path": "/sumbriska/bridge-puzzle-maker/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/sumbriska/bridge-puzzle-maker/",
+  "published": "2026-11-05",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Grid Path Endpoint Checker: Can a Path Visit Every Square?",
+  "description": "Pick endpoints on three small grids. Check the alternating color rule, verify whether a complete route exists and reveal a numbered path.",
+  "appSlug": "sumthread",
+  "strategy": "interactive-exercise",
+  "query": "grid path checkerboard endpoints puzzle",
+  "tags": [
+   "path studies",
+   "puzzle",
+   "practice"
+  ],
+  "path": "/sumthread/endpoint-checker/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/sumthread/endpoint-checker/",
+  "published": "2026-11-05",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Idle Game Number Calculator — Compare K, M, B and T",
+  "description": "Expand and compare large game numbers like 950K and 1.2M. See the exact difference between typed values, a relative-size graphic and a rounded ratio.",
+  "appSlug": "cash-empire-clicker",
+  "strategy": "interactive-tool",
+  "query": "idle game K M B T number calculator compare",
+  "tags": [
+   "idle-games",
+   "large-numbers",
+   "calculator",
+   "notation"
+  ],
+  "path": "/cash-empire-clicker/big-number-compare/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/cash-empire-clicker/big-number-compare/",
+  "published": "2026-11-04",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Idle Game Bulk Cost Calculator — Upgrade Prices and Buy Max",
+  "description": "Price a bundle of idle-game upgrades or find how many your budget buys. See every rounded cost, your leftover credits and the shortfall for the next upgrade.",
+  "appSlug": "cash-empire-clicker",
+  "strategy": "interactive-tool",
+  "query": "idle game bulk cost calculator increasing prices",
+  "tags": [
+   "idle-game",
+   "math",
+   "upgrades"
+  ],
+  "path": "/cash-empire-clicker/bulk-price-ladder/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/cash-empire-clicker/bulk-price-ladder/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Idle Game Offline Earnings Calculator, Plus 12 Idle FAQs",
+  "description": "Estimate fictional game coins earned while away. Compare uncapped and capped offline production using your own rate and hours.",
+  "appSlug": "cash-empire-clicker",
+  "strategy": "faq-hub",
+  "query": "idle game offline earnings calculator",
+  "tags": [
+   "idle",
+   "clicker",
+   "calculator",
+   "faq",
+   "offline"
+  ],
+  "path": "/cash-empire-clicker/idle-game-offline-earnings-calculator/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/cash-empire-clicker/idle-game-offline-earnings-calculator/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Idle Games Without Intrusive Ads: 8 Questions to Ask First",
+  "description": "Looking for idle games without intrusive ads? Eight questions to ask any clicker before you install, answered for Cash Empire Clicker from its own listing.",
+  "appSlug": "cash-empire-clicker",
+  "strategy": "question-answer",
+  "query": "idle games without intrusive ads",
+  "tags": [
+   "idle",
+   "clicker",
+   "no-ads",
+   "tycoon",
+   "iphone"
+  ],
+  "path": "/cash-empire-clicker/idle-games-without-intrusive-ads-8-questions/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/cash-empire-clicker/idle-games-without-intrusive-ads-8-questions/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Spot the Misprint: Free Six-Round Pattern Game",
+  "description": "Nine fictional tickets. One changed symbol. Play six untimed pattern-inspection rounds, get an explanation after each and try Cash Empire Clicker on iPhone.",
+  "appSlug": "cash-empire-clicker",
+  "strategy": "interactive-tool",
+  "query": "spot the odd one out pattern game free",
+  "tags": [],
+  "path": "/cash-empire-clicker/spot-the-misprint/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/cash-empire-clicker/spot-the-misprint/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Gravity Flip Puzzle: Plan Every Move | Fluxo Route Lab",
+  "description": "Six original gravity flip route puzzles with undo, hints and shortest-route explanations. Plan floor and ceiling moves without a timer.",
+  "appSlug": "fluxo",
+  "strategy": "original_interactive_companion",
+  "query": "gravity flip puzzle",
+  "tags": [
+   "gravity flip game",
+   "route puzzle",
+   "offline arcade"
+  ],
+  "path": "/fluxo/gravity-flip-route-lab/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/fluxo/gravity-flip-route-lab/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Laser Gate Timing Puzzle: Find a Departure That Clears Every Gate",
+  "description": "Solve three free timing puzzles using repeating open-and-closed gate cycles. Pick a departure tick, inspect each arrival, then reveal every clear start.",
+  "appSlug": "fluxo",
+  "strategy": "interactive-tool",
+  "query": "laser gate timing puzzle",
+  "tags": [],
+  "path": "/fluxo/laser-gate-timing-puzzle/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/fluxo/laser-gate-timing-puzzle/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Mid-Air Gravity Flip Lab — See Momentum After a Reversal",
+  "description": "Move the flip time and step through a simple gravity-reversal model. See why changing acceleration does not instantly reverse movement.",
+  "appSlug": "fluxo",
+  "strategy": "interactive-tool",
+  "query": "gravity flip momentum mid air reversal",
+  "tags": [
+   "gravity",
+   "arcade",
+   "motion",
+   "interactive"
+  ],
+  "path": "/fluxo/midair-flip-motion-lab/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/fluxo/midair-flip-motion-lab/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "One-Tap Games for Short Breaks: Find Your Fluxo Mode",
+  "description": "Compare Zen, Classic and Hyper, then choose a starting mode for your next short arcade break.",
+  "appSlug": "fluxo",
+  "strategy": "audience-page",
+  "query": "one tap games for short breaks",
+  "tags": [
+   "one-tap",
+   "arcade",
+   "short-breaks"
+  ],
+  "path": "/fluxo/one-tap-short-breaks/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/fluxo/one-tap-short-breaks/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Turn-Based Number Puzzles for Adults: Try a Carry Chain",
+  "description": "Compare four launches in a carry-chain puzzle, then predict missing numbers on a free printable with a fold-under answer key.",
+  "appSlug": "number-beasts",
+  "strategy": "audience-page",
+  "query": "turn based number puzzles for adults",
+  "tags": [
+   "number-puzzles",
+   "turn-based",
+   "adults"
+  ],
+  "path": "/number-beasts/carry-chain-puzzle/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/number-beasts/carry-chain-puzzle/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Addition and Subtraction Fact Family Sort — Free Practice",
+  "description": "Sort equations into six number fact families. Spot true-but-unrelated equations, explore doubles and zero, and see explanations without a timer.",
+  "appSlug": "number-beasts",
+  "strategy": "interactive-tool",
+  "query": "addition subtraction fact family sorting game",
+  "tags": [
+   "number bonds",
+   "fact families",
+   "subtraction"
+  ],
+  "path": "/number-beasts/fact-family-sort/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/number-beasts/fact-family-sort/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Make Ten Addition: Move the Counters, See the Remainder",
+  "description": "Use two interactive ten-frames to show why 8 + 7 becomes 10 + 5. Includes a printable classroom number talk, answer key, and an 18-second worked example.",
+  "appSlug": "number-beasts",
+  "strategy": "interactive-tool",
+  "query": "make ten addition visualizer",
+  "tags": [
+   "number-bonds",
+   "make-ten",
+   "addition",
+   "ten-frame"
+  ],
+  "path": "/number-beasts/make-ten-addition-lab/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/number-beasts/make-ten-addition-lab/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Missing Number Bonds: Play the Six-Round Missing Part Lab",
+  "description": "Find six missing number bonds, then build a printable seven-tile chain where every join adds to ten.",
+  "appSlug": "number-beasts",
+  "strategy": "interactive-tool",
+  "query": "missing number bonds interactive practice",
+  "tags": [
+   "number-bonds",
+   "puzzle",
+   "math"
+  ],
+  "path": "/number-beasts/missing-part-lab/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/number-beasts/missing-part-lab/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Number Puzzle Strategy: Does Route Order Matter?",
+  "description": "Try six route-order puzzles with step-by-step explanations, or download the two-page puzzle pack with writing spaces and a separate answer key.",
+  "appSlug": "number-beasts",
+  "strategy": "interactive-practice",
+  "query": "number puzzle strategy route order carry planning",
+  "tags": [
+   "number-puzzles",
+   "strategy",
+   "number-bonds"
+  ],
+  "path": "/number-beasts/route-order-lab/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/number-beasts/route-order-lab/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "What Century Is a Year In? Interactive Century and Decade Practice",
+  "description": "Learn the difference between centuries and named decades. Explore CE years, see century boundaries, and practice the tricky 1900, 1901, 2000 and 2001 transitions.",
+  "appSlug": "pastrush",
+  "strategy": "useful interactive tool with worked example and contextual app conversion",
+  "query": "What Century Is a Year In? Interactive Century and Decade Practice",
+  "tags": [
+   "pastrush",
+   "century",
+   "interactive tool"
+  ],
+  "path": "/pastrush/century-and-decade-practice/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/pastrush/century-and-decade-practice/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "BCE Century Calculator: Find the Century of a BC Date",
+  "description": "Place BCE and BC dates in the correct century with visual boundaries, examples and a short practice exercise.",
+  "appSlug": "pastrush",
+  "strategy": "interactive-reference",
+  "query": "BCE century calculator what century is a BC date",
+  "tags": [
+   "history",
+   "century",
+   "chronology"
+  ],
+  "path": "/pastrush/century-finder/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/pastrush/century-finder/",
+  "published": "2026-11-04",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "A History Game to Play With Grandkids: 5 Rounds to Try",
+  "description": "For grandparents who want one screen, two heads and a real argument about the past. Five tap-to-reveal rounds to try tonight, then the case-file game.",
+  "appSlug": "pastrush",
+  "strategy": "audience-page",
+  "query": "history game to play with grandkids",
+  "tags": [
+   "grandparents",
+   "kids",
+   "history",
+   "family-game",
+   "ipad"
+  ],
+  "path": "/pastrush/history-game-to-play-with-grandkids/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/pastrush/history-game-to-play-with-grandkids/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Primary Source Detective: Wright Brothers Photo and Telegram",
+  "description": "Compare a Wright brothers flight photo and telegram, edit a caption with a printable classroom worksheet, then try six source-analysis cases.",
+  "appSlug": "pastrush",
+  "strategy": "interactive-exercise",
+  "query": "primary source analysis practice",
+  "tags": [
+   "history",
+   "evidence",
+   "practice"
+  ],
+  "path": "/pastrush/primary-source-detective/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/pastrush/primary-source-detective/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Resized Map Scale Calculator: Correct Distance After Printing",
+  "description": "Enlarged or reduced a map? Calculate its effective ratio scale and convert a measured paper distance into metres or kilometres.",
+  "appSlug": "pastrush",
+  "strategy": "interactive-tool",
+  "query": "map scale calculator after resizing printing",
+  "tags": [
+   "map-scale",
+   "geography",
+   "printing"
+  ],
+  "path": "/pastrush/resized-map-scale-lab/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/pastrush/resized-map-scale-lab/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Bouncing Ball Prediction Puzzle: Count the Steps, Find the Finish",
+  "description": "Play six free bouncing-orb puzzles. Predict the landing position, then reveal each step. Untimed, keyboard-friendly and explained with a simple reflection rule.",
+  "appSlug": "rushorb",
+  "strategy": "interactive-tool",
+  "query": "bouncing ball prediction puzzle",
+  "tags": [],
+  "path": "/rushorb/bounce-count-puzzle/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/rushorb/bounce-count-puzzle/",
+  "published": "2026-11-04",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "One-Hand Games for iPhone: 5-Step Thumb Guide | RushOrb",
+  "description": "Standing on a train with one free thumb? A five-step visual guide to RushOrb, a 3D runner you steer and command with one hand, offline, no ads.",
+  "appSlug": "rushorb",
+  "strategy": "visual-step-guide",
+  "query": "one hand games for iphone",
+  "tags": [
+   "one-handed",
+   "commute",
+   "runner",
+   "offline-games"
+  ],
+  "path": "/rushorb/one-hand-games-for-iphone/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/rushorb/one-hand-games-for-iphone/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Rolling Ball Game Tips: Why You Keep Dying and What to Do",
+  "description": "You are steering too much and looking too close. Seven rolling ball game tips that transfer between games, plus a three-tap quiz for your play style.",
+  "appSlug": "rushorb",
+  "strategy": "question-answer",
+  "query": "rolling ball game tips",
+  "tags": [
+   "games",
+   "tips",
+   "arcade",
+   "one-thumb",
+   "rushorb"
+  ],
+  "path": "/rushorb/rolling-ball-game-tips/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/rushorb/rolling-ball-game-tips/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "RushOrb Weather Guide: Practice Frost, Blaze and Gale",
+  "description": "Learn three RushOrb weather rules with six untimed obstacle cards. Get explanations, retry a choice, and then explore the full iPhone game.",
+  "appSlug": "rushorb",
+  "strategy": "interactive-tool",
+  "query": "RushOrb Frost Blaze Gale weather guide",
+  "tags": [
+   "game-guide",
+   "weather",
+   "practice"
+  ],
+  "path": "/rushorb/weather-rule-practice/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/rushorb/weather-rule-practice/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "\"Why Am I So Bad at Mental Math?\" 12 Answers for Adults",
+  "description": "Bad at mental math as an adult? Twelve questions people ask, answered plainly, plus a calculator that shows the make-ten trick on any sum you type.",
+  "appSlug": "sumbriska",
+  "strategy": "faq-hub",
+  "query": "bad at mental math as an adult",
+  "tags": [
+   "mental-math",
+   "adults",
+   "puzzles",
+   "faq",
+   "number-sense"
+  ],
+  "path": "/sumbriska/bad-at-mental-math-as-an-adult/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/sumbriska/bad-at-mental-math-as-an-adult/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Bridge Sum Lab: Six Playable Number Puzzles",
+  "description": "Flip bridge endpoints, compare island totals, and solve six untimed practice boards, including a two-tide challenge.",
+  "appSlug": "sumbriska",
+  "strategy": "interactive-companion",
+  "query": "bridge number puzzles for adults",
+  "tags": [
+   "number-puzzles",
+   "logic",
+   "adults",
+   "interactive"
+  ],
+  "path": "/sumbriska/bridge-sum-lab/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/sumbriska/bridge-sum-lab/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Sumbriska Beginner Practice Plan: Predict, Check, Explain",
+  "description": "A six-check practice sheet for learning Sumbriska's bridge sums without rushing: predict one flip, inspect both islands, then explain a correction.",
+  "appSlug": "sumbriska",
+  "strategy": "challenge-plan",
+  "query": "sumbriska beginner practice plan",
+  "tags": [
+   "sumbriska",
+   "practice",
+   "bridge-sums"
+  ],
+  "path": "/sumbriska/predict-check-explain/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/sumbriska/predict-check-explain/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Daily Number Puzzle for Beginners: Play Today’s Sumthread",
+  "description": "A daily number puzzle for beginners you can play on this page: one path through every tile, hitting the target sums in order. Scratch to reveal the answer.",
+  "appSlug": "sumthread",
+  "strategy": "puzzle-of-the-day",
+  "query": "daily number puzzle",
+  "tags": [
+   "puzzle",
+   "daily",
+   "numbers",
+   "beginner",
+   "offline"
+  ],
+  "path": "/sumthread/daily-number-puzzle-for-beginners/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/sumthread/daily-number-puzzle-for-beginners/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Number Path Puzzle with Ordered Sums: Thread 01 + Solution",
+  "description": "Try an original 3×3 number-path puzzle with ordered targets 6, 9 and 6. Tap each tile once, undo freely and reveal a worked solution.",
+  "appSlug": "sumthread",
+  "strategy": "puzzle-of-the-day",
+  "query": "number path puzzle with ordered sums",
+  "tags": [
+   "number-path",
+   "puzzle",
+   "worked-solution"
+  ],
+  "path": "/sumthread/ordered-sums-thread-01/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/sumthread/ordered-sums-thread-01/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "How to Play Games on a Plane Without Wi-Fi (Holiday 2026)",
+  "description": "How to play games on a plane without Wi-Fi: what works in airplane mode, three steps before boarding, and a one-tap runner that runs fully offline.",
+  "appSlug": "fluxo",
+  "strategy": "seasonal",
+  "query": "games to play on a plane without wifi",
+  "tags": [
+   "travel",
+   "offline",
+   "airplane-mode",
+   "arcade",
+   "thanksgiving"
+  ],
+  "path": "/fluxo/games-on-a-plane-without-wifi/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/fluxo/games-on-a-plane-without-wifi/",
+  "published": "2026-11-03",
+  "updated": "2026-11-03"
+ },
+ {
+  "title": "Best Number Bonds Apps for Homeschool (Checked Nov 2026)",
+  "description": "Best number bonds apps for homeschool, checked against App Store listings on 4 Nov 2026: price, last update, ads, accounts, what each teaches.",
+  "appSlug": "number-beasts",
+  "strategy": "honest-comparison",
+  "query": "best number bonds apps",
+  "tags": [
+   "kids",
+   "maths",
+   "number-bonds",
+   "homeschool",
+   "comparison"
+  ],
+  "path": "/number-beasts/best-number-bonds-apps-homeschool/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/number-beasts/best-number-bonds-apps-homeschool/",
+  "published": "2026-11-03",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Best History Games for Kids: 5 Compared + a 7-Day Challenge",
+  "description": "Best history games for kids, compared from their App Store listings, after a which-came-first quiz you can play now. Then a seven-day family challenge.",
+  "appSlug": "pastrush",
+  "strategy": "challenge-plan",
+  "query": "best history games for kids",
+  "tags": [
+   "history",
+   "kids",
+   "education",
+   "comparison",
+   "family",
+   "quiz"
+  ],
+  "path": "/pastrush/best-history-games-for-kids-7-day-challenge/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/pastrush/best-history-games-for-kids-7-day-challenge/",
+  "published": "2026-11-03",
+  "updated": "2026-11-03"
+ },
+ {
+  "title": "Best Rolling Ball Games for iPhone: Beginner Picks (2026)",
+  "description": "Best rolling ball games for iPhone for beginners, compared from their App Store listings: finish lines, download size, ads, offline play. Sort, get a pick.",
+  "appSlug": "rushorb",
+  "strategy": "honest-comparison",
+  "query": "best rolling ball games for iphone",
+  "tags": [
+   "arcade",
+   "ball-game",
+   "beginner",
+   "comparison",
+   "offline"
+  ],
+  "path": "/rushorb/best-rolling-ball-games-iphone-beginners/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/rushorb/best-rolling-ball-games-iphone-beginners/",
+  "published": "2026-11-03",
+  "updated": "2026-11-03"
+ },
+ {
+  "title": "Free Daily Number Puzzle: Flip Bridges, Match Sums",
+  "description": "A free daily number puzzle to play in your browser: flip bridges so every island hits its target sum. New board every day, solution behind a tap.",
+  "appSlug": "sumbriska",
+  "strategy": "puzzle-of-the-day",
+  "query": "free daily number puzzle",
+  "tags": [
+   "puzzle",
+   "daily",
+   "numbers",
+   "play-online"
+  ],
+  "path": "/sumbriska/daily-number-puzzle/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-games/sumbriska/daily-number-puzzle/",
+  "published": "2026-11-03",
+  "updated": "2026-11-05"
+ }
+]

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow">
+<title>Signal Relay | An offline two-player gravity puzzle</title>
+<style>
+:root{color-scheme:dark;color:#f5f4ff;background:#101027;font:17px/1.55 system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0}main{max-width:50rem;margin:auto;padding:clamp(1rem,4vw,2.5rem)}
+header{color:#9bf6ec;border-bottom:1px solid #525172;padding-bottom:.8rem}h1{font-size:clamp(2.5rem,9vw,4.2rem);margin:.3em 0}h2{margin:.1em 0 .5em;line-height:1.2}
+.card{background:#1b1c39;border:1px solid #6d7094;border-top:5px solid #78f2e7;border-radius:.7rem;padding:clamp(.8rem,3vw,1.5rem);margin:1rem 0}
+.actions{display:flex;gap:.6rem;flex-wrap:wrap;margin:1rem 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(7rem,1fr));gap:.5rem;padding:0;list-style:none}
+.grid li{border:1px solid #525172;padding:.55rem;border-radius:.3rem}.grid strong{display:block;color:#9bf6ec}
+button,select{font:inherit;min-height:44px;max-width:100%;border:1px solid #9bf6ec;border-radius:.4rem;background:#1b1c39;color:#f5f4ff;padding:.4rem .75rem}button{cursor:pointer}button:disabled{opacity:.5;cursor:default}
+.primary{background:#9bf6ec;color:#101027;font-weight:700}button:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #ff9bdc;outline-offset:3px}a{color:#9bf6ec}
+small{color:#d0cfdf}ol{padding-left:1.5rem}li{margin:.25rem 0}footer{margin-top:2rem;border-top:1px solid #525172;padding-top:1rem}select{display:block;margin:.4rem 0}
+</style></head>
+<body><main><header>Honest Little Apps · Offline club edition</header><h1>Signal Relay</h1>
+<p>Two players share one screen. The navigator studies eight gates and talks the pilot through them. The pilot programs the route with the map hidden. Switch jobs on the next course.</p>
+<noscript>This file needs JavaScript enabled to run the relay.</noscript>
+<section class="card" id="nav"><h2 tabindex="-1" id="navHeading">Navigator, read the course</h2>
+<label for="pick">Choose a course</label><select id="pick"></select><p id="brief"></p>
+<ol class="grid" id="map"></ol><p>Agree on a short message, such as “flip at gate two, then stay until gate five.” Hand over the screen after hiding the map. You can also play alone from memory.</p>
+<button id="handoff" class="primary">Hide map and pass to pilot</button></section>
+<section class="card" id="pilot" hidden><h2 id="pilotHeading" tabindex="-1">Pilot, program your route</h2>
+<p id="startLane"></p><p>Stay keeps your lane. Flip switches lanes before entering the next gate. Enter one command per gate, using the navigator’s message.</p>
+<p id="commands" aria-live="polite"></p>
+<div class="actions"><button id="stay">Stay</button><button id="flip">Flip</button><button id="undo">Undo</button></div>
+<button class="primary" id="check">Test the route</button></section>
+<section class="card" id="end" hidden><h2 id="endHeading" tabindex="-1">Flight log</h2><p id="outcome"></p><ol id="log"></ol>
+<p>Compare the first unexpected lane with the navigator’s message. Which instruction would you change?</p>
+<div class="actions"><button id="again">Retry this course</button><button id="swap" class="primary">Swap roles on the next course</button></div></section>
+<footer><p>Made for clubs, classrooms and pairs. Save this HTML file and reopen it in a browser. The whole relay works offline, with no account or saved player information.</p>
+<p>This is an original, untimed route puzzle. For live one-tap arcade play on iPhone, see <a href="https://apps.apple.com/us/app/fluxo-gravity-runner/id6787641780">Fluxo on the App Store</a> when you’re online.</p></footer></main>
+<script>
+(() => {
+  'use strict';
+  // Original discrete route puzzle; not Fluxo's native movement model.
+const courses = [
+ {name:'First crossing',start:0,gates:[0,1,0,2,0,1,1,0],note:'A clear gate gives you a choice. A blocked lane does not.'},
+ {name:'Hold your line',start:0,gates:[0,0,1,0,0,1,0,2],note:'Changing lanes at every clear gate adds work. Look at the next blocked lane.'},
+ {name:'Ceiling start',start:1,gates:[2,0,0,1,0,2,0,1],note:'Start on the ceiling. The same two choices still work.'},
+ {name:'Alternating signals',start:0,gates:[1,2,1,0,2,1,2,0],note:'Several changes are necessary here. Count only the changes you actually make.'},
+ {name:'The long gap',start:1,gates:[0,0,2,0,0,0,1,0],note:'Several equally short routes can cross a long clear gap.'},
+ {name:'Look one gate ahead',start:0,gates:[2,0,1,0,2,0,1,2],note:'Use clear gates to prepare, or wait until the next gate. Both can be valid.'}
+];
+// Gate 0: both clear. Gate 1: floor blocked. Gate 2: ceiling blocked.
+const safe = (gate,lane) => gate !== lane+1;
+function inspect(course,actions) {
+ if(!Array.isArray(actions)||actions.length>course.gates.length||actions.some(a=>a!==0&&a!==1)) throw new Error('Invalid route');
+ let lane=course.start,flips=0; const lanes=[];
+ for(let i=0;i<actions.length;i++){lane^=actions[i];flips+=actions[i];lanes.push(lane);if(!safe(course.gates[i],lane))return {valid:false,collision:i,lane,flips,lanes,complete:false};}
+ return {valid:true,lane,flips,lanes,complete:actions.length===course.gates.length};
+}
+
+  const byId = id => document.getElementById(id);
+  const lanes = ['floor','ceiling'];
+  const rule = ['both lanes clear','floor blocked','ceiling blocked'];
+  let courseIndex = 0;
+  let actions = [];
+  const sections = ['nav','pilot','end'];
+  function displaySection(section) {
+    for (const id of sections) byId(id).hidden = id !== section;
+    byId(section + 'Heading').focus();
+  }
+  function populateMap() {
+    const course = courses[courseIndex];
+    byId('pick').value = String(courseIndex);
+    byId('brief').textContent = course.name + '. Start on the ' + lanes[course.start] + '.';
+    byId('map').replaceChildren(...course.gates.map((gate, index) => {
+      const item = document.createElement('li');
+      const label = document.createElement('strong');
+      label.textContent = 'Gate ' + (index + 1);
+      item.append(label, rule[gate]);
+      return item;
+    }));
+  }
+  function pilotStatus() {
+    const size = courses[courseIndex].gates.length;
+    const complete = actions.length === size;
+    const trail = actions.map(action => action ? 'Flip' : 'Stay').join(' · ');
+    byId('commands').textContent = (trail ? trail + '. ' : '') +
+      (complete ? 'All gates programmed.' : 'Choose the command for gate ' + (actions.length + 1) + ' of ' + size + '.');
+    byId('stay').disabled = byId('flip').disabled = complete;
+    byId('undo').disabled = !actions.length;
+    byId('check').disabled = !complete;
+  }
+  function program(action) {
+    if (actions.length >= courses[courseIndex].gates.length) return;
+    actions.push(action);
+    pilotStatus();
+    if (byId('stay').disabled) byId('check').focus();
+  }
+  function startPlanning() {
+    actions = [];
+    populateMap();
+    displaySection('nav');
+  }
+  for (const [index, course] of courses.entries()) {
+    const option = document.createElement('option');
+    option.value = String(index);
+    option.textContent = course.name;
+    byId('pick').append(option);
+  }
+  byId('pick').onchange = () => { courseIndex = Number(byId('pick').value); populateMap(); };
+  byId('handoff').onclick = () => {
+    actions = [];
+    byId('startLane').textContent = 'Start on the ' + lanes[courses[courseIndex].start] + '.';
+    pilotStatus();
+    displaySection('pilot');
+  };
+  byId('stay').onclick = () => program(0);
+  byId('flip').onclick = () => program(1);
+  byId('undo').onclick = () => { actions.pop(); pilotStatus(); };
+  byId('check').onclick = () => {
+    const course = courses[courseIndex];
+    if (actions.length !== course.gates.length) return;
+    const result = inspect(course, actions);
+    byId('outcome').textContent = result.complete ? 'Cleared all eight gates with ' + result.flips + ' flips.' :
+      'Cleared ' + result.collision + ' of eight gates. Gate ' + (result.collision + 1) + ' blocked the ' + lanes[result.lane] + '.';
+    byId('log').replaceChildren(...result.lanes.map((lane, index) => {
+      const entry = document.createElement('li');
+      entry.textContent = (actions[index] ? 'Flip' : 'Stay') + ' → ' + lanes[lane] + '. ' +
+        rule[course.gates[index]] + (index === result.collision ? ' — collision.' : ' — clear.');
+      return entry;
+    }));
+    displaySection('end');
+  };
+  byId('again').onclick = startPlanning;
+  byId('swap').onclick = () => { courseIndex = (courseIndex + 1) % courses.length; startPlanning(); };
+  populateMap();
+})();
+</script></body></html>
