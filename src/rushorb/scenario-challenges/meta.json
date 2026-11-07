@@ -1,0 +1,14 @@
+{
+  "title": "Route Choice Workshop",
+  "description": "27 independent route and resource puzzles with selectable answers. Fictional rules are fully stated; no native mechanics are assumed.",
+  "appSlug": "rushorb",
+  "strategy": "worked-scenario-quiz",
+  "query": "route choice puzzles",
+  "tags": [
+    "worked examples",
+    "mini challenges",
+    "rushorb"
+  ],
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+}

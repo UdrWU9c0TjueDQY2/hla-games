@@ -1,0 +1,14 @@
+{
+  "title": "Island Transfer Decisions",
+  "description": "27 original island-number questions with worked solutions. Transfers, costs and target conditions are explicit independent web rules.",
+  "appSlug": "sumbriska",
+  "strategy": "worked-scenario-quiz",
+  "query": "number transfer quiz",
+  "tags": [
+    "worked examples",
+    "mini challenges",
+    "sumbriska"
+  ],
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+}
